@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly Marketing Blog — Insights on digital marketing strategy, SEO, paid advertising, branding, and growth.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/blog.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <title>Blog — Stackly Marketing</title>
+</head>
+<body>
+
+  <header class="header js-header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <span class="header__logo-img" role="img" aria-label="Stackly Marketing"></span>
+      </a>
+      <nav class="header__nav js-nav">
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link">Home</a></li>
+          <li><a class="header__nav-link">Services</a></li>
+          <li><a class="header__nav-link">About</a></li>
+          <li><a class="header__nav-link">Case Studies</a></li>
+          <li><a class="header__nav-link">Blog</a></li>
+          <li><a class="header__nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--ghost header__login">Sign In</a>
+        <a href="contact.html" class="btn btn--primary header__cta">Sign Up</a>
+        <button class="header__hamburger js-hamburger" aria-label="Toggle menu">
+          <span class="header__hamburger-line"></span>
+          <span class="header__hamburger-line"></span>
+          <span class="header__hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas -->
+  <div class="header__offcanvas js-offcanvas">
+    <div class="header__offcanvas-inner">
+      <button class="header__offcanvas-close js-offcanvas-close" aria-label="Close menu">
+        <span class="header__offcanvas-close-line"></span>
+        <span class="header__offcanvas-close-line"></span>
+      </button>
+      <nav class="header__offcanvas-nav">
+        <ul class="header__offcanvas-list">
+          <li><a href="index.html" class="header__offcanvas-link">Home</a></li>
+          <li><a class="header__offcanvas-link">Services</a></li>
+          <li><a class="header__offcanvas-link">About</a></li>
+          <li><a class="header__offcanvas-link">Case Studies</a></li>
+          <li><a class="header__offcanvas-link">Blog</a></li>
+          <li><a class="header__offcanvas-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__offcanvas-actions">
+        <a href="contact.html" class="btn btn--primary header__offcanvas-cta">Get Started</a>
+      </div>
+    </div>
+  </div>
+  <div class="header__overlay js-overlay"></div>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero__label">Our Blog</span>
+        <h1 class="page-hero__title">Insights for Modern Marketers.</h1>
+        <p class="page-hero__text">Expert perspectives on digital strategy, growth tactics, industry trends, and behind-the-scenes looks at how we build brands.</p>
+      </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="featured-post section reveal">
+      <div class="container">
+        <article class="featured-post__card">
+          <div class="featured-post__image">
+            <div class="featured-post__image-placeholder"></div>
+          </div>
+          <div class="featured-post__body">
+            <div class="featured-post__meta">
+              <span class="tag">Strategy</span>
+              <span class="featured-post__date">June 24, 2026</span>
+              <span class="featured-post__read-time">8 min read</span>
+            </div>
+            <h2 class="featured-post__title">The Future of AI in Digital Marketing: What's Working in 2026</h2>
+            <p class="featured-post__excerpt">From predictive analytics to AI-powered creative optimization — we break down the practical applications of artificial intelligence that are delivering real results for marketers today.</p>
+            <div class="featured-post__author">
+              <div class="featured-post__author-avatar"></div>
+              <div class="featured-post__author-info">
+                <span class="featured-post__author-name">Amara Okafor</span>
+                <span class="featured-post__author-role">Chief Strategy Officer</span>
+              </div>
+            </div>
+            <a href="#" class="btn btn--outline featured-post__link">Read Article</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-grid section reveal">
+      <div class="container">
+        <div class="blog-grid__header">
+          <span class="section__label">Latest Articles</span>
+          <h2 class="section__title blog-grid__title">More from the Blog.</h2>
+        </div>
+        <div class="blog-grid__categories">
+          <button class="blog-grid__category is-active">All</button>
+          <button class="blog-grid__category">SEO</button>
+          <button class="blog-grid__category">Paid Media</button>
+          <button class="blog-grid__category">Branding</button>
+          <button class="blog-grid__category">Strategy</button>
+          <button class="blog-grid__category">AI</button>
+        </div>
+        <div class="blog-grid__items">
+          <article class="blog-grid__card">
+            <div class="blog-grid__card-image">
+              <div class="blog-grid__card-placeholder"></div>
+            </div>
+            <div class="blog-grid__card-body">
+              <div class="blog-grid__card-meta">
+                <span class="tag">SEO</span>
+                <span class="blog-grid__card-date">Jun 20, 2026</span>
+              </div>
+              <h3 class="blog-grid__card-title">How to Build a Content Strategy That Actually Drives Traffic</h3>
+              <p class="blog-grid__card-text">A step-by-step framework for creating content that ranks, resonates, and converts — backed by real data from our campaigns.</p>
+              <a href="#" class="blog-grid__card-link">Read More <span>→</span></a>
+            </div>
+          </article>
+          <article class="blog-grid__card">
+            <div class="blog-grid__card-image">
+              <div class="blog-grid__card-placeholder"></div>
+            </div>
+            <div class="blog-grid__card-body">
+              <div class="blog-grid__card-meta">
+                <span class="tag">Paid Media</span>
+                <span class="blog-grid__card-date">Jun 15, 2026</span>
+              </div>
+              <h3 class="blog-grid__card-title">Google Ads in 2026: What Changed and How to Adapt</h3>
+              <p class="blog-grid__card-text">Major updates to Google's advertising platform are reshaping how smart marketers allocate their budgets. Here's what you need to know.</p>
+              <a href="#" class="blog-grid__card-link">Read More <span>→</span></a>
+            </div>
+          </article>
+          <article class="blog-grid__card">
+            <div class="blog-grid__card-image">
+              <div class="blog-grid__card-placeholder"></div>
+            </div>
+            <div class="blog-grid__card-body">
+              <div class="blog-grid__card-meta">
+                <span class="tag">Branding</span>
+                <span class="blog-grid__card-date">Jun 10, 2026</span>
+              </div>
+              <h3 class="blog-grid__card-title">Why Brand Strategy Matters More Than Ever in 2026</h3>
+              <p class="blog-grid__card-text">In an era of AI-generated content and noise, a strong brand is your most valuable competitive advantage. Here's how to build one.</p>
+              <a href="#" class="blog-grid__card-link">Read More <span>→</span></a>
+            </div>
+          </article>
+          <article class="blog-grid__card">
+            <div class="blog-grid__card-image">
+              <div class="blog-grid__card-placeholder"></div>
+            </div>
+            <div class="blog-grid__card-body">
+              <div class="blog-grid__card-meta">
+                <span class="tag">Strategy</span>
+                <span class="blog-grid__card-date">Jun 5, 2026</span>
+              </div>
+              <h3 class="blog-grid__card-title">The Modern Marketing Funnel: A Complete Guide</h3>
+              <p class="blog-grid__card-text">Forget everything you know about traditional funnels. Today's customer journey is nonlinear — and your strategy needs to reflect that.</p>
+              <a href="#" class="blog-grid__card-link">Read More <span>→</span></a>
+            </div>
+          </article>
+          <article class="blog-grid__card">
+            <div class="blog-grid__card-image">
+              <div class="blog-grid__card-placeholder"></div>
+            </div>
+            <div class="blog-grid__card-body">
+              <div class="blog-grid__card-meta">
+                <span class="tag">AI</span>
+                <span class="blog-grid__card-date">May 28, 2026</span>
+              </div>
+              <h3 class="blog-grid__card-title">AI-Powered Personalization: A Practical Implementation Guide</h3>
+              <p class="blog-grid__card-text">How leading brands are using machine learning to deliver hyper-personalized experiences at scale — and how you can too.</p>
+              <a href="#" class="blog-grid__card-link">Read More <span>→</span></a>
+            </div>
+          </article>
+          <article class="blog-grid__card">
+            <div class="blog-grid__card-image">
+              <div class="blog-grid__card-placeholder"></div>
+            </div>
+            <div class="blog-grid__card-body">
+              <div class="blog-grid__card-meta">
+                <span class="tag">Paid Media</span>
+                <span class="blog-grid__card-date">May 22, 2026</span>
+              </div>
+              <h3 class="blog-grid__card-title">LinkedIn Advertising: B2B Playbook for 2026</h3>
+              <p class="blog-grid__card-text">The strategies, targeting options, and creative approaches that are driving the best results on LinkedIn right now.</p>
+              <a href="#" class="blog-grid__card-link">Read More <span>→</span></a>
+            </div>
+          </article>
+        </div>
+        <div class="blog-grid__pagination">
+          <a href="#" class="btn btn--outline">Load More Articles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter section reveal">
+      <div class="container">
+        <div class="newsletter__inner">
+          <div class="newsletter__content">
+            <span class="section__label newsletter__label">Stay Ahead</span>
+            <h2 class="newsletter__title">Get Marketing Insights Delivered to Your Inbox.</h2>
+            <p class="newsletter__text">Weekly updates on digital strategy, growth tactics, and industry trends — from practitioners who build campaigns daily.</p>
+          </div>
+          <form class="newsletter__form">
+            <div class="newsletter__form-row">
+              <input type="email" class="newsletter__input" placeholder="Enter your email" required>
+              <button type="submit" class="btn btn--primary newsletter__submit">Subscribe</button>
+            </div>
+            <p class="newsletter__disclaimer">No spam, ever. Unsubscribe anytime.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo"><span class="footer__logo-img" role="img" aria-label="Stackly Marketing"></span></a>
+          <p class="footer__tagline">Data-driven strategy meets creative excellence. We help ambitious brands grow, engage, and dominate their markets with purpose-built digital marketing that delivers measurable results.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">X</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">IG</a>
+            <a href="#" class="footer__social-link" aria-label="Dribbble">Dr</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul class="footer__col-list">
+            <li><span class="footer__col-link">SEO & Organic Growth</span></li>
+            <li><span class="footer__col-link">Paid Advertising</span></li>
+            <li><span class="footer__col-link">Brand & Creative</span></li>
+            <li><span class="footer__col-link">Web & CRO</span></li>
+            <li><span class="footer__col-link">Social Media</span></li>
+            <li><span class="footer__col-link">AI Marketing</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul class="footer__col-list">
+            <li><span class="footer__col-link">About Us</span></li>
+            <li><span class="footer__col-link">Case Studies</span></li>
+            <li><span class="footer__col-link">Blog</span></li>
+            <li><span class="footer__col-link">Contact</span></li>
+            <li><span class="footer__col-link">Careers</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Contact</h4>
+          <ul class="footer__col-list">
+            <li><span class="footer__col-link">hello@stackly.com</span></li>
+            <li><span class="footer__col-link">+1 (234) 567-890</span></li>
+            <li class="footer__col-address">123 Madison Avenue<br>New York, NY 10016</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 Stackly Marketing. All rights reserved.</span>
+        <div class="footer__legal">
+          <a href="#" class="footer__legal-link">Privacy Policy</a>
+          <a href="#" class="footer__legal-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

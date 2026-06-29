@@ -1,0 +1,321 @@
+/* ============================================
+   STACKLY MARKETING — Footer Component
+   Dark background, 4-column grid,
+   bottom bar, social links.
+   ============================================ */
+
+/* --------------------------------------------
+   Footer Base
+   -------------------------------------------- */
+.footer {
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  padding: 80px 0 0;
+  position: relative;
+}
+
+/* --------------------------------------------
+   Footer Grid
+   -------------------------------------------- */
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: var(--space-12);
+  align-items: start;
+  padding-bottom: var(--space-16);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* --------------------------------------------
+   Brand Column
+   -------------------------------------------- */
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.footer__logo {
+  display: block;
+  text-decoration: none;
+  transition: opacity var(--transition-base);
+}
+
+.footer__logo:hover {
+  opacity: 0.8;
+}
+
+.footer__logo-img {
+  display: block;
+  width: 380px;
+  height: 110px;
+  margin-top: -42px;
+  background-color: var(--color-accent);
+  mask-image: url(../images/logo-stackly.webp);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: left center;
+  -webkit-mask-image: url(../images/logo-stackly.webp);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left center;
+}
+
+.footer__tagline {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  max-width: 280px;
+  margin-bottom: var(--space-5);
+}
+
+/* Social Links */
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-secondary);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.footer__social-link:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  transform: translateY(-3px);
+}
+
+/* --------------------------------------------
+   Footer Columns
+   -------------------------------------------- */
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.footer__col-title {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-1);
+}
+
+.footer__col-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__col-link {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  position: relative;
+  width: fit-content;
+}
+
+.footer__col-link:hover {
+  color: var(--color-text-primary);
+  transform: translateX(4px);
+}
+
+.footer__col-address {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  font-style: normal;
+}
+
+/* --------------------------------------------
+   Footer Bottom Bar
+   -------------------------------------------- */
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: var(--space-8) 0;
+  flex-wrap: wrap;
+}
+
+.footer__copyright {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.footer__legal {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.footer__legal-link {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footer__legal-link:hover {
+  color: var(--color-text-primary);
+}
+
+/* --------------------------------------------
+   Responsive — Tablet
+   -------------------------------------------- */
+@media (max-width: 1023px) {
+  .footer {
+    padding: 60px 0 0;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__tagline {
+    max-width: 400px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-6) 0;
+  }
+}
+
+/* --------------------------------------------
+   Responsive — Mobile
+   -------------------------------------------- */
+@media (max-width: 639px) {
+  .footer {
+    padding: 40px 0 0;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    text-align: center;
+  }
+
+  .footer__brand {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__social {
+    justify-content: center;
+  }
+
+  .footer__col-list {
+    align-items: center;
+  }
+
+  .footer__logo-img {
+    width: 240px;
+    height: 76px;
+  }
+
+  .footer__col-address {
+    text-align: center;
+  }
+
+  .footer__col-link {
+    width: auto;
+  }
+
+  .footer__legal {
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 479px) {
+  .footer__grid {
+    gap: var(--space-6);
+  }
+
+  .footer__col {
+    gap: var(--space-4);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-5) 0;
+  }
+
+  .footer__legal {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer {
+    padding: 28px 0 0;
+  }
+
+  .footer__grid {
+    gap: var(--space-5);
+    padding-bottom: var(--space-10);
+  }
+
+  .footer__logo-img {
+    width: 180px;
+    height: 56px;
+    margin-top: -16px;
+  }
+
+  .footer__tagline {
+    font-size: 12px;
+    max-width: 100%;
+  }
+
+  .footer__social-link {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer__col-title {
+    font-size: 11px;
+  }
+
+  .footer__col-link {
+    font-size: 12px;
+  }
+
+  .footer__copyright {
+    font-size: 12px;
+  }
+
+  .footer__legal-link {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly Marketing — A premier digital marketing agency delivering data-driven strategies for enterprise growth.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <title>Stackly Marketing — Digital Agency</title>
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER
+       ============================================ -->
+  <header class="header js-header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <span class="header__logo-img" role="img" aria-label="Stackly Marketing"></span>
+      </a>
+
+      <nav class="header__nav js-nav">
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link is-active">Home</a></li>
+          <li><a class="header__nav-link">Services</a></li>
+          <li><a class="header__nav-link">About</a></li>
+          <li><a class="header__nav-link">Case Studies</a></li>
+          <li><a class="header__nav-link">Blog</a></li>
+          <li><a class="header__nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--ghost header__login">Sign In</a>
+        <a href="contact.html" class="btn btn--primary header__cta">Sign Up</a>
+        <button class="header__hamburger js-hamburger" aria-label="Toggle menu">
+          <span class="header__hamburger-line"></span>
+          <span class="header__hamburger-line"></span>
+          <span class="header__hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Mobile Offcanvas -->
+  <div class="header__offcanvas js-offcanvas">
+    <div class="header__offcanvas-inner">
+      <button class="header__offcanvas-close js-offcanvas-close" aria-label="Close menu">
+        <span class="header__offcanvas-close-line"></span>
+        <span class="header__offcanvas-close-line"></span>
+      </button>
+      <nav class="header__offcanvas-nav">
+        <ul class="header__offcanvas-list">
+          <li><a href="index.html" class="header__offcanvas-link is-active">Home</a></li>
+          <li><a class="header__offcanvas-link">Services</a></li>
+          <li><a class="header__offcanvas-link">About</a></li>
+          <li><a class="header__offcanvas-link">Case Studies</a></li>
+          <li><a class="header__offcanvas-link">Blog</a></li>
+          <li><a class="header__offcanvas-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__offcanvas-actions">
+        <a href="contact.html" class="btn btn--primary header__offcanvas-cta">Get Started</a>
+      </div>
+    </div>
+  </div>
+  <div class="header__overlay js-overlay"></div>
+
+  <main>
+
+    <!-- ============================================
+         SECTION 1 — HERO
+         ============================================ -->
+    <section class="hero js-hero js-parallax-section">
+      <div class="hero__bg">
+        <img src="assets/images/hero-bg.webp" alt="" class="hero__bg-image" aria-hidden="true" loading="lazy">
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__inner">
+        <div class="hero__content reveal reveal--fade-left">
+          <span class="hero__tag tag">Digital Growth Agency</span>
+          <h1 class="hero__title">We Build Brands That Dominate Digital.</h1>
+          <p class="hero__text">Data-driven strategies, award-winning creative, and relentless execution — we turn ambitious brands into market leaders.</p>
+          <div class="hero__actions">
+            <a href="contact.html" class="btn btn--primary btn--lg js-magnetic">Start Your Project</a>
+            <a href="case-studies.html" class="btn btn--outline btn--lg js-magnetic">View Our Work</a>
+          </div>
+        </div>
+        <div class="hero__visual reveal reveal--fade-right reveal--delay-2">
+          <div class="hero__visual-shape"></div>
+          <div class="hero__dashboard js-dashboard" data-tilt>
+            <div class="hero__dashboard-header">
+              <span class="hero__dashboard-dot"></span>
+              <span class="hero__dashboard-title">Growth Overview</span>
+              <span class="hero__dashboard-period">Q2 2026</span>
+            </div>
+            <div class="hero__dashboard-chart">
+              <svg viewBox="0 0 300 112" class="hero__chart-svg" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0.30"/>
+                    <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <line x1="0" y1="28" x2="300" y2="28" class="hero__chart-grid"/>
+                <line x1="0" y1="56" x2="300" y2="56" class="hero__chart-grid"/>
+                <line x1="0" y1="84" x2="300" y2="84" class="hero__chart-grid"/>
+                <path d="M0,95 Q40,90 75,70 T140,50 T200,30 T260,22 T300,12 L300,112 L0,112 Z" fill="url(#chartGrad)" class="hero__chart-area"/>
+                <path d="M0,95 Q40,90 75,70 T140,50 T200,30 T260,22 T300,12" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" class="hero__chart-line"/>
+                <circle cx="0" cy="95" r="3" fill="var(--color-accent)" class="hero__chart-dot"/>
+                <circle cx="75" cy="70" r="3" fill="var(--color-accent)" class="hero__chart-dot"/>
+                <circle cx="140" cy="50" r="3" fill="var(--color-accent)" class="hero__chart-dot"/>
+                <circle cx="200" cy="30" r="3" fill="var(--color-accent)" class="hero__chart-dot"/>
+                <circle cx="260" cy="22" r="3" fill="var(--color-accent)" class="hero__chart-dot"/>
+                <circle cx="300" cy="12" r="4" fill="var(--color-accent)" class="hero__chart-dot hero__chart-dot--latest"/>
+                <circle cx="300" cy="12" r="10" fill="none" stroke="var(--color-accent)" stroke-width="1.5" class="hero__chart-pulse"/>
+              </svg>
+            </div>
+            <div class="hero__dashboard-stats">
+              <div class="hero__dashboard-stat">
+                <span class="hero__dashboard-stat-value" data-count="340">0</span>
+                <span class="hero__dashboard-stat-label">Avg. ROI</span>
+              </div>
+              <div class="hero__dashboard-stat">
+                <span class="hero__dashboard-stat-value" data-count="12">0</span>
+                <span class="hero__dashboard-stat-suffix">K+</span>
+                <span class="hero__dashboard-stat-label">Leads Generated</span>
+              </div>
+              <div class="hero__dashboard-stat">
+                <span class="hero__dashboard-stat-value" data-count="24">0</span>
+                <span class="hero__dashboard-stat-suffix">%</span>
+                <span class="hero__dashboard-stat-label">Conversion Rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__glow"></div>
+    </section>
+
+    <!-- ============================================
+         SECTION 2 — TRUSTED BRANDS
+         ============================================ -->
+    <section class="brands section reveal reveal--fade-up">
+      <div class="container">
+        <div class="brands__header stagger-children">
+          <span class="section__label">Trusted Partners</span>
+          <p class="brands__text">Leading companies rely on Stackly for measurable digital growth.</p>
+        </div>
+        <div class="brands__marquee marquee">
+          <div class="brands__track marquee__track">
+            <span class="brands__logo">Sapphire</span>
+            <span class="brands__logo">Ventura</span>
+            <span class="brands__logo">Apexion</span>
+            <span class="brands__logo">Crestline</span>
+            <span class="brands__logo">Nomadic</span>
+            <span class="brands__logo">Pinnacle</span>
+            <span class="brands__logo">Orbit</span>
+            <span class="brands__logo">Everstone</span>
+            <span class="brands__logo">Sapphire</span>
+            <span class="brands__logo">Ventura</span>
+            <span class="brands__logo">Apexion</span>
+            <span class="brands__logo">Crestline</span>
+            <span class="brands__logo">Nomadic</span>
+            <span class="brands__logo">Pinnacle</span>
+            <span class="brands__logo">Orbit</span>
+            <span class="brands__logo">Everstone</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3 — AGENCY OVERVIEW
+         ============================================ -->
+    <section class="overview section reveal reveal--fade-up">
+      <div class="container">
+        <div class="overview__grid">
+          <div class="overview__content">
+            <span class="section__label">Our Agency</span>
+            <h2 class="section__title overview__title">Where Strategy Meets Creative Execution.</h2>
+            <p class="section__subtitle overview__text">We're not just another agency. We're a growth partner who understands that great marketing is a blend of art, science, and unrelenting focus on results.</p>
+            <div class="overview__stats stagger-children stagger--scale">
+              <div class="overview__stat">
+                <span class="overview__stat-number">8+</span>
+                <span class="overview__stat-label">Years in Business</span>
+              </div>
+              <div class="overview__stat">
+                <span class="overview__stat-number">200+</span>
+                <span class="overview__stat-label">Projects Delivered</span>
+              </div>
+              <div class="overview__stat">
+                <span class="overview__stat-number">50+</span>
+                <span class="overview__stat-label">Team Members</span>
+              </div>
+            </div>
+            <a href="about.html" class="btn btn--outline js-magnetic">Learn Our Story</a>
+          </div>
+          <div class="overview__visual reveal reveal--fade-right reveal--delay-2">
+            <div class="overview__image-wrapper">
+              <img src="assets/images/overview.webp" alt="Stackly Marketing Agency team collaboration" class="overview__image" loading="lazy">
+              <div class="overview__accent-card">
+                <span class="overview__accent-card-icon">✦</span>
+                <span class="overview__accent-card-text">Award-Winning<br>Creative</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 4 — WHY STACKLY (New Section)
+         ============================================ -->
+    <section class="why-stackly section reveal reveal--fade-up">
+      <div class="container">
+        <div class="why-stackly__grid">
+          <div class="why-stackly__content">
+            <span class="section__label">Our Agency</span>
+            <h2 class="section__title why-stackly__title">You Deserve a Growth Partner, Not Just an Agency.</h2>
+            <p class="section__subtitle why-stackly__text">We combine data science with creative firepower to deliver marketing that moves markets — not just metrics.</p>
+            <div class="why-stackly__features stagger-children">
+              <div class="why-stackly__feature">
+                <div class="why-stackly__feature-icon">
+                  <span>📈</span>
+                </div>
+                <div class="why-stackly__feature-content">
+                  <h3 class="why-stackly__feature-title">Data-First Methodology</h3>
+                  <p class="why-stackly__feature-text">Every decision backed by real-time analytics, predictive modeling, and deep audience insights — no guesswork.</p>
+                </div>
+              </div>
+              <div class="why-stackly__feature">
+                <div class="why-stackly__feature-icon">
+                  <span>🏆</span>
+                </div>
+                <div class="why-stackly__feature-content">
+                  <h3 class="why-stackly__feature-title">Award-Winning Creative</h3>
+                  <p class="why-stackly__feature-text">Our designs don't just look good — they convert. Recognized by Awwwards, CSSDA, and The Webby Awards.</p>
+                </div>
+              </div>
+              <div class="why-stackly__feature">
+                <div class="why-stackly__feature-icon">
+                  <span>⚡</span>
+                </div>
+                <div class="why-stackly__feature-content">
+                  <h3 class="why-stackly__feature-title">Uncompromising Speed</h3>
+                  <p class="why-stackly__feature-text">From strategy to execution, we move at startup speed while delivering enterprise-grade quality and compliance.</p>
+                </div>
+              </div>
+              <div class="why-stackly__feature">
+                <div class="why-stackly__feature-icon">
+                  <span>🤝</span>
+                </div>
+                <div class="why-stackly__feature-content">
+                  <h3 class="why-stackly__feature-title">True Partnership Model</h3>
+                  <p class="why-stackly__feature-text">Dedicated account leads, transparent reporting, and a shared mission: your growth is our growth.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="why-stackly__visual reveal reveal--fade-right reveal--delay-2">
+            <div class="why-stackly__image-wrapper">
+              <img src="assets/images/why-stackly.webp" alt="Stackly Marketing team strategy session" class="why-stackly__image" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 5 — SERVICES
+         ============================================ -->
+    <section class="services section reveal reveal--blur" id="services">
+      <div class="container">
+        <div class="services__header stagger-children">
+          <span class="section__label">What We Do</span>
+          <h2 class="section__title services__title">Full-Funnel Digital Marketing.</h2>
+          <p class="section__subtitle services__subtitle">From brand strategy to performance campaigns — every service engineered for measurable growth.</p>
+        </div>
+        <div class="services__grid stagger-children">
+          <article class="services__card js-tilt-card js-glow-card">
+            <div class="services__card-icon">
+              <span>🔍</span>
+            </div>
+            <h3 class="services__card-title">SEO & Organic Growth</h3>
+            <p class="services__card-text">Dominate search rankings with technical SEO, content strategy, and authority-building backlink campaigns.</p>
+            <a href="services.html" class="services__card-link">Learn More <span>→</span></a>
+          </article>
+          <article class="services__card js-tilt-card js-glow-card">
+            <div class="services__card-icon">
+              <span>📊</span>
+            </div>
+            <h3 class="services__card-title">Paid Advertising</h3>
+            <p class="services__card-text">ROI-optimized campaigns across Google, Meta, LinkedIn, and programmatic platforms.</p>
+            <a href="services.html" class="services__card-link">Learn More <span>→</span></a>
+          </article>
+          <article class="services__card js-tilt-card js-glow-card">
+            <div class="services__card-icon">
+              <span>🎨</span>
+            </div>
+            <h3 class="services__card-title">Brand & Creative</h3>
+            <p class="services__card-text">Distinct brand identities, visual storytelling, and creative that cuts through the noise.</p>
+            <a href="services.html" class="services__card-link">Learn More <span>→</span></a>
+          </article>
+          <article class="services__card js-tilt-card js-glow-card">
+            <div class="services__card-icon">
+              <span>🌐</span>
+            </div>
+            <h3 class="services__card-title">Web & CRO</h3>
+            <p class="services__card-text">High-converting websites, landing pages, and conversion rate optimization frameworks.</p>
+            <a href="services.html" class="services__card-link">Learn More <span>→</span></a>
+          </article>
+          <article class="services__card js-tilt-card js-glow-card">
+            <div class="services__card-icon">
+              <span>📱</span>
+            </div>
+            <h3 class="services__card-title">Social Media</h3>
+            <p class="services__card-text">Strategic social presence, community management, and paid social that drives engagement.</p>
+            <a href="services.html" class="services__card-link">Learn More <span>→</span></a>
+          </article>
+          <article class="services__card js-tilt-card js-glow-card">
+            <div class="services__card-icon">
+              <span>🤖</span>
+            </div>
+            <h3 class="services__card-title">AI Marketing</h3>
+            <p class="services__card-text">Leverage machine learning for predictive analytics, personalization, and automated campaign optimization.</p>
+            <a href="services.html" class="services__card-link">Learn More <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 6 — MARKETING PROCESS
+         ============================================ -->
+    <section class="process section reveal reveal--fade-up">
+      <div class="process__bg">
+        <img src="assets/images/portfolio-3.webp" alt="" class="process__bg-image" aria-hidden="true" loading="lazy">
+      </div>
+      <div class="container">
+        <div class="process__header stagger-children">
+          <span class="section__label">How We Work</span>
+          <h2 class="section__title">A Proven Process, Delivered With Precision.</h2>
+          <p class="section__subtitle">Every engagement follows our battle-tested methodology — from discovery to continuous optimization.</p>
+        </div>
+        <div class="process__steps stagger-children stagger--blur">
+          <div class="process__step">
+            <span class="process__step-number">01</span>
+            <div class="process__step-content">
+              <h3 class="process__step-title">Discovery & Audit</h3>
+              <p class="process__step-text">Deep-dive analysis of your market, competitors, audience, and current performance to identify opportunities.</p>
+            </div>
+          </div>
+          <div class="process__step">
+            <span class="process__step-number">02</span>
+            <div class="process__step-content">
+              <h3 class="process__step-title">Strategy Design</h3>
+              <p class="process__step-text">Data-backed strategic roadmap tailored to your business objectives, budget, and timeline.</p>
+            </div>
+          </div>
+          <div class="process__step">
+            <span class="process__step-number">03</span>
+            <div class="process__step-content">
+              <h3 class="process__step-title">Creative Development</h3>
+              <p class="process__step-text">World-class creative, copy, and technical execution aligned with your brand and campaign goals.</p>
+            </div>
+          </div>
+          <div class="process__step">
+            <span class="process__step-number">04</span>
+            <div class="process__step-content">
+              <h3 class="process__step-title">Launch & Optimize</h3>
+              <p class="process__step-text">Precision launch with real-time monitoring, A/B testing, and iterative refinement for peak performance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 7 — PORTFOLIO / CASE STUDIES
+         ============================================ -->
+    <section class="portfolio section reveal reveal--fade-up" id="work">
+      <div class="container">
+        <div class="portfolio__header stagger-children">
+          <span class="section__label">Case Studies</span>
+          <h2 class="section__title portfolio__title">Work That Speaks Volumes.</h2>
+          <p class="section__subtitle portfolio__subtitle">Real campaigns, real results. Explore how we've transformed brands across industries.</p>
+        </div>
+        <div class="portfolio__grid stagger-children">
+          <article class="portfolio__card js-tilt-card js-glow-card">
+            <div class="portfolio__card-image">
+              <img src="assets/images/portfolio-1.webp" alt="Apexion case study — SaaS growth dashboard" class="portfolio__card-img" loading="lazy">
+            </div>
+            <div class="portfolio__card-body">
+              <span class="tag portfolio__card-tag">SaaS</span>
+              <h3 class="portfolio__card-title">Apexion — 3x Pipeline Growth</h3>
+              <p class="portfolio__card-text">Multi-channel demand generation campaign that tripled qualified pipeline in 6 months.</p>
+              <a href="case-studies.html" class="portfolio__card-link">View Case Study <span>→</span></a>
+            </div>
+          </article>
+          <article class="portfolio__card js-tilt-card js-glow-card">
+            <div class="portfolio__card-image">
+              <img src="assets/images/portfolio-2.webp" alt="Crestline case study — e-commerce sales growth" class="portfolio__card-img" loading="lazy">
+            </div>
+            <div class="portfolio__card-body">
+              <span class="tag portfolio__card-tag">E-Commerce</span>
+              <h3 class="portfolio__card-title">Crestline — 4.2x ROAS</h3>
+              <p class="portfolio__card-text">Full-funnel paid media strategy driving 4.2x return on ad spend with 60% revenue growth.</p>
+              <a href="case-studies.html" class="portfolio__card-link">View Case Study <span>→</span></a>
+            </div>
+          </article>
+          <article class="portfolio__card js-tilt-card js-glow-card">
+            <div class="portfolio__card-image">
+              <img src="assets/images/portfolio-3.webp" alt="Nomadic case study — digital marketing analytics" class="portfolio__card-img" loading="lazy">
+            </div>
+            <div class="portfolio__card-body">
+              <span class="tag portfolio__card-tag">B2B</span>
+              <h3 class="portfolio__card-title">Nomadic — 180% Organic Traffic</h3>
+              <p class="portfolio__card-text">SEO and content strategy overhaul that doubled organic traffic and generated 500+ monthly leads.</p>
+              <a href="case-studies.html" class="portfolio__card-link">View Case Study <span>→</span></a>
+            </div>
+          </article>
+        </div>
+        <div class="portfolio__cta">
+          <a href="case-studies.html" class="btn btn--outline js-magnetic">View All Case Studies</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 8 — SUCCESS STATISTICS
+         ============================================ -->
+    <section class="stats section reveal reveal--zoom">
+      <div class="container">
+        <div class="stats__grid stagger-children stagger--scale">
+          <div class="stats__item">
+            <span class="stats__number" data-count="340">0</span>
+            <span class="stats__suffix">%</span>
+            <span class="stats__label">Average Client ROI</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__number" data-count="12000">0</span>
+            <span class="stats__suffix">+</span>
+            <span class="stats__label">Leads Generated</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__number" data-count="200">0</span>
+            <span class="stats__suffix">+</span>
+            <span class="stats__label">Projects Completed</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__number" data-count="15">0</span>
+            <span class="stats__suffix">+</span>
+            <span class="stats__label">Industry Awards</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 9 — TESTIMONIALS
+         ============================================ -->
+    <section class="testimonials section reveal reveal--fade-up">
+      <div class="container">
+        <div class="testimonials__header stagger-children">
+          <span class="section__label">Client Voices</span>
+          <h2 class="section__title testimonials__title">Trusted By Industry Leaders.</h2>
+        </div>
+        <div class="testimonials__grid stagger-children">
+          <blockquote class="testimonials__card js-tilt-card">
+            <div class="testimonials__stars">★★★★★</div>
+            <p class="testimonials__text">"Stackly transformed our digital presence. The strategic depth and creative quality exceeded every expectation. Our pipeline has never been stronger."</p>
+            <footer class="testimonials__author">
+              <img src="assets/images/testimonial-1.webp" alt="Sarah Chen" class="testimonials__avatar" loading="lazy">
+              <div class="testimonials__author-info">
+                <cite class="testimonials__name">Sarah Chen</cite>
+                <span class="testimonials__role">CMO, Apexion Technologies</span>
+              </div>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonials__card js-tilt-card">
+            <div class="testimonials__stars">★★★★★</div>
+            <p class="testimonials__text">"The ROI speaks for itself. Within six months of engagement, we saw a 4x return on our marketing spend. The team is world-class."</p>
+            <footer class="testimonials__author">
+              <img src="assets/images/testimonial-2.webp" alt="Marcus Rivera" class="testimonials__avatar" loading="lazy">
+              <div class="testimonials__author-info">
+                <cite class="testimonials__name">Marcus Rivera</cite>
+                <span class="testimonials__role">CEO, Crestline Group</span>
+              </div>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonials__card js-tilt-card">
+            <div class="testimonials__stars">★★★★★</div>
+            <p class="testimonials__text">"They don't just execute — they partner. Stackly became an extension of our team, deeply understanding our brand and our customers."</p>
+            <footer class="testimonials__author">
+              <img src="assets/images/testimonial-3.webp" alt="Elena Voss" class="testimonials__avatar" loading="lazy">
+              <div class="testimonials__author-info">
+                <cite class="testimonials__name">Elena Voss</cite>
+                <span class="testimonials__role">VP Marketing, Nomadic Inc.</span>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 10 — PRICING
+         ============================================ -->
+    <section class="pricing section reveal reveal--zoom" id="pricing">
+      <div class="container">
+        <div class="pricing__header stagger-children">
+          <span class="section__label">Investment</span>
+          <h2 class="section__title pricing__title">Transparent Pricing, Premium Delivery.</h2>
+          <p class="section__subtitle pricing__subtitle">No hidden fees, no surprises. Choose the plan that fits your ambition.</p>
+        </div>
+        <div class="pricing__grid stagger-children">
+          <article class="pricing__card js-tilt-card js-glow-card">
+            <div class="pricing__card-header">
+              <h3 class="pricing__card-name">Growth</h3>
+              <p class="pricing__card-description">For startups and early-stage brands ready to scale.</p>
+            </div>
+            <div class="pricing__card-price">
+              <span class="pricing__card-amount">$3,500</span>
+              <span class="pricing__card-period">/month</span>
+            </div>
+            <ul class="pricing__card-features">
+              <li>Strategic Consultation</li>
+              <li>Campaign Management</li>
+              <li>Monthly Reporting</li>
+              <li>Email Support</li>
+              <li>Basic Analytics</li>
+            </ul>
+            <a href="contact.html" class="btn btn--outline pricing__card-btn">Get Started</a>
+          </article>
+          <article class="pricing__card pricing__card--featured js-tilt-card js-glow-card">
+            <span class="pricing__card-badge">Most Popular</span>
+            <div class="pricing__card-header">
+              <h3 class="pricing__card-name">Accelerate</h3>
+              <p class="pricing__card-description">For growing companies demanding comprehensive execution.</p>
+            </div>
+            <div class="pricing__card-price">
+              <span class="pricing__card-amount">$7,500</span>
+              <span class="pricing__card-period">/month</span>
+            </div>
+            <ul class="pricing__card-features">
+              <li>Full-Funnel Strategy</li>
+              <li>Multi-Channel Campaigns</li>
+              <li>Creative Production</li>
+              <li>Dedicated Account Manager</li>
+              <li>Advanced Analytics & Insights</li>
+              <li>Bi-Weekly Reviews</li>
+            </ul>
+            <a href="contact.html" class="btn btn--primary pricing__card-btn">Get Started</a>
+          </article>
+          <article class="pricing__card js-tilt-card js-glow-card">
+            <div class="pricing__card-header">
+              <h3 class="pricing__card-name">Enterprise</h3>
+              <p class="pricing__card-description">For established enterprises seeking a true growth partnership.</p>
+            </div>
+            <div class="pricing__card-price">
+              <span class="pricing__card-amount">Custom</span>
+              <span class="pricing__card-period"></span>
+            </div>
+            <ul class="pricing__card-features">
+              <li>Custom Strategy Development</li>
+              <li>Dedicated Team</li>
+              <li>Unlimited Revisions</li>
+              <li>Priority Support</li>
+              <li>Custom Integrations</li>
+              <li>Quarterly Business Reviews</li>
+            </ul>
+            <a href="contact.html" class="btn btn--outline pricing__card-btn">Contact Us</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 11 — CTA
+         ============================================ -->
+    <section class="cta section reveal reveal--zoom">
+      <div class="container">
+        <div class="cta__inner">
+          <div class="cta__bg js-parallax-scroll">
+            <img src="assets/images/cta-bg.webp" alt="" class="cta__bg-image" aria-hidden="true" loading="lazy">
+          </div>
+          <span class="section__label cta__label">Let's Build Together</span>
+          <h2 class="cta__title">Ready to Transform Your Digital Presence?</h2>
+          <p class="cta__text">Every great partnership starts with a conversation. Tell us about your goals, and we'll build a roadmap to get you there.</p>
+          <div class="cta__actions">
+            <a href="contact.html" class="btn btn--primary btn--lg js-magnetic">Start Your Project</a>
+            <a href="tel:+1234567890" class="btn btn--outline btn--lg js-magnetic">Book a Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 12 — AWARDS & RECOGNITION (New Section)
+         ============================================ -->
+    <section class="awards-home section reveal reveal--fade-up">
+      <div class="container">
+        <div class="awards-home__inner">
+          <div class="awards-home__header stagger-children">
+            <span class="section__label">Recognition</span>
+            <h2 class="section__title awards-home__title">Trusted & Recognized Worldwide.</h2>
+            <p class="section__subtitle awards-home__subtitle">Our work has been featured and awarded by the industry's most respected publications and organizations.</p>
+          </div>
+          <div class="awards-home__grid stagger-children">
+            <div class="awards-home__item js-tilt-card js-glow-card">
+              <div class="awards-home__item-icon">
+                <img src="assets/images/testimonial-1.webp" alt="" class="awards-home__item-icon-img" aria-hidden="true" loading="lazy">
+              </div>
+              <h3 class="awards-home__item-title">Awwwards — Site of the Day</h3>
+              <p class="awards-home__item-text">Recognized for exceptional UX and visual design innovation.</p>
+            </div>
+            <div class="awards-home__item js-tilt-card js-glow-card">
+              <div class="awards-home__item-icon">
+                <img src="assets/images/testimonial-2.webp" alt="" class="awards-home__item-icon-img" aria-hidden="true" loading="lazy">
+              </div>
+              <h3 class="awards-home__item-title">The Webby Awards — Nominee</h3>
+              <p class="awards-home__item-text">Honored in the Marketing & Advertising category for breakthrough campaigns.</p>
+            </div>
+            <div class="awards-home__item js-tilt-card js-glow-card">
+              <div class="awards-home__item-icon">
+                <img src="assets/images/testimonial-3.webp" alt="" class="awards-home__item-icon-img" aria-hidden="true" loading="lazy">
+              </div>
+              <h3 class="awards-home__item-title">CSS Design Awards — Winner</h3>
+              <p class="awards-home__item-text">Awarded for outstanding CSS architecture and responsive design excellence.</p>
+            </div>
+            <div class="awards-home__item js-tilt-card js-glow-card">
+              <div class="awards-home__item-icon">
+                <img src="assets/images/hero-bg.webp" alt="" class="awards-home__item-icon-img" aria-hidden="true" loading="lazy">
+              </div>
+              <h3 class="awards-home__item-title">Clutch — Top Digital Agency</h3>
+              <p class="awards-home__item-text">Ranked among the top 50 digital marketing agencies globally.</p>
+            </div>
+            <div class="awards-home__item js-tilt-card js-glow-card">
+              <div class="awards-home__item-icon">
+                <img src="assets/images/overview.webp" alt="" class="awards-home__item-icon-img" aria-hidden="true" loading="lazy">
+              </div>
+              <h3 class="awards-home__item-title">Google Premier Partner</h3>
+              <p class="awards-home__item-text">Elite status awarded to top 3% of Google Ads partners worldwide.</p>
+            </div>
+            <div class="awards-home__item js-tilt-card js-glow-card">
+              <div class="awards-home__item-icon">
+                <img src="assets/images/why-stackly.webp" alt="" class="awards-home__item-icon-img" aria-hidden="true" loading="lazy">
+              </div>
+              <h3 class="awards-home__item-title">Forbes — Agency Spotlight</h3>
+              <p class="awards-home__item-text">Featured in Forbes for innovative AI-driven marketing solutions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo"><span class="footer__logo-img" role="img" aria-label="Stackly Marketing"></span></a>
+          <p class="footer__tagline">Data-driven strategy meets creative excellence. We help ambitious brands grow, engage, and dominate their markets with purpose-built digital marketing that delivers measurable results.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">X</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">IG</a>
+            <a href="#" class="footer__social-link" aria-label="Dribbble">Dr</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul class="footer__col-list">
+            <li><span class="footer__col-link">SEO & Organic Growth</span></li>
+            <li><span class="footer__col-link">Paid Advertising</span></li>
+            <li><span class="footer__col-link">Brand & Creative</span></li>
+            <li><span class="footer__col-link">Web & CRO</span></li>
+            <li><span class="footer__col-link">Social Media</span></li>
+            <li><span class="footer__col-link">AI Marketing</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul class="footer__col-list">
+            <li><span class="footer__col-link">About Us</span></li>
+            <li><span class="footer__col-link">Case Studies</span></li>
+            <li><span class="footer__col-link">Blog</span></li>
+            <li><span class="footer__col-link">Contact</span></li>
+            <li><span class="footer__col-link">Careers</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Contact</h4>
+          <ul class="footer__col-list">
+            <li><span class="footer__col-link">hello@stackly.com</span></li>
+            <li><span class="footer__col-link">+1 (234) 567-890</span></li>
+            <li class="footer__col-address">123 Madison Avenue<br>New York, NY 10016</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 Stackly Marketing. All rights reserved.</span>
+        <div class="footer__legal">
+          <a href="#" class="footer__legal-link">Privacy Policy</a>
+          <a href="#" class="footer__legal-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

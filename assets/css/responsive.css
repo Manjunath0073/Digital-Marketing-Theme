@@ -1,0 +1,150 @@
+/* ============================================
+   STACKLY MARKETING — Responsive Styles
+   ============================================ */
+
+/* --------------------------------------------
+   Large Desktop (1400px+)
+   -------------------------------------------- */
+
+/* --------------------------------------------
+   Desktop (1200px - 1399px)
+   -------------------------------------------- */
+
+
+
+
+
+/* ============================================
+   CTA SECTION — Responsive
+   ============================================ */
+@media (max-width: 767px) {
+  .cta__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta__actions .btn {
+    width: 100%;
+  }
+}
+
+
+
+/* ============================================
+   GENERAL RESPONSIVE
+   ============================================ */
+@media (max-width: 1023px) {
+  .section {
+    padding: 80px 0 !important;
+  }
+
+  .section__title {
+    font-size: var(--text-4xl) !important;
+    max-width: 100% !important;
+  }
+
+  .section__subtitle {
+    max-width: 100% !important;
+  }
+
+  .page-hero {
+    padding: 160px 0 80px !important;
+  }
+
+  .page-hero__title {
+    font-size: var(--text-5xl) !important;
+  }
+
+  .container {
+    --container-padding: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0 !important;
+  }
+
+  .section__title {
+    font-size: var(--text-3xl) !important;
+  }
+
+  .page-hero {
+    padding: 130px 0 60px !important;
+  }
+
+  .page-hero__title {
+    font-size: var(--text-4xl) !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .container {
+    --container-padding: 16px;
+  }
+
+  .section__title {
+    font-size: var(--text-2xl) !important;
+  }
+
+  .page-hero__title {
+    font-size: var(--text-3xl) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    --container-padding: 12px;
+  }
+
+  .section {
+    padding: 40px 0 !important;
+  }
+
+  .section__title {
+    font-size: var(--text-xl) !important;
+  }
+
+  .section__subtitle {
+    font-size: var(--text-sm) !important;
+  }
+
+  .section__label {
+    font-size: 11px !important;
+  }
+
+  .page-hero {
+    padding: 100px 0 32px !important;
+  }
+
+  .page-hero__title {
+    font-size: var(--text-2xl) !important;
+  }
+
+  .page-hero__text {
+    font-size: var(--text-sm) !important;
+  }
+
+  .page-hero__label {
+    font-size: 11px !important;
+  }
+
+  .cta__title {
+    font-size: var(--text-2xl) !important;
+  }
+
+  .cta__text {
+    font-size: var(--text-sm) !important;
+  }
+
+  .cta__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta__actions .btn {
+    width: 100%;
+  }
+}
+
+

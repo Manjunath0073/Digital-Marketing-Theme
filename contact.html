@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Stackly Marketing — Let's discuss your digital marketing goals. Get in touch with our team.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <title>Contact — Stackly Marketing</title>
+</head>
+<body>
+
+  <header class="header js-header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <span class="header__logo-img" role="img" aria-label="Stackly Marketing"></span>
+      </a>
+      <nav class="header__nav js-nav">
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link">Home</a></li>
+          <li><a class="header__nav-link">Services</a></li>
+          <li><a class="header__nav-link">About</a></li>
+          <li><a class="header__nav-link">Case Studies</a></li>
+          <li><a class="header__nav-link">Blog</a></li>
+          <li><a class="header__nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--ghost header__login">Sign In</a>
+        <a href="contact.html" class="btn btn--primary header__cta">Sign Up</a>
+        <button class="header__hamburger js-hamburger" aria-label="Toggle menu">
+          <span class="header__hamburger-line"></span>
+          <span class="header__hamburger-line"></span>
+          <span class="header__hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas -->
+  <div class="header__offcanvas js-offcanvas">
+    <div class="header__offcanvas-inner">
+      <button class="header__offcanvas-close js-offcanvas-close" aria-label="Close menu">
+        <span class="header__offcanvas-close-line"></span>
+        <span class="header__offcanvas-close-line"></span>
+      </button>
+      <nav class="header__offcanvas-nav">
+        <ul class="header__offcanvas-list">
+          <li><a href="index.html" class="header__offcanvas-link">Home</a></li>
+          <li><a class="header__offcanvas-link">Services</a></li>
+          <li><a class="header__offcanvas-link">About</a></li>
+          <li><a class="header__offcanvas-link">Case Studies</a></li>
+          <li><a class="header__offcanvas-link">Blog</a></li>
+          <li><a class="header__offcanvas-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__offcanvas-actions">
+        <a href="contact.html" class="btn btn--primary header__offcanvas-cta">Get Started</a>
+      </div>
+    </div>
+  </div>
+  <div class="header__overlay js-overlay"></div>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero__label">Get in Touch</span>
+        <h1 class="page-hero__title">Let's Build Something Extraordinary.</h1>
+        <p class="page-hero__text">Tell us about your goals, challenges, and vision — we'll design a partnership that drives measurable results.</p>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form section reveal">
+      <div class="container">
+        <div class="contact-form__grid">
+          <div class="contact-form__info">
+            <h2 class="contact-form__info-title">Let's Start a Conversation.</h2>
+            <p class="contact-form__info-text">Fill out the form and a member of our team will reach out within 24 hours to schedule a discovery call.</p>
+            <div class="contact-form__details">
+              <div class="contact-form__detail">
+                <span class="contact-form__detail-icon">✉</span>
+                <div>
+                  <h4 class="contact-form__detail-label">Email</h4>
+                  <a href="mailto:hello@stackly.com" class="contact-form__detail-value">hello@stackly.com</a>
+                </div>
+              </div>
+              <div class="contact-form__detail">
+                <span class="contact-form__detail-icon">☎</span>
+                <div>
+                  <h4 class="contact-form__detail-label">Phone</h4>
+                  <a href="tel:+1234567890" class="contact-form__detail-value">+1 (234) 567-890</a>
+                </div>
+              </div>
+              <div class="contact-form__detail">
+                <span class="contact-form__detail-icon">◈</span>
+                <div>
+                  <h4 class="contact-form__detail-label">Office</h4>
+                  <span class="contact-form__detail-value">123 Madison Avenue<br>New York, NY 10016</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form__form">
+            <div class="contact-form__form-row">
+              <div class="contact-form__field">
+                <label for="name" class="contact-form__label">Full Name</label>
+                <input type="text" id="name" class="contact-form__input" placeholder="John Smith" required>
+              </div>
+              <div class="contact-form__field">
+                <label for="email" class="contact-form__label">Email Address</label>
+                <input type="email" id="email" class="contact-form__input" placeholder="john@company.com" required>
+              </div>
+            </div>
+            <div class="contact-form__field">
+              <label for="company" class="contact-form__label">Company Name</label>
+              <input type="text" id="company" class="contact-form__input" placeholder="Your Company">
+            </div>
+            <div class="contact-form__field">
+              <label for="service" class="contact-form__label">Service Interest</label>
+              <select id="service" class="contact-form__select">
+                <option value="">Select a service</option>
+                <option value="seo">SEO & Organic Growth</option>
+                <option value="paid">Paid Advertising</option>
+                <option value="brand">Brand & Creative</option>
+                <option value="web">Web & CRO</option>
+                <option value="social">Social Media</option>
+                <option value="ai">AI Marketing</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="contact-form__field">
+              <label for="budget" class="contact-form__label">Monthly Budget</label>
+              <select id="budget" class="contact-form__select">
+                <option value="">Select budget range</option>
+                <option value="3-5k">$3,000 – $5,000</option>
+                <option value="5-10k">$5,000 – $10,000</option>
+                <option value="10-25k">$10,000 – $25,000</option>
+                <option value="25k+">$25,000+</option>
+                <option value="undecided">Not sure yet</option>
+              </select>
+            </div>
+            <div class="contact-form__field">
+              <label for="message" class="contact-form__label">Tell Us About Your Project</label>
+              <textarea id="message" class="contact-form__textarea" rows="5" placeholder="Describe your goals, challenges, and timeline..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg contact-form__submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section">
+      <div class="container">
+        <div class="faq__header">
+          <span class="section__label">FAQ</span>
+          <h2 class="section__title faq__title">Quick Answers.</h2>
+        </div>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">
+              <span>What happens after I submit the form?</span>
+              <span class="faq__question-icon">+</span>
+            </summary>
+            <div class="faq__answer">
+              <p>A member of our team will review your information and reach out within 24 hours to schedule a discovery call. This initial conversation is always complimentary.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">
+              <span>How long does a typical engagement last?</span>
+              <span class="faq__question-icon">+</span>
+            </summary>
+            <div class="faq__answer">
+              <p>Most engagements are structured as ongoing monthly partnerships, though we also offer project-based work. We'll recommend a structure that aligns with your goals during the discovery call.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">
+              <span>Do you work with startups?</span>
+              <span class="faq__question-icon">+</span>
+            </summary>
+            <div class="faq__answer">
+              <p>Absolutely. We work with companies at every stage — from seed-stage startups to enterprise organizations. We design engagements that match your budget and growth stage.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">
+              <span>Can you work with our existing team?</span>
+              <span class="faq__question-icon">+</span>
+            </summary>
+            <div class="faq__answer">
+              <p>Yes. We frequently partner with in-house marketing teams to augment capabilities, provide specialized expertise, or take on specific projects. We're flexible in how we collaborate.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map section reveal">
+      <div class="container">
+        <div class="map__inner">
+          <h2 class="map__title">Visit Our Studio.</h2>
+          <p class="map__text">We'd love to meet you in person. Our flagship office is located in the heart of Manhattan.</p>
+          <div class="map__container">
+            <div class="map__placeholder">
+              <span class="map__placeholder-text">Interactive Map</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo"><span class="footer__logo-img" role="img" aria-label="Stackly Marketing"></span></a>
+          <p class="footer__tagline">Data-driven strategy meets creative excellence. We help ambitious brands grow, engage, and dominate their markets with purpose-built digital marketing that delivers measurable results.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">X</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">IG</a>
+            <a href="#" class="footer__social-link" aria-label="Dribbble">Dr</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul class="footer__col-list">
+            <li><span class="footer__col-link">SEO & Organic Growth</span></li>
+            <li><span class="footer__col-link">Paid Advertising</span></li>
+            <li><span class="footer__col-link">Brand & Creative</span></li>
+            <li><span class="footer__col-link">Web & CRO</span></li>
+            <li><span class="footer__col-link">Social Media</span></li>
+            <li><span class="footer__col-link">AI Marketing</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul class="footer__col-list">
+            <li><span class="footer__col-link">About Us</span></li>
+            <li><span class="footer__col-link">Case Studies</span></li>
+            <li><span class="footer__col-link">Blog</span></li>
+            <li><span class="footer__col-link">Contact</span></li>
+            <li><span class="footer__col-link">Careers</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Contact</h4>
+          <ul class="footer__col-list">
+            <li><span class="footer__col-link">hello@stackly.com</span></li>
+            <li><span class="footer__col-link">+1 (234) 567-890</span></li>
+            <li class="footer__col-address">123 Madison Avenue<br>New York, NY 10016</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 Stackly Marketing. All rights reserved.</span>
+        <div class="footer__legal">
+          <a href="#" class="footer__legal-link">Privacy Policy</a>
+          <a href="#" class="footer__legal-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
