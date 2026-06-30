@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly Marketing — Client Dashboard">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+
+  <title>Dashboard — Stackly Marketing</title>
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- Sidebar -->
+  <aside class="dashboard__sidebar js-dashboard-sidebar">
+    <a href="index.html" class="dashboard__sidebar-logo">
+      <span class="dashboard__sidebar-logo-img" role="img" aria-label="Stackly Marketing"></span>
+    </a>
+
+    <nav class="dashboard__sidebar-nav">
+      <a href="#" class="dashboard__sidebar-link is-active" data-section="section-overview" onclick="switchSection('section-overview')">
+        <span class="dashboard__sidebar-link-icon">&#9632;</span>
+        Overview
+      </a>
+      <a href="#" class="dashboard__sidebar-link" data-section="section-analytics" onclick="switchSection('section-analytics')">
+        <span class="dashboard__sidebar-link-icon">&#9650;</span>
+        Analytics
+      </a>
+      <a href="#" class="dashboard__sidebar-link" data-section="section-campaigns" onclick="switchSection('section-campaigns')">
+        <span class="dashboard__sidebar-link-icon">&#9673;</span>
+        Campaigns
+      </a>
+      <a href="#" class="dashboard__sidebar-link" data-section="section-reports" onclick="switchSection('section-reports')">
+        <span class="dashboard__sidebar-link-icon">&#9638;</span>
+        Reports
+      </a>
+      <a href="#" class="dashboard__sidebar-link" data-section="section-settings" onclick="switchSection('section-settings')">
+        <span class="dashboard__sidebar-link-icon">&#9881;</span>
+        Settings
+      </a>
+    </nav>
+
+    <div class="dashboard__sidebar-footer">
+      <div class="dashboard__sidebar-user">
+        <span class="dashboard__sidebar-user-avatar js-dashboard-user-avatar">U</span>
+        <div class="dashboard__sidebar-user-info">
+          <div class="dashboard__sidebar-user-name js-dashboard-user-name">User</div>
+          <div class="dashboard__sidebar-user-role js-dashboard-user-role">client</div>
+        </div>
+      </div>
+      <button class="dashboard__sidebar-logout js-dashboard-logout">
+        <span class="dashboard__sidebar-logout-icon">&#8617;</span>
+        Logout
+      </button>
+    </div>
+  </aside>
+
+  <div class="dashboard__overlay js-dashboard-overlay"></div>
+
+  <!-- Main -->
+  <main class="dashboard__main">
+    <div class="dashboard__header">
+      <a href="index.html" class="dashboard__header-logo">
+        <span class="dashboard__header-logo-img" role="img" aria-label="Stackly Marketing"></span>
+      </a>
+      <button class="dashboard__hamburger js-dashboard-hamburger">&#9776;</button>
+      <div class="dashboard__header-text">
+        <h1 class="dashboard__header-title js-dashboard-section-title">Overview</h1>
+        <p class="dashboard__header-greeting js-dashboard-greeting">Welcome back!</p>
+      </div>
+    </div>
+
+    <!-- ========== SECTION: Overview ========== -->
+    <div id="section-overview" class="js-dashboard-section">
+      <div class="dashboard__stats">
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9650;</span>
+            <span class="dashboard__stat-card-change is-up">+12.5%</span>
+          </div>
+          <div class="dashboard__stat-card-value">$48,250</div>
+          <div class="dashboard__stat-card-label">Total Revenue</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9673;</span>
+            <span class="dashboard__stat-card-change is-up">+8.3%</span>
+          </div>
+          <div class="dashboard__stat-card-value">12,847</div>
+          <div class="dashboard__stat-card-label">Website Visits</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9632;</span>
+            <span class="dashboard__stat-card-change is-up">+3.2%</span>
+          </div>
+          <div class="dashboard__stat-card-value">847</div>
+          <div class="dashboard__stat-card-label">Conversions</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9881;</span>
+            <span class="dashboard__stat-card-change is-down">-1.8%</span>
+          </div>
+          <div class="dashboard__stat-card-value">3.2%</div>
+          <div class="dashboard__stat-card-label">Conversion Rate</div>
+        </div>
+      </div>
+
+      <div class="dashboard__charts">
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Revenue Overview</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="overviewRevenueChart"></canvas>
+          </div>
+        </div>
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Traffic Sources</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="overviewSourcesChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard__table-card">
+        <div class="dashboard__table-card-header">
+          <h3 class="dashboard__table-card-title">Recent Campaigns</h3>
+        </div>
+        <table class="dashboard__table">
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Budget</th>
+              <th>Spent</th>
+              <th>Impressions</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Q3 Brand Awareness</td>
+              <td>$15,000</td>
+              <td>$12,340</td>
+              <td>245.6K</td>
+              <td><span class="badge badge--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Summer Sale 2026</td>
+              <td>$8,500</td>
+              <td>$8,120</td>
+              <td>189.3K</td>
+              <td><span class="badge badge--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Product Launch - Pro</td>
+              <td>$22,000</td>
+              <td>$18,900</td>
+              <td>412.7K</td>
+              <td><span class="badge badge--pending">Pending</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ========== SECTION: Analytics ========== -->
+    <div id="section-analytics" class="js-dashboard-section" style="display:none;">
+      <div class="dashboard__stats">
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9650;</span>
+            <span class="dashboard__stat-card-change is-up">+18.2%</span>
+          </div>
+          <div class="dashboard__stat-card-value">45.2K</div>
+          <div class="dashboard__stat-card-label">Page Views</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9673;</span>
+            <span class="dashboard__stat-card-change is-down">-2.1%</span>
+          </div>
+          <div class="dashboard__stat-card-value">2m 34s</div>
+          <div class="dashboard__stat-card-label">Avg. Session</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9632;</span>
+            <span class="dashboard__stat-card-change is-up">+5.7%</span>
+          </div>
+          <div class="dashboard__stat-card-value">68.3%</div>
+          <div class="dashboard__stat-card-label">Bounce Rate</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9881;</span>
+            <span class="dashboard__stat-card-change is-up">+11.4%</span>
+          </div>
+          <div class="dashboard__stat-card-value">4.7</div>
+          <div class="dashboard__stat-card-label">Pages / Session</div>
+        </div>
+      </div>
+
+      <div class="dashboard__charts">
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Traffic Over Time</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="analyticsTrafficChart"></canvas>
+          </div>
+        </div>
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Device Breakdown</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="analyticsDevicesChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== SECTION: Campaigns ========== -->
+    <div id="section-campaigns" class="js-dashboard-section" style="display:none;">
+      <div class="dashboard__stats">
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9650;</span>
+            <span class="dashboard__stat-card-change is-up">+3</span>
+          </div>
+          <div class="dashboard__stat-card-value">5</div>
+          <div class="dashboard__stat-card-label">Total Campaigns</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9673;</span>
+            <span class="dashboard__stat-card-change is-up">+18.4%</span>
+          </div>
+          <div class="dashboard__stat-card-value">$53,000</div>
+          <div class="dashboard__stat-card-label">Total Budget</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9632;</span>
+            <span class="dashboard__stat-card-change is-up">+15.2%</span>
+          </div>
+          <div class="dashboard__stat-card-value">$46,420</div>
+          <div class="dashboard__stat-card-label">Total Spent</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9881;</span>
+            <span class="dashboard__stat-card-change is-up">+2.3%</span>
+          </div>
+          <div class="dashboard__stat-card-value">87.6%</div>
+          <div class="dashboard__stat-card-label">Budget Utilization</div>
+        </div>
+      </div>
+
+      <div class="dashboard__charts">
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Budget vs Spend</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="campaignsBudgetChart"></canvas>
+          </div>
+        </div>
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Campaign Performance</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="campaignsPerformanceChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard__table-card">
+        <div class="dashboard__table-card-header">
+          <h3 class="dashboard__table-card-title">All Campaigns</h3>
+        </div>
+        <table class="dashboard__table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Budget</th>
+              <th>Spent</th>
+              <th>Impressions</th>
+              <th>Clicks</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Q3 Brand Awareness</td>
+              <td>$15,000</td>
+              <td>$12,340</td>
+              <td>245.6K</td>
+              <td>12.4K</td>
+              <td><span class="badge badge--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Summer Sale 2026</td>
+              <td>$8,500</td>
+              <td>$8,120</td>
+              <td>189.3K</td>
+              <td>9.8K</td>
+              <td><span class="badge badge--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Retargeting - Display</td>
+              <td>$5,000</td>
+              <td>$4,560</td>
+              <td>320.1K</td>
+              <td>8.2K</td>
+              <td><span class="badge badge--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Product Launch - Pro</td>
+              <td>$22,000</td>
+              <td>$18,900</td>
+              <td>412.7K</td>
+              <td>21.3K</td>
+              <td><span class="badge badge--pending">Pending</span></td>
+            </tr>
+            <tr>
+              <td>Email - Newsletter</td>
+              <td>$2,500</td>
+              <td>$2,500</td>
+              <td>98.4K</td>
+              <td>5.1K</td>
+              <td><span class="badge badge--paused">Paused</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ========== SECTION: Reports ========== -->
+    <div id="section-reports" class="js-dashboard-section" style="display:none;">
+      <div class="dashboard__stats">
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9650;</span>
+            <span class="dashboard__stat-card-change is-up">+22.5%</span>
+          </div>
+          <div class="dashboard__stat-card-value">$48,250</div>
+          <div class="dashboard__stat-card-label">Total Revenue</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9673;</span>
+            <span class="dashboard__stat-card-change is-up">+12.3%</span>
+          </div>
+          <div class="dashboard__stat-card-value">$46,420</div>
+          <div class="dashboard__stat-card-label">Total Ad Spend</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9632;</span>
+            <span class="dashboard__stat-card-change is-up">+8.7%</span>
+          </div>
+          <div class="dashboard__stat-card-value">3.9x</div>
+          <div class="dashboard__stat-card-label">ROAS</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9881;</span>
+            <span class="dashboard__stat-card-change is-up">+4.1%</span>
+          </div>
+          <div class="dashboard__stat-card-value">847</div>
+          <div class="dashboard__stat-card-label">Total Conversions</div>
+        </div>
+      </div>
+
+      <div class="dashboard__charts">
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Monthly Performance</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="reportsPerformanceChart"></canvas>
+          </div>
+        </div>
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">ROI Breakdown</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="reportsRoiChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard__table-card">
+        <div class="dashboard__table-card-header">
+          <h3 class="dashboard__table-card-title">Monthly Reports</h3>
+        </div>
+        <table class="dashboard__table">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Revenue</th>
+              <th>Spend</th>
+              <th>ROAS</th>
+              <th>Conversions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>January 2026</td>
+              <td>$32,000</td>
+              <td>$28,500</td>
+              <td>3.2x</td>
+              <td>612</td>
+            </tr>
+            <tr>
+              <td>February 2026</td>
+              <td>$28,000</td>
+              <td>$26,200</td>
+              <td>3.0x</td>
+              <td>548</td>
+            </tr>
+            <tr>
+              <td>March 2026</td>
+              <td>$35,000</td>
+              <td>$30,100</td>
+              <td>3.4x</td>
+              <td>703</td>
+            </tr>
+            <tr>
+              <td>April 2026</td>
+              <td>$42,000</td>
+              <td>$34,800</td>
+              <td>3.6x</td>
+              <td>789</td>
+            </tr>
+            <tr>
+              <td>May 2026</td>
+              <td>$38,000</td>
+              <td>$32,500</td>
+              <td>3.5x</td>
+              <td>756</td>
+            </tr>
+            <tr>
+              <td>June 2026</td>
+              <td>$48,250</td>
+              <td>$38,900</td>
+              <td>3.9x</td>
+              <td>847</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ========== SECTION: Settings ========== -->
+    <div id="section-settings" class="js-dashboard-section" style="display:none;">
+      <div class="dashboard__chart-card">
+        <h3 class="dashboard__chart-card-title">Account Settings</h3>
+        <form class="dashboard__settings-form" onsubmit="event.preventDefault(); (function(){ var m=document.getElementById('clientSettingsSuccess'); m.style.display='block'; setTimeout(function(){ m.style.display='none'; },3000); })();">
+          <div class="auth-form__field">
+            <label for="settings-name">Full Name</label>
+            <input type="text" id="settings-name" class="js-dashboard-user-name" value="">
+          </div>
+          <div class="auth-form__field">
+            <label for="settings-email">Email</label>
+            <input type="email" id="settings-email" value="">
+          </div>
+          <div class="auth-form__field">
+            <label for="settings-company">Company</label>
+            <input type="text" id="settings-company" value="Stackly Client Inc.">
+          </div>
+          <button type="submit" class="btn btn--primary">Save Changes</button>
+          <div id="clientSettingsSuccess" class="dashboard__settings-success" style="display:none;">Settings saved successfully!</div>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script>
+(function () {
+  var defs = getChartDefaults();
+
+  /* --- Overview: Revenue line chart --- */
+  createChart('overviewRevenueChart', {
+    type: 'line',
+    data: {
+      labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+      datasets: [{
+        label: 'Revenue',
+        data: [32000, 28000, 35000, 42000, 38000, 48250],
+        borderColor: defs.accentColor,
+        backgroundColor: defs.accentAlpha,
+        fill: true,
+        tension: 0.4,
+        pointBackgroundColor: defs.accentColor,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: defs.gridColor }, ticks: { color: defs.color } },
+        y: { grid: { color: defs.gridColor }, ticks: { color: defs.color } }
+      }
+    }
+  });
+
+  /* --- Overview: Sources doughnut --- */
+  createChart('overviewSourcesChart', {
+    type: 'doughnut',
+    data: {
+      labels: ['Organic','Paid','Social','Referral'],
+      datasets: [{
+        data: [38, 28, 20, 14],
+        backgroundColor: ['#E8923E','#2ecc71','#3498db','#95a5a6'],
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: defs.color, padding: 16 }
+        }
+      }
+    }
+  });
+
+  /* --- Analytics: Traffic line --- */
+  createChart('analyticsTrafficChart', {
+    type: 'line',
+    data: {
+      labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+      datasets: [{
+        label: 'Visitors',
+        data: [5800, 7200, 6400, 8100, 7600, 5200, 4900],
+        borderColor: '#3498db',
+        backgroundColor: 'rgba(52,152,219,0.1)',
+        fill: true,
+        tension: 0.4,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: defs.gridColor }, ticks: { color: defs.color } },
+        y: { grid: { color: defs.gridColor }, ticks: { color: defs.color } }
+      }
+    }
+  });
+
+  /* --- Analytics: Device doughnut --- */
+  createChart('analyticsDevicesChart', {
+    type: 'doughnut',
+    data: {
+      labels: ['Desktop','Mobile','Tablet'],
+      datasets: [{
+        data: [45, 42, 13],
+        backgroundColor: ['#E8923E','#2ecc71','#3498db'],
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: defs.color, padding: 16 }
+        }
+      }
+    }
+  });
+
+  /* --- Reports: Performance bar --- */
+  createChart('reportsPerformanceChart', {
+    type: 'bar',
+    data: {
+      labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+      datasets: [{
+        label: 'Revenue',
+        data: [32000, 28000, 35000, 42000, 38000, 48250],
+        backgroundColor: defs.accentAlpha,
+        borderColor: defs.accentColor,
+        borderWidth: 1,
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: defs.gridColor }, ticks: { color: defs.color } },
+        y: { grid: { color: defs.gridColor }, ticks: { color: defs.color } }
+      }
+    }
+  });
+
+  /* --- Campaigns: Budget vs Spend bar --- */
+  createChart('campaignsBudgetChart', {
+    type: 'bar',
+    data: {
+      labels: ['Brand Awareness','Summer Sale','Retargeting','Product Launch','Email'],
+      datasets: [
+        {
+          label: 'Budget',
+          data: [15000, 8500, 5000, 22000, 2500],
+          backgroundColor: 'rgba(232,146,62,0.3)',
+          borderColor: '#E8923E',
+          borderWidth: 1,
+          borderRadius: 4,
+        },
+        {
+          label: 'Spent',
+          data: [12340, 8120, 4560, 18900, 2500],
+          backgroundColor: 'rgba(46,204,113,0.3)',
+          borderColor: '#2ecc71',
+          borderWidth: 1,
+          borderRadius: 4,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { color: defs.color, padding: 12 }
+        }
+      },
+      scales: {
+        x: { grid: { color: defs.gridColor }, ticks: { color: defs.color } },
+        y: { grid: { color: defs.gridColor }, ticks: { color: defs.color } }
+      }
+    }
+  });
+
+  /* --- Campaigns: Performance doughnut --- */
+  createChart('campaignsPerformanceChart', {
+    type: 'doughnut',
+    data: {
+      labels: ['Active','Pending','Paused'],
+      datasets: [{
+        data: [60, 20, 20],
+        backgroundColor: ['#2ecc71','#f1c40f','#95a5a6'],
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: defs.color, padding: 16 }
+        }
+      }
+    }
+  });
+
+  /* --- Reports: ROI pie --- */
+  createChart('reportsRoiChart', {
+    type: 'pie',
+    data: {
+      labels: ['SEO','Paid Ads','Social','Email'],
+      datasets: [{
+        data: [35, 30, 20, 15],
+        backgroundColor: ['#E8923E','#2ecc71','#3498db','#9b59b6'],
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: defs.color, padding: 16 }
+        }
+      }
+    }
+  });
+
+  /* --- Set user name in settings --- */
+  var user = getDashboardUser();
+  if (user) {
+    var nameInput = document.getElementById('settings-name');
+    var emailInput = document.getElementById('settings-email');
+    if (nameInput) nameInput.value = user.name;
+    if (emailInput) emailInput.value = user.email;
+  }
+})();
+</script>
+</body>
+</html>

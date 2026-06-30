@@ -323,6 +323,27 @@
   text-align: center;
 }
 
+.header__offcanvas-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-8);
+}
+
+.header__offcanvas-logo-img {
+  display: block;
+  width: 340px;
+  height: 102px;
+  background-color: var(--color-accent);
+  mask-image: url(../images/logo-stackly.webp);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url(../images/logo-stackly.webp);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
 /* --------------------------------------------
    Desktop (hide hamburger, show nav)
    -------------------------------------------- */
@@ -395,6 +416,7 @@
   .header__offcanvas-link {
     text-align: center;
   }
+
 }
 
 @media (max-width: 480px) {
@@ -418,6 +440,7 @@
   .header__offcanvas-link {
     font-size: var(--text-2xl);
   }
+
 }
 
 @media (max-width: 360px) {

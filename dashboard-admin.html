@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly Marketing — Admin Dashboard">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+
+  <title>Admin Dashboard — Stackly Marketing</title>
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- Sidebar -->
+  <aside class="dashboard__sidebar js-dashboard-sidebar">
+    <a href="index.html" class="dashboard__sidebar-logo">
+      <span class="dashboard__sidebar-logo-img" role="img" aria-label="Stackly Marketing"></span>
+    </a>
+
+    <nav class="dashboard__sidebar-nav">
+      <a href="#" class="dashboard__sidebar-link is-active" data-section="section-dashboard" onclick="switchSection('section-dashboard')">
+        <span class="dashboard__sidebar-link-icon">&#9632;</span>
+        Dashboard
+      </a>
+      <a href="#" class="dashboard__sidebar-link" data-section="section-users" onclick="switchSection('section-users')">
+        <span class="dashboard__sidebar-link-icon">&#9673;</span>
+        Users
+      </a>
+      <a href="#" class="dashboard__sidebar-link" data-section="section-campaigns" onclick="switchSection('section-campaigns')">
+        <span class="dashboard__sidebar-link-icon">&#9650;</span>
+        Campaigns
+      </a>
+      <a href="#" class="dashboard__sidebar-link" data-section="section-analytics" onclick="switchSection('section-analytics')">
+        <span class="dashboard__sidebar-link-icon">&#9638;</span>
+        Analytics
+      </a>
+      <a href="#" class="dashboard__sidebar-link" data-section="section-settings" onclick="switchSection('section-settings')">
+        <span class="dashboard__sidebar-link-icon">&#9881;</span>
+        Settings
+      </a>
+    </nav>
+
+    <div class="dashboard__sidebar-footer">
+      <div class="dashboard__sidebar-user">
+        <span class="dashboard__sidebar-user-avatar js-dashboard-user-avatar">U</span>
+        <div class="dashboard__sidebar-user-info">
+          <div class="dashboard__sidebar-user-name js-dashboard-user-name">Admin</div>
+          <div class="dashboard__sidebar-user-role js-dashboard-user-role">admin</div>
+        </div>
+      </div>
+      <button class="dashboard__sidebar-logout js-dashboard-logout">
+        <span class="dashboard__sidebar-logout-icon">&#8617;</span>
+        Logout
+      </button>
+    </div>
+  </aside>
+
+  <div class="dashboard__overlay js-dashboard-overlay"></div>
+
+  <!-- Main -->
+  <main class="dashboard__main">
+    <div class="dashboard__header">
+      <a href="index.html" class="dashboard__header-logo">
+        <span class="dashboard__header-logo-img" role="img" aria-label="Stackly Marketing"></span>
+      </a>
+      <button class="dashboard__hamburger js-dashboard-hamburger">&#9776;</button>
+      <div class="dashboard__header-text">
+        <h1 class="dashboard__header-title js-dashboard-section-title">Admin Dashboard</h1>
+        <p class="dashboard__header-greeting js-dashboard-greeting">Welcome back!</p>
+      </div>
+    </div>
+
+    <!-- ========== SECTION: Dashboard ========== -->
+    <div id="section-dashboard" class="js-dashboard-section">
+      <div class="dashboard__stats">
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9673;</span>
+            <span class="dashboard__stat-card-change is-up">+4</span>
+          </div>
+          <div class="dashboard__stat-card-value">128</div>
+          <div class="dashboard__stat-card-label">Total Clients</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9650;</span>
+            <span class="dashboard__stat-card-change is-up">+18.2%</span>
+          </div>
+          <div class="dashboard__stat-card-value">$284.5K</div>
+          <div class="dashboard__stat-card-label">MRR</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9632;</span>
+            <span class="dashboard__stat-card-change is-up">+6</span>
+          </div>
+          <div class="dashboard__stat-card-value">43</div>
+          <div class="dashboard__stat-card-label">Active Campaigns</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9881;</span>
+            <span class="dashboard__stat-card-change is-up">+12</span>
+          </div>
+          <div class="dashboard__stat-card-value">8</div>
+          <div class="dashboard__stat-card-label">Team Members</div>
+        </div>
+      </div>
+
+      <div class="dashboard__charts">
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Revenue (Last 6 Months)</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="adminRevenueChart"></canvas>
+          </div>
+        </div>
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Client Distribution</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="adminClientsChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard__table-card">
+        <div class="dashboard__table-card-header">
+          <h3 class="dashboard__table-card-title">Recent Activity</h3>
+        </div>
+        <table class="dashboard__table">
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Action</th>
+              <th>Campaign</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nebula Inc.</td>
+              <td>Launched</td>
+              <td>Q3 Brand Awareness</td>
+              <td>Jun 28, 2026</td>
+            </tr>
+            <tr>
+              <td>Brightline</td>
+              <td>Approved</td>
+              <td>Summer Sale 2026</td>
+              <td>Jun 25, 2026</td>
+            </tr>
+            <tr>
+              <td>Orbit Studio</td>
+              <td>Paused</td>
+              <td>Retargeting - Display</td>
+              <td>Jun 22, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ========== SECTION: Users ========== -->
+    <div id="section-users" class="js-dashboard-section" style="display:none;">
+      <div class="dashboard__users-grid">
+        <div class="dashboard__user-card">
+          <span class="dashboard__user-card-avatar">D</span>
+          <div class="dashboard__user-card-info">
+            <div class="dashboard__user-card-name">David Park</div>
+            <div class="dashboard__user-card-email">david@nebula.com</div>
+            <div class="dashboard__user-card-role">client</div>
+          </div>
+        </div>
+        <div class="dashboard__user-card">
+          <span class="dashboard__user-card-avatar">M</span>
+          <div class="dashboard__user-card-info">
+            <div class="dashboard__user-card-name">Maria Chen</div>
+            <div class="dashboard__user-card-email">maria@brightline.co</div>
+            <div class="dashboard__user-card-role">client</div>
+          </div>
+        </div>
+        <div class="dashboard__user-card">
+          <span class="dashboard__user-card-avatar">J</span>
+          <div class="dashboard__user-card-info">
+            <div class="dashboard__user-card-name">James Walker</div>
+            <div class="dashboard__user-card-email">james@orbit.studio</div>
+            <div class="dashboard__user-card-role">client</div>
+          </div>
+        </div>
+        <div class="dashboard__user-card">
+          <span class="dashboard__user-card-avatar">P</span>
+          <div class="dashboard__user-card-info">
+            <div class="dashboard__user-card-name">Priya Sharma</div>
+            <div class="dashboard__user-card-email">priya@lotus.media</div>
+            <div class="dashboard__user-card-role">client</div>
+          </div>
+        </div>
+        <div class="dashboard__user-card">
+          <span class="dashboard__user-card-avatar">A</span>
+          <div class="dashboard__user-card-info">
+            <div class="dashboard__user-card-name">Admin User</div>
+            <div class="dashboard__user-card-email">admin@stackly.com</div>
+            <div class="dashboard__user-card-role">admin</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== SECTION: Campaigns ========== -->
+    <div id="section-campaigns" class="js-dashboard-section" style="display:none;">
+      <div class="dashboard__stats">
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9650;</span>
+            <span class="dashboard__stat-card-change is-up">+4</span>
+          </div>
+          <div class="dashboard__stat-card-value">24</div>
+          <div class="dashboard__stat-card-label">Total Campaigns</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9632;</span>
+            <span class="dashboard__stat-card-change is-up">+2</span>
+          </div>
+          <div class="dashboard__stat-card-value">12</div>
+          <div class="dashboard__stat-card-label">Active</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9638;</span>
+            <span class="dashboard__stat-card-change is-down">-1</span>
+          </div>
+          <div class="dashboard__stat-card-value">5</div>
+          <div class="dashboard__stat-card-label">Paused</div>
+        </div>
+        <div class="dashboard__stat-card">
+          <div class="dashboard__stat-card-header">
+            <span class="dashboard__stat-card-icon">&#9673;</span>
+            <span class="dashboard__stat-card-change is-up">+7</span>
+          </div>
+          <div class="dashboard__stat-card-value">7</div>
+          <div class="dashboard__stat-card-label">Completed</div>
+        </div>
+      </div>
+
+      <div class="dashboard__table-card">
+        <div class="dashboard__table-card-header">
+          <h3 class="dashboard__table-card-title">All Client Campaigns</h3>
+        </div>
+        <table class="dashboard__table">
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Campaign</th>
+              <th>Type</th>
+              <th>Budget</th>
+              <th>Spent</th>
+              <th>ROI</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nebula Inc.</td>
+              <td>Q3 Brand Awareness</td>
+              <td>Branding</td>
+              <td>$15,000</td>
+              <td>$12,340</td>
+              <td>184%</td>
+              <td><span class="badge badge--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Brightline</td>
+              <td>Summer Sale 2026</td>
+              <td>Paid Ads</td>
+              <td>$8,500</td>
+              <td>$8,120</td>
+              <td>312%</td>
+              <td><span class="badge badge--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Orbit Studio</td>
+              <td>Retargeting - Display</td>
+              <td>Paid Ads</td>
+              <td>$5,000</td>
+              <td>$4,560</td>
+              <td>96%</td>
+              <td><span class="badge badge--paused">Paused</span></td>
+            </tr>
+            <tr>
+              <td>Lotus Media</td>
+              <td>Product Launch - Pro</td>
+              <td>SEO</td>
+              <td>$22,000</td>
+              <td>$18,900</td>
+              <td>145%</td>
+              <td><span class="badge badge--pending">Pending</span></td>
+            </tr>
+            <tr>
+              <td>Peak Performance</td>
+              <td>Influencer Collab Q3</td>
+              <td>Social</td>
+              <td>$12,000</td>
+              <td>$6,200</td>
+              <td>210%</td>
+              <td><span class="badge badge--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Vertex Solutions</td>
+              <td>Lead Gen - Search</td>
+              <td>SEO</td>
+              <td>$6,500</td>
+              <td>$6,500</td>
+              <td>78%</td>
+              <td><span class="badge badge--completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td>Pulse Media</td>
+              <td>Brand Refresh</td>
+              <td>Branding</td>
+              <td>$18,000</td>
+              <td>$16,300</td>
+              <td>267%</td>
+              <td><span class="badge badge--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Apex Agency</td>
+              <td>Holiday Campaign 2025</td>
+              <td>Paid Ads</td>
+              <td>$25,000</td>
+              <td>$24,800</td>
+              <td>430%</td>
+              <td><span class="badge badge--completed">Completed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dashboard__charts">
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Budget vs Spent by Campaign</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="adminCampaignBudgetChart"></canvas>
+          </div>
+        </div>
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Campaign Status Distribution</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="adminCampaignStatusChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== SECTION: Analytics ========== -->
+    <div id="section-analytics" class="js-dashboard-section" style="display:none;">
+      <div class="dashboard__charts">
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Agency Revenue</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="adminAnalyticsRevenueChart"></canvas>
+          </div>
+        </div>
+        <div class="dashboard__chart-card">
+          <h3 class="dashboard__chart-card-title">Service Breakdown</h3>
+          <div class="dashboard__chart-wrapper">
+            <canvas id="adminAnalyticsServicesChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== SECTION: Settings ========== -->
+    <div id="section-settings" class="js-dashboard-section" style="display:none;">
+      <div class="dashboard__chart-card">
+        <h3 class="dashboard__chart-card-title">Admin Settings</h3>
+        <form class="dashboard__settings-form" onsubmit="event.preventDefault(); (function(){ var m=document.getElementById('adminSettingsSuccess'); m.style.display='block'; setTimeout(function(){ m.style.display='none'; },3000); })();">
+          <div class="auth-form__field">
+            <label for="admin-settings-name">Full Name</label>
+            <input type="text" id="admin-settings-name" class="js-dashboard-user-name" value="">
+          </div>
+          <div class="auth-form__field">
+            <label for="admin-settings-email">Email</label>
+            <input type="email" id="admin-settings-email" value="">
+          </div>
+          <button type="submit" class="btn btn--primary">Save Changes</button>
+          <div id="adminSettingsSuccess" class="dashboard__settings-success" style="display:none;">Settings saved successfully!</div>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script>
+(function () {
+  var defs = getChartDefaults();
+
+  /* --- Admin Revenue line --- */
+  createChart('adminRevenueChart', {
+    type: 'line',
+    data: {
+      labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+      datasets: [{
+        label: 'Revenue',
+        data: [180000, 210000, 195000, 240000, 265000, 284500],
+        borderColor: defs.accentColor,
+        backgroundColor: defs.accentAlpha,
+        fill: true,
+        tension: 0.4,
+        pointBackgroundColor: defs.accentColor,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: defs.gridColor }, ticks: { color: defs.color } },
+        y: { grid: { color: defs.gridColor }, ticks: { color: defs.color } }
+      }
+    }
+  });
+
+  /* --- Admin Client Distribution doughnut --- */
+  createChart('adminClientsChart', {
+    type: 'doughnut',
+    data: {
+      labels: ['SEO','Paid Ads','Branding','Social','Web'],
+      datasets: [{
+        data: [35, 25, 18, 14, 8],
+        backgroundColor: ['#E8923E','#2ecc71','#3498db','#9b59b6','#95a5a6'],
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: defs.color, padding: 16 }
+        }
+      }
+    }
+  });
+
+  /* --- Admin Analytics Revenue bar --- */
+  createChart('adminAnalyticsRevenueChart', {
+    type: 'bar',
+    data: {
+      labels: ['SEO','Paid Ads','Social','Branding','Web'],
+      datasets: [{
+        label: 'Revenue by Service',
+        data: [85000, 72000, 48000, 42000, 28500],
+        backgroundColor: [
+          'rgba(232,146,62,0.6)',
+          'rgba(46,204,113,0.6)',
+          'rgba(52,152,219,0.6)',
+          'rgba(155,89,182,0.6)',
+          'rgba(149,165,166,0.6)',
+        ],
+        borderColor: [
+          '#E8923E','#2ecc71','#3498db','#9b59b6','#95a5a6'
+        ],
+        borderWidth: 1,
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: defs.gridColor }, ticks: { color: defs.color } },
+        y: { grid: { color: defs.gridColor }, ticks: { color: defs.color } }
+      }
+    }
+  });
+
+  /* --- Admin Campaign Budget bar --- */
+  createChart('adminCampaignBudgetChart', {
+    type: 'bar',
+    data: {
+      labels: ['Q3 Brand Awareness','Summer Sale','Retargeting','Product Launch','Influencer Collab','Lead Gen','Brand Refresh','Holiday Campaign'],
+      datasets: [
+        {
+          label: 'Budget',
+          data: [15000, 8500, 5000, 22000, 12000, 6500, 18000, 25000],
+          backgroundColor: 'rgba(232,146,62,0.3)',
+          borderColor: '#E8923E',
+          borderWidth: 1,
+          borderRadius: 4,
+        },
+        {
+          label: 'Spent',
+          data: [12340, 8120, 4560, 18900, 6200, 6500, 16300, 24800],
+          backgroundColor: 'rgba(46,204,113,0.3)',
+          borderColor: '#2ecc71',
+          borderWidth: 1,
+          borderRadius: 4,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: defs.color, padding: 16 }
+        }
+      },
+      scales: {
+        x: { grid: { color: defs.gridColor }, ticks: { display: false } },
+        y: { grid: { color: defs.gridColor }, ticks: { color: defs.color, callback: function(v) { return '$' + v.toLocaleString(); } } }
+      }
+    }
+  });
+
+  /* --- Admin Campaign Status doughnut --- */
+  createChart('adminCampaignStatusChart', {
+    type: 'doughnut',
+    data: {
+      labels: ['Active','Paused','Pending','Completed'],
+      datasets: [{
+        data: [12, 5, 3, 7],
+        backgroundColor: ['#2ecc71','#95a5a6','#f1c40f','#3498db'],
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: defs.color, padding: 16 }
+        }
+      }
+    }
+  });
+
+  /* --- Admin Analytics Services pie --- */
+  createChart('adminAnalyticsServicesChart', {
+    type: 'pie',
+    data: {
+      labels: ['SEO','Paid Ads','Social','Branding','Web'],
+      datasets: [{
+        data: [30, 25, 18, 17, 10],
+        backgroundColor: ['#E8923E','#2ecc71','#3498db','#9b59b6','#95a5a6'],
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: defs.color, padding: 16 }
+        }
+      }
+    }
+  });
+
+  /* --- Set user name in settings --- */
+  var user = getDashboardUser();
+  if (user) {
+    var nameInput = document.getElementById('admin-settings-name');
+    var emailInput = document.getElementById('admin-settings-email');
+    if (nameInput) nameInput.value = user.name;
+    if (emailInput) emailInput.value = user.email;
+  }
+})();
+</script>
+</body>
+</html>

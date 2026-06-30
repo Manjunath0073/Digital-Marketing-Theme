@@ -204,9 +204,20 @@
       return;
     }
 
+    var role = document.getElementById('signin-role').value;
+
+    localStorage.setItem('stackly_user', JSON.stringify({
+      name: email.split('@')[0],
+      email: email,
+      role: role
+    }));
+
     showError('Sign in successful \u2014 redirecting to dashboard...');
     errorMsg.classList.remove('auth-form__message--error');
     errorMsg.classList.add('auth-form__message--success');
+
+    var target = role === 'admin' ? 'dashboard-admin.html' : 'dashboard-client.html';
+    setTimeout(function () { window.location.href = target; }, 1200);
   });
 })();
 </script>

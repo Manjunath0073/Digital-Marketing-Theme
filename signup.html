@@ -363,9 +363,20 @@
       return;
     }
 
+    var role = document.getElementById('signup-role').value;
+
+    localStorage.setItem('stackly_user', JSON.stringify({
+      name: name,
+      email: email,
+      role: role
+    }));
+
     errorMsg.textContent = 'Account created \u2014 redirecting to dashboard...';
     errorMsg.classList.remove('auth-form__message--error');
     errorMsg.classList.add('auth-form__message--success', 'is-visible');
+
+    var target = role === 'admin' ? 'dashboard-admin.html' : 'dashboard-client.html';
+    setTimeout(function () { window.location.href = target; }, 1200);
   });
 
   /* ---------- Trust rotator ---------- */
