@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in to your Stackly Marketing account.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/signin-signup.css">
+
+  <title>Sign In — Stackly Marketing</title>
+</head>
+<body>
+
+<main class="auth-page">
+  <div class="auth-page__grid">
+
+    <!-- ============================================
+         BRAND PANEL
+         ============================================ -->
+    <div class="auth-panel">
+      <div class="auth-panel__content">
+        <a href="index.html" class="auth-panel__logo">
+          <span class="auth-panel__logo-img" role="img" aria-label="Stackly Marketing"></span>
+        </a>
+
+        <p class="auth-panel__tagline">
+          Welcome<br>
+          <span class="auth-panel__tagline-accent">Back.</span>
+        </p>
+        <p class="auth-panel__text">Access your dashboard, manage campaigns, review performance reports, and collaborate with your team in real time.</p>
+      </div>
+
+      <div class="auth-panel__features">
+        <div class="auth-panel__feature">
+          <span class="auth-panel__feature-icon">&#9650;</span>
+          Real-time campaign analytics
+        </div>
+        <div class="auth-panel__feature">
+          <span class="auth-panel__feature-icon">&#9673;</span>
+          Role-based team access controls
+        </div>
+        <div class="auth-panel__feature">
+          <span class="auth-panel__feature-icon">&#9632;</span>
+          Automated performance reporting
+        </div>
+      </div>
+
+      <a href="index.html" class="auth-panel__back">
+        <span class="auth-panel__back-arrow">&larr;</span>
+        Back to home
+      </a>
+    </div>
+
+    <!-- ============================================
+         AUTH CARD
+         ============================================ -->
+    <div class="auth-card">
+      <div class="auth-card__inner">
+        <span class="auth-card__badge">Sign In</span>
+        <h1 class="auth-card__title">Sign In.</h1>
+        <p class="auth-card__subtitle">Access your account to manage campaigns and track performance.</p>
+
+        <form class="auth-form js-auth-form" novalidate>
+          <div class="auth-form__message auth-form__message--error js-form-error"></div>
+
+          <div class="auth-form__field">
+            <label class="auth-form__label" for="signin-role">Account type</label>
+            <select class="auth-form__select" id="signin-role" required>
+              <option value="client">Client</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+
+          <div class="auth-form__field js-field">
+            <label class="auth-form__label" for="signin-email">
+              Email
+              <span class="auth-form__label-error">Required</span>
+            </label>
+            <div class="auth-form__input-wrap">
+              <input type="email" class="auth-form__input" id="signin-email" placeholder="you@company.com" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="auth-form__field js-field">
+            <label class="auth-form__label" for="signin-password">
+              Password
+              <span class="auth-form__label-error">Required</span>
+            </label>
+            <div class="auth-form__input-wrap">
+              <input type="password" class="auth-form__input" id="signin-password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required minlength="8" autocomplete="current-password">
+              <button type="button" class="auth-form__toggle-btn js-password-toggle" aria-label="Toggle password visibility" tabindex="-1">&#128065;</button>
+            </div>
+          </div>
+
+          <div class="auth-form__checkbox-row">
+            <label class="auth-form__checkbox">
+              <input type="checkbox" id="signin-remember">
+              <span class="auth-form__check"></span>
+              Remember me
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg auth-form__submit">Sign In to Dashboard</button>
+
+          <p class="auth-form__footer">
+            Don't have an account? <a href="signup.html">Create one</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script>
+(function () {
+  /* ---------- DOM refs ---------- */
+  var form = document.querySelector('.js-auth-form');
+  var errorMsg = document.querySelector('.js-form-error');
+  var emailField = document.getElementById('signin-email');
+  var passwordField = document.getElementById('signin-password');
+  var toggleBtns = form.querySelectorAll('.js-password-toggle');
+
+  /* ---------- Password toggle ---------- */
+  toggleBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var input = btn.parentElement.querySelector('input');
+      var isPassword = input.getAttribute('type') === 'password';
+      input.setAttribute('type', isPassword ? 'text' : 'password');
+      btn.textContent = isPassword ? '\u2713' : '\u{1F441}';
+    });
+  });
+
+  /* ---------- Helpers ---------- */
+  function setFieldValidity(field, valid) {
+    field.classList.toggle('is-valid', valid);
+    field.classList.toggle('is-invalid', !valid);
+  }
+
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function showError(msg) {
+    errorMsg.textContent = msg;
+    errorMsg.classList.remove('auth-form__message--success');
+    errorMsg.classList.add('auth-form__message--error', 'is-visible');
+  }
+
+  function clearError() {
+    errorMsg.textContent = '';
+    errorMsg.classList.remove('is-visible');
+  }
+
+  /* ---------- Live validation on blur ---------- */
+  emailField.addEventListener('blur', function () {
+    var v = emailField.value.trim();
+    if (!v) { setFieldValidity(emailField.closest('.js-field'), false); return; }
+    setFieldValidity(emailField.closest('.js-field'), validateEmail(v));
+  });
+
+  passwordField.addEventListener('blur', function () {
+    var v = passwordField.value;
+    if (!v) { setFieldValidity(passwordField.closest('.js-field'), false); return; }
+    setFieldValidity(passwordField.closest('.js-field'), v.length >= 8);
+  });
+
+  /* ---------- Form submit ---------- */
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearError();
+
+    var email = emailField.value.trim();
+    var password = passwordField.value;
+    var isValid = true;
+
+    if (!email) {
+      setFieldValidity(emailField.closest('.js-field'), false);
+      isValid = false;
+    } else if (!validateEmail(email)) {
+      setFieldValidity(emailField.closest('.js-field'), false);
+      isValid = false;
+    } else {
+      setFieldValidity(emailField.closest('.js-field'), true);
+    }
+
+    if (!password) {
+      setFieldValidity(passwordField.closest('.js-field'), false);
+      isValid = false;
+    } else if (password.length < 8) {
+      setFieldValidity(passwordField.closest('.js-field'), false);
+      isValid = false;
+    } else {
+      setFieldValidity(passwordField.closest('.js-field'), true);
+    }
+
+    if (!isValid) {
+      showError('Please fix the highlighted fields before continuing.');
+      return;
+    }
+
+    showError('Sign in successful \u2014 redirecting to dashboard...');
+    errorMsg.classList.remove('auth-form__message--error');
+    errorMsg.classList.add('auth-form__message--success');
+  });
+})();
+</script>
+</body>
+</html>

@@ -28,16 +28,16 @@
       <nav class="header__nav js-nav">
         <ul class="header__nav-list">
           <li><a href="index.html" class="header__nav-link">Home</a></li>
-          <li><a class="header__nav-link">Services</a></li>
-          <li><a class="header__nav-link">About</a></li>
-          <li><a class="header__nav-link">Case Studies</a></li>
-          <li><a class="header__nav-link">Blog</a></li>
-          <li><a class="header__nav-link">Contact</a></li>
+          <li><a href="services.html" class="header__nav-link is-active">Services</a></li>
+          <li><a href="about.html" class="header__nav-link">About</a></li>
+          <li><a href="case-studies.html" class="header__nav-link">Case Studies</a></li>
+          <li><a href="blog.html" class="header__nav-link">Blog</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
         </ul>
       </nav>
       <div class="header__actions">
-        <a href="contact.html" class="btn btn--ghost header__login">Sign In</a>
-        <a href="contact.html" class="btn btn--primary header__cta">Sign Up</a>
+        <a href="signin.html" class="btn btn--ghost header__login">Sign In</a>
+        <a href="signup.html" class="btn btn--primary header__cta">Sign Up</a>
         <button class="header__hamburger js-hamburger" aria-label="Toggle menu">
           <span class="header__hamburger-line"></span>
           <span class="header__hamburger-line"></span>
@@ -57,15 +57,18 @@
       <nav class="header__offcanvas-nav">
         <ul class="header__offcanvas-list">
           <li><a href="index.html" class="header__offcanvas-link">Home</a></li>
-          <li><a class="header__offcanvas-link">Services</a></li>
-          <li><a class="header__offcanvas-link">About</a></li>
-          <li><a class="header__offcanvas-link">Case Studies</a></li>
-          <li><a class="header__offcanvas-link">Blog</a></li>
-          <li><a class="header__offcanvas-link">Contact</a></li>
+          <li><a href="services.html" class="header__offcanvas-link is-active">Services</a></li>
+          <li><a href="about.html" class="header__offcanvas-link">About</a></li>
+          <li><a href="case-studies.html" class="header__offcanvas-link">Case Studies</a></li>
+          <li><a href="blog.html" class="header__offcanvas-link">Blog</a></li>
+          <li><a href="contact.html" class="header__offcanvas-link">Contact</a></li>
         </ul>
       </nav>
       <div class="header__offcanvas-actions">
-        <a href="contact.html" class="btn btn--primary header__offcanvas-cta">Get Started</a>
+        <div class="header__offcanvas-btn-group">
+          <a href="signin.html" class="btn btn--ghost header__offcanvas-btn">Sign In</a>
+          <a href="signup.html" class="btn btn--primary header__offcanvas-btn">Sign Up</a>
+        </div>
       </div>
     </div>
   </div>
@@ -73,27 +76,129 @@
 
   <main>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="container">
-        <span class="page-hero__label">Our Services</span>
-        <h1 class="page-hero__title">Full-Funnel Digital Marketing Services.</h1>
-        <p class="page-hero__text">Every capability you need to attract, engage, and convert your ideal customers — delivered by a team obsessed with measurable results.</p>
+    <!-- ============================================
+         SECTION 1 — HERO (Full-screen immersive)
+         ============================================ -->
+    <section class="services-hero js-hero">
+      <div class="services-hero__bg">
+        <div class="services-hero__gradient"></div>
+        <div class="services-hero__noise"></div>
+      </div>
+
+      <div class="container services-hero__inner">
+        <!-- Left: Content -->
+        <div class="services-hero__content">
+          <div class="services-hero__label">Our Services</div>
+          <h1 class="services-hero__title">
+            Data-Driven<br>
+            <span class="services-hero__accent">Digital Marketing</span><br>
+            That Delivers.
+          </h1>
+          <p class="services-hero__text">Every capability you need to attract, engage, and convert your ideal customers — delivered by a team obsessed with measurable results.</p>
+          <div class="services-hero__actions">
+            <a href="404.html" class="btn btn--primary btn--lg js-magnetic">Start Your Project</a>
+            <a href="404.html" class="btn btn--outline btn--lg js-magnetic">Explore Services</a>
+          </div>
+          <div class="services-hero__metrics">
+            <div class="services-hero__metric">
+              <span class="services-hero__metric-value">200+</span>
+              <span class="services-hero__metric-label">Projects Delivered</span>
+            </div>
+            <div class="services-hero__metric">
+              <span class="services-hero__metric-value">340%</span>
+              <span class="services-hero__metric-label">Avg. Client ROI</span>
+            </div>
+            <div class="services-hero__metric">
+              <span class="services-hero__metric-value">50+</span>
+              <span class="services-hero__metric-label">Team Members</span>
+            </div>
+            <div class="services-hero__metric">
+              <span class="services-hero__metric-value">15+</span>
+              <span class="services-hero__metric-label">Industry Awards</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 2x3 Service Preview Grid -->
+        <div class="services-hero__grid">
+          <div class="services-hero__card">
+            <div class="services-hero__card-icon services-hero__card-icon--seo">🔍</div>
+            <span class="services-hero__card-name">SEO & Organic Growth</span>
+          </div>
+          <div class="services-hero__card">
+            <div class="services-hero__card-icon services-hero__card-icon--paid">📊</div>
+            <span class="services-hero__card-name">Paid Advertising</span>
+          </div>
+          <div class="services-hero__card">
+            <div class="services-hero__card-icon services-hero__card-icon--brand">🎨</div>
+            <span class="services-hero__card-name">Brand & Creative</span>
+          </div>
+          <div class="services-hero__card">
+            <div class="services-hero__card-icon services-hero__card-icon--web">🌐</div>
+            <span class="services-hero__card-name">Web Development & CRO</span>
+          </div>
+          <div class="services-hero__card">
+            <div class="services-hero__card-icon services-hero__card-icon--social">📱</div>
+            <span class="services-hero__card-name">Social Media Marketing</span>
+          </div>
+          <div class="services-hero__card">
+            <div class="services-hero__card-icon services-hero__card-icon--ai">🤖</div>
+            <span class="services-hero__card-name">AI Marketing Solutions</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-hero__scroll">
+        <span>Scroll</span>
+        <div class="services-hero__scroll-line"></div>
       </div>
     </section>
 
-    <!-- Services Detail Grid -->
-    <section class="services-detail section reveal">
+    <!-- ============================================
+         SECTION 2 — MARQUEE (Service categories strip)
+         ============================================ -->
+    <section class="services-marquee">
+      <div class="marquee">
+        <div class="services-marquee__track marquee__track">
+          <span class="services-marquee__item"><span class="services-marquee__item-icon">🔍</span> SEO & Organic Growth</span>
+          <span class="services-marquee__item"><span class="services-marquee__item-icon">📊</span> Paid Advertising</span>
+          <span class="services-marquee__item"><span class="services-marquee__item-icon">🎨</span> Brand & Creative</span>
+          <span class="services-marquee__item"><span class="services-marquee__item-icon">🌐</span> Web & CRO</span>
+          <span class="services-marquee__item"><span class="services-marquee__item-icon">📱</span> Social Media</span>
+          <span class="services-marquee__item"><span class="services-marquee__item-icon">🤖</span> AI Marketing</span>
+          <span class="services-marquee__item"><span class="services-marquee__item-icon">🔍</span> SEO & Organic Growth</span>
+          <span class="services-marquee__item"><span class="services-marquee__item-icon">📊</span> Paid Advertising</span>
+          <span class="services-marquee__item"><span class="services-marquee__item-icon">🎨</span> Brand & Creative</span>
+          <span class="services-marquee__item"><span class="services-marquee__item-icon">🌐</span> Web & CRO</span>
+          <span class="services-marquee__item"><span class="services-marquee__item-icon">📱</span> Social Media</span>
+          <span class="services-marquee__item"><span class="services-marquee__item-icon">🤖</span> AI Marketing</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3 — SERVICES GRID (Alternating zigzag)
+         ============================================ -->
+    <section class="services-grid section reveal" id="services">
       <div class="container">
-        <div class="services-detail__grid">
-          <article class="services-detail__card">
-            <div class="services-detail__card-icon">
-              <span>🔍</span>
+        <div class="services-grid__header stagger-children">
+          <span class="section__label">What We Do</span>
+          <h2 class="section__title">Full-Funnel Digital Marketing.</h2>
+          <p class="section__subtitle">From brand strategy to performance campaigns — every service engineered for measurable growth.</p>
+        </div>
+
+        <div class="services-grid__list stagger-children">
+          <!-- SEO -->
+          <article class="services-grid__card js-tilt-card js-glow-card reveal reveal--fade-up">
+            <div class="services-grid__card-icon">
+              <div class="services-grid__card-icon-bg services-grid__card-icon-bg--seo"></div>
+              <img src="assets/images/service-seo.webp" alt="SEO & Organic Growth" class="services-grid__card-icon-img" loading="lazy">
             </div>
-            <div class="services-detail__card-content">
-              <h3 class="services-detail__card-title">SEO & Organic Growth</h3>
-              <p class="services-detail__card-text">Technical audits, keyword strategy, content architecture, link building — a comprehensive approach to dominating search rankings and driving sustainable organic traffic.</p>
-              <ul class="services-detail__card-list">
+            <div class="services-grid__card-body">
+              <span class="tag services-grid__card-tag">Organic Growth</span>
+              <h3 class="services-grid__card-title">SEO & Organic Growth</h3>
+              <p class="services-grid__card-text">Technical audits, keyword strategy, content architecture, link building — a comprehensive approach to dominating search rankings and driving sustainable organic traffic.</p>
+              <ul class="services-grid__card-list">
                 <li>Technical SEO & Site Audits</li>
                 <li>Keyword Research & Strategy</li>
                 <li>Content Strategy & Production</li>
@@ -102,14 +207,18 @@
               </ul>
             </div>
           </article>
-          <article class="services-detail__card">
-            <div class="services-detail__card-icon">
-              <span>📊</span>
+
+          <!-- Paid Ads -->
+          <article class="services-grid__card services-grid__card--reverse js-tilt-card js-glow-card reveal reveal--fade-up">
+            <div class="services-grid__card-icon">
+              <div class="services-grid__card-icon-bg services-grid__card-icon-bg--paid"></div>
+              <img src="assets/images/service-paid-ads.webp" alt="Paid Advertising" class="services-grid__card-icon-img" loading="lazy">
             </div>
-            <div class="services-detail__card-content">
-              <h3 class="services-detail__card-title">Paid Advertising</h3>
-              <p class="services-detail__card-text">Data-driven paid media campaigns across Google Ads, Meta, LinkedIn, TikTok, and programmatic platforms — engineered for maximum ROAS.</p>
-              <ul class="services-detail__card-list">
+            <div class="services-grid__card-body">
+              <span class="tag services-grid__card-tag">Paid Media</span>
+              <h3 class="services-grid__card-title">Paid Advertising</h3>
+              <p class="services-grid__card-text">Data-driven paid media campaigns across Google Ads, Meta, LinkedIn, TikTok, and programmatic platforms — engineered for maximum ROAS.</p>
+              <ul class="services-grid__card-list">
                 <li>Google Search & Shopping</li>
                 <li>Social Media Advertising</li>
                 <li>Display & Programmatic</li>
@@ -118,14 +227,18 @@
               </ul>
             </div>
           </article>
-          <article class="services-detail__card">
-            <div class="services-detail__card-icon">
-              <span>🎨</span>
+
+          <!-- Brand -->
+          <article class="services-grid__card js-tilt-card js-glow-card reveal reveal--fade-up">
+            <div class="services-grid__card-icon">
+              <div class="services-grid__card-icon-bg services-grid__card-icon-bg--brand"></div>
+              <img src="assets/images/service-brand.webp" alt="Brand & Creative" class="services-grid__card-icon-img" loading="lazy">
             </div>
-            <div class="services-detail__card-content">
-              <h3 class="services-detail__card-title">Brand & Creative</h3>
-              <p class="services-detail__card-text">Distinct brand identities that resonate. From positioning and visual identity to campaign creative that captures attention and drives action.</p>
-              <ul class="services-detail__card-list">
+            <div class="services-grid__card-body">
+              <span class="tag services-grid__card-tag">Creative</span>
+              <h3 class="services-grid__card-title">Brand & Creative</h3>
+              <p class="services-grid__card-text">Distinct brand identities that resonate. From positioning and visual identity to campaign creative that captures attention and drives action.</p>
+              <ul class="services-grid__card-list">
                 <li>Brand Strategy & Positioning</li>
                 <li>Visual Identity Design</li>
                 <li>Copywriting & Messaging</li>
@@ -134,14 +247,18 @@
               </ul>
             </div>
           </article>
-          <article class="services-detail__card">
-            <div class="services-detail__card-icon">
-              <span>🌐</span>
+
+          <!-- Web -->
+          <article class="services-grid__card services-grid__card--reverse js-tilt-card js-glow-card reveal reveal--fade-up">
+            <div class="services-grid__card-icon">
+              <div class="services-grid__card-icon-bg services-grid__card-icon-bg--web"></div>
+              <img src="assets/images/service-webdev.webp" alt="Web Development & CRO" class="services-grid__card-icon-img" loading="lazy">
             </div>
-            <div class="services-detail__card-content">
-              <h3 class="services-detail__card-title">Web Development & CRO</h3>
-              <p class="services-detail__card-text">High-performance websites and landing pages designed for conversion. We build experiences that turn visitors into customers.</p>
-              <ul class="services-detail__card-list">
+            <div class="services-grid__card-body">
+              <span class="tag services-grid__card-tag">Development</span>
+              <h3 class="services-grid__card-title">Web Development & CRO</h3>
+              <p class="services-grid__card-text">High-performance websites and landing pages designed for conversion. We build experiences that turn visitors into customers.</p>
+              <ul class="services-grid__card-list">
                 <li>Custom Web Design & Development</li>
                 <li>Landing Page Optimization</li>
                 <li>A/B Testing & Experimentation</li>
@@ -150,14 +267,18 @@
               </ul>
             </div>
           </article>
-          <article class="services-detail__card">
-            <div class="services-detail__card-icon">
-              <span>📱</span>
+
+          <!-- Social -->
+          <article class="services-grid__card js-tilt-card js-glow-card reveal reveal--fade-up">
+            <div class="services-grid__card-icon">
+              <div class="services-grid__card-icon-bg services-grid__card-icon-bg--social"></div>
+              <img src="assets/images/service-social.webp" alt="Social Media Marketing" class="services-grid__card-icon-img" loading="lazy">
             </div>
-            <div class="services-detail__card-content">
-              <h3 class="services-detail__card-title">Social Media Marketing</h3>
-              <p class="services-detail__card-text">Strategic social presence that builds community, drives engagement, and generates leads across every major platform.</p>
-              <ul class="services-detail__card-list">
+            <div class="services-grid__card-body">
+              <span class="tag services-grid__card-tag">Social</span>
+              <h3 class="services-grid__card-title">Social Media Marketing</h3>
+              <p class="services-grid__card-text">Strategic social presence that builds community, drives engagement, and generates leads across every major platform.</p>
+              <ul class="services-grid__card-list">
                 <li>Social Strategy & Planning</li>
                 <li>Content Creation & Curation</li>
                 <li>Community Management</li>
@@ -166,14 +287,18 @@
               </ul>
             </div>
           </article>
-          <article class="services-detail__card">
-            <div class="services-detail__card-icon">
-              <span>🤖</span>
+
+          <!-- AI -->
+          <article class="services-grid__card services-grid__card--reverse js-tilt-card js-glow-card reveal reveal--fade-up">
+            <div class="services-grid__card-icon">
+              <div class="services-grid__card-icon-bg services-grid__card-icon-bg--ai"></div>
+              <img src="assets/images/service-ai.webp" alt="AI Marketing Solutions" class="services-grid__card-icon-img" loading="lazy">
             </div>
-            <div class="services-detail__card-content">
-              <h3 class="services-detail__card-title">AI Marketing Solutions</h3>
-              <p class="services-detail__card-text">Harness the power of artificial intelligence for predictive analytics, hyper-personalization, and automated campaign optimization at scale.</p>
-              <ul class="services-detail__card-list">
+            <div class="services-grid__card-body">
+              <span class="tag services-grid__card-tag">Innovation</span>
+              <h3 class="services-grid__card-title">AI Marketing Solutions</h3>
+              <p class="services-grid__card-text">Harness the power of artificial intelligence for predictive analytics, hyper-personalization, and automated campaign optimization at scale.</p>
+              <ul class="services-grid__card-list">
                 <li>Predictive Analytics</li>
                 <li>AI-Powered Personalization</li>
                 <li>Chatbot & Conversational AI</li>
@@ -186,132 +311,151 @@
       </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits section reveal">
+    <!-- ============================================
+         SECTION 4 — STATS (Impact counters)
+         ============================================ -->
+    <section class="services-stats section reveal reveal--zoom">
       <div class="container">
-        <div class="benefits__header">
-          <span class="section__label">Why Stackly</span>
-          <h2 class="section__title benefits__title">Built Different. By Design.</h2>
-          <p class="section__subtitle benefits__subtitle">We don't follow templates. Every engagement is built from the ground up around your unique business goals.</p>
+        <div class="services-stats__header stagger-children">
+          <span class="section__label">By the Numbers</span>
+          <h2 class="section__title">Results That Speak for Themselves.</h2>
         </div>
-        <div class="benefits__grid">
-          <div class="benefits__item">
-            <span class="benefits__item-number">01</span>
-            <h3 class="benefits__item-title">Data-First Approach</h3>
-            <p class="benefits__item-text">Every decision is backed by rigorous analysis and real-time data, ensuring your marketing budget delivers maximum impact.</p>
+        <div class="services-stats__grid stagger-children stagger--scale">
+          <div class="services-stats__card">
+            <div class="services-stats__card-icon">📈</div>
+            <div class="services-stats__card-number" data-count="340">0</div>
+            <span class="services-stats__card-suffix">%</span>
+            <span class="services-stats__card-label">Average Client ROI</span>
           </div>
-          <div class="benefits__item">
-            <span class="benefits__item-number">02</span>
-            <h3 class="benefits__item-title">Integrated Strategy</h3>
-            <p class="benefits__item-text">SEO, paid, creative, and social work in concert — not silos — creating a unified funnel that drives consistent growth.</p>
+          <div class="services-stats__card">
+            <div class="services-stats__card-icon">🚀</div>
+            <div class="services-stats__card-number" data-count="200">0</div>
+            <span class="services-stats__card-suffix">+</span>
+            <span class="services-stats__card-label">Projects Completed</span>
           </div>
-          <div class="benefits__item">
-            <span class="benefits__item-number">03</span>
-            <h3 class="benefits__item-title">World-Class Talent</h3>
-            <p class="benefits__item-text">Our team brings experience from top agencies and brands — strategists, creatives, and technologists who deliver excellence.</p>
+          <div class="services-stats__card">
+            <div class="services-stats__card-icon">🏆</div>
+            <div class="services-stats__card-number" data-count="15">0</div>
+            <span class="services-stats__card-suffix">+</span>
+            <span class="services-stats__card-label">Industry Awards</span>
           </div>
-          <div class="benefits__item">
-            <span class="benefits__item-number">04</span>
-            <h3 class="benefits__item-title">Relentless Optimization</h3>
-            <p class="benefits__item-text">We never stop improving. Continuous testing, iteration, and refinement ensure your campaigns get better every single day.</p>
-          </div>
-          <div class="benefits__item">
-            <span class="benefits__item-number">05</span>
-            <h3 class="benefits__item-title">Transparent Reporting</h3>
-            <p class="benefits__item-text">Clear, honest, real-time reporting that shows exactly what's working, what's not, and what we're doing about it.</p>
-          </div>
-          <div class="benefits__item">
-            <span class="benefits__item-number">06</span>
-            <h3 class="benefits__item-title">Partnership Mindset</h3>
-            <p class="benefits__item-text">We treat your business like our own. Deep collaboration, shared goals, and a commitment to your long-term success.</p>
+          <div class="services-stats__card">
+            <div class="services-stats__card-icon">👥</div>
+            <div class="services-stats__card-number" data-count="50">0</div>
+            <span class="services-stats__card-suffix">+</span>
+            <span class="services-stats__card-label">Team Members</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process-alt section reveal">
+    <!-- ============================================
+         SECTION 5 — PROCESS (Vertical timeline)
+         ============================================ -->
+    <section class="services-timeline section reveal">
       <div class="container">
-        <div class="process-alt__header">
+        <div class="services-timeline__header stagger-children">
           <span class="section__label">Our Methodology</span>
           <h2 class="section__title">How We Deliver Results.</h2>
           <p class="section__subtitle">A structured, transparent process designed to move your business forward — fast.</p>
         </div>
-        <div class="process-alt__timeline">
-          <div class="process-alt__step">
-            <span class="process-alt__step-phase">Phase 1</span>
-            <h3 class="process-alt__step-title">Discovery</h3>
-            <p class="process-alt__step-text">We immerse ourselves in your business, market, and competitors to uncover every growth opportunity.</p>
+
+        <div class="services-timeline__track">
+          <div class="services-timeline__step reveal reveal--fade-left">
+            <div class="services-timeline__step-content services-timeline__step-content--left">
+              <span class="services-timeline__step-phase">Phase 1</span>
+              <h3 class="services-timeline__step-title">Discovery</h3>
+              <p class="services-timeline__step-text">We immerse ourselves in your business, market, and competitors to uncover every growth opportunity.</p>
+            </div>
+            <div class="services-timeline__step-node">01</div>
+            <div></div>
           </div>
-          <div class="process-alt__step">
-            <span class="process-alt__step-phase">Phase 2</span>
-            <h3 class="process-alt__step-title">Strategy</h3>
-            <p class="process-alt__step-text">A comprehensive, data-backed roadmap that aligns your business objectives with the right channels and tactics.</p>
+
+          <div class="services-timeline__step reveal reveal--fade-right">
+            <div></div>
+            <div class="services-timeline__step-node">02</div>
+            <div class="services-timeline__step-content services-timeline__step-content--right">
+              <span class="services-timeline__step-phase">Phase 2</span>
+              <h3 class="services-timeline__step-title">Strategy</h3>
+              <p class="services-timeline__step-text">A comprehensive, data-backed roadmap that aligns your business objectives with the right channels and tactics.</p>
+            </div>
           </div>
-          <div class="process-alt__step">
-            <span class="process-alt__step-phase">Phase 3</span>
-            <h3 class="process-alt__step-title">Execution</h3>
-            <p class="process-alt__step-text">World-class creative and technical execution, delivered on time and on budget with meticulous attention to detail.</p>
+
+          <div class="services-timeline__step reveal reveal--fade-left">
+            <div class="services-timeline__step-content services-timeline__step-content--left">
+              <span class="services-timeline__step-phase">Phase 3</span>
+              <h3 class="services-timeline__step-title">Execution</h3>
+              <p class="services-timeline__step-text">World-class creative and technical execution, delivered on time and on budget with meticulous attention to detail.</p>
+            </div>
+            <div class="services-timeline__step-node">03</div>
+            <div></div>
           </div>
-          <div class="process-alt__step">
-            <span class="process-alt__step-phase">Phase 4</span>
-            <h3 class="process-alt__step-title">Optimization</h3>
-            <p class="process-alt__step-text">Continuous monitoring, testing, and refinement to maximize performance and ROI over the long term.</p>
+
+          <div class="services-timeline__step reveal reveal--fade-right">
+            <div></div>
+            <div class="services-timeline__step-node">04</div>
+            <div class="services-timeline__step-content services-timeline__step-content--right">
+              <span class="services-timeline__step-phase">Phase 4</span>
+              <h3 class="services-timeline__step-title">Optimization</h3>
+              <p class="services-timeline__step-text">Continuous monitoring, testing, and refinement to maximize performance and ROI over the long term.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq section reveal" id="faq">
+    <!-- ============================================
+         SECTION 6 — FAQ (Premium accordion)
+         ============================================ -->
+    <section class="services-faq section reveal" id="faq">
       <div class="container">
-        <div class="faq__header">
+        <div class="services-faq__header stagger-children">
           <span class="section__label">FAQ</span>
-          <h2 class="section__title faq__title">Common Questions.</h2>
+          <h2 class="section__title">Common Questions.</h2>
         </div>
-        <div class="faq__list">
-          <details class="faq__item">
-            <summary class="faq__question">
+        <div class="services-faq__list">
+          <details class="services-faq__item">
+            <summary class="services-faq__question">
               <span>What makes Stackly different from other agencies?</span>
-              <span class="faq__question-icon">+</span>
+              <span class="services-faq__question-icon">+</span>
             </summary>
-            <div class="faq__answer">
+            <div class="services-faq__answer">
               <p>We combine deep strategic thinking with world-class creative execution and a relentless focus on measurable results. Every engagement is custom-built — no templates, no cookie-cutter approaches.</p>
             </div>
           </details>
-          <details class="faq__item">
-            <summary class="faq__question">
+          <details class="services-faq__item">
+            <summary class="services-faq__question">
               <span>How do you measure success?</span>
-              <span class="faq__question-icon">+</span>
+              <span class="services-faq__question-icon">+</span>
             </summary>
-            <div class="faq__answer">
+            <div class="services-faq__answer">
               <p>We define clear KPIs at the start of every engagement — whether that's revenue, leads, traffic, engagement, or brand lift. Real-time dashboards and monthly reports ensure full transparency.</p>
             </div>
           </details>
-          <details class="faq__item">
-            <summary class="faq__question">
+          <details class="services-faq__item">
+            <summary class="services-faq__question">
               <span>What industries do you work with?</span>
-              <span class="faq__question-icon">+</span>
+              <span class="services-faq__question-icon">+</span>
             </summary>
-            <div class="faq__answer">
+            <div class="services-faq__answer">
               <p>We work across B2B SaaS, e-commerce, professional services, healthcare, fintech, and consumer brands. Our methodology adapts to any industry while our team brings specialized vertical expertise.</p>
             </div>
           </details>
-          <details class="faq__item">
-            <summary class="faq__question">
+          <details class="services-faq__item">
+            <summary class="services-faq__question">
               <span>How long until I see results?</span>
-              <span class="faq__question-icon">+</span>
+              <span class="services-faq__question-icon">+</span>
             </summary>
-            <div class="faq__answer">
+            <div class="services-faq__answer">
               <p>Timelines vary by channel and strategy. Paid campaigns typically show results within weeks, while SEO and content efforts build momentum over 3-6 months. We set clear milestones at the outset.</p>
             </div>
           </details>
-          <details class="faq__item">
-            <summary class="faq__question">
+          <details class="services-faq__item">
+            <summary class="services-faq__question">
               <span>Do you offer custom pricing?</span>
-              <span class="faq__question-icon">+</span>
+              <span class="services-faq__question-icon">+</span>
             </summary>
-            <div class="faq__answer">
+            <div class="services-faq__answer">
               <p>Yes. While we offer structured packages, every engagement is scoped based on your specific needs, goals, and budget. We'll design a partnership that makes sense for your business.</p>
             </div>
           </details>
@@ -319,15 +463,19 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta section">
+    <!-- ============================================
+         SECTION 7 — CTA (Premium)
+         ============================================ -->
+    <section class="services-cta section reveal reveal--zoom">
+      <div class="services-cta__gradient"></div>
       <div class="container">
-        <div class="cta__inner">
-          <span class="section__label cta__label">Start Your Journey</span>
-          <h2 class="cta__title">Ready to Accelerate Your Growth?</h2>
-          <p class="cta__text">Let's build a custom marketing strategy that drives real, measurable results for your business.</p>
-          <div class="cta__actions">
-            <a href="contact.html" class="btn btn--primary btn--lg">Book a Consultation</a>
+        <div class="services-cta__inner">
+          <span class="section__label services-cta__label">Start Your Journey</span>
+          <h2 class="services-cta__title">Ready to Accelerate Your Growth?</h2>
+          <p class="services-cta__text">Let's build a custom marketing strategy that drives real, measurable results for your business.</p>
+          <div class="services-cta__actions">
+            <a href="404.html" class="btn btn--primary btn--lg js-magnetic">Book a Consultation</a>
+            <a href="404.html" class="btn btn--outline btn--lg js-magnetic">Call Us</a>
           </div>
         </div>
       </div>
@@ -343,39 +491,37 @@
           <a href="index.html" class="footer__logo"><span class="footer__logo-img" role="img" aria-label="Stackly Marketing"></span></a>
           <p class="footer__tagline">Data-driven strategy meets creative excellence. We help ambitious brands grow, engage, and dominate their markets with purpose-built digital marketing that delivers measurable results.</p>
           <div class="footer__social">
-            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
-            <a href="#" class="footer__social-link" aria-label="Twitter">X</a>
-            <a href="#" class="footer__social-link" aria-label="Instagram">IG</a>
-            <a href="#" class="footer__social-link" aria-label="Dribbble">Dr</a>
+            <a href="404.html" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="404.html" class="footer__social-link" aria-label="Twitter">X</a>
+            <a href="404.html" class="footer__social-link" aria-label="Instagram">IG</a>
+            <a href="404.html" class="footer__social-link" aria-label="Dribbble">Dr</a>
           </div>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Services</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">SEO & Organic Growth</span></li>
-            <li><span class="footer__col-link">Paid Advertising</span></li>
-            <li><span class="footer__col-link">Brand & Creative</span></li>
-            <li><span class="footer__col-link">Web & CRO</span></li>
-            <li><span class="footer__col-link">Social Media</span></li>
-            <li><span class="footer__col-link">AI Marketing</span></li>
+            <li><a href="404.html" class="footer__col-link">SEO & Organic Growth</a></li>
+            <li><a href="404.html" class="footer__col-link">Paid Advertising</a></li>
+            <li><a href="404.html" class="footer__col-link">Social Media</a></li>
+            <li><a href="404.html" class="footer__col-link">AI Marketing</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Company</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">About Us</span></li>
-            <li><span class="footer__col-link">Case Studies</span></li>
-            <li><span class="footer__col-link">Blog</span></li>
-            <li><span class="footer__col-link">Contact</span></li>
-            <li><span class="footer__col-link">Careers</span></li>
+            <li><a href="about.html" class="footer__col-link">About Us</a></li>
+            <li><a href="case-studies.html" class="footer__col-link">Case Studies</a></li>
+            <li><a href="blog.html" class="footer__col-link">Blog</a></li>
+            <li><a href="contact.html" class="footer__col-link">Contact</a></li>
+            <li><a href="contact.html" class="footer__col-link">Careers</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Contact</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">hello@stackly.com</span></li>
-            <li><span class="footer__col-link">+1 (234) 567-890</span></li>
-            <li class="footer__col-address">123 Madison Avenue<br>New York, NY 10016</li>
+            <li><a href="404.html" class="footer__col-link">info@stackly.com</a></li>
+            <li><a href="404.html" class="footer__col-link">+1 (234) 567-890</a></li>
+            <li class="footer__col-address">Stackly Marketing<br>Salem, Tamil Nadu, India</li>
           </ul>
         </div>
       </div>

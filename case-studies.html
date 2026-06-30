@@ -27,16 +27,16 @@
       <nav class="header__nav js-nav">
         <ul class="header__nav-list">
           <li><a href="index.html" class="header__nav-link">Home</a></li>
-          <li><a class="header__nav-link">Services</a></li>
-          <li><a class="header__nav-link">About</a></li>
-          <li><a class="header__nav-link">Case Studies</a></li>
-          <li><a class="header__nav-link">Blog</a></li>
-          <li><a class="header__nav-link">Contact</a></li>
+          <li><a href="services.html" class="header__nav-link">Services</a></li>
+          <li><a href="about.html" class="header__nav-link">About</a></li>
+          <li><a href="case-studies.html" class="header__nav-link is-active">Case Studies</a></li>
+          <li><a href="blog.html" class="header__nav-link">Blog</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
         </ul>
       </nav>
       <div class="header__actions">
-        <a href="contact.html" class="btn btn--ghost header__login">Sign In</a>
-        <a href="contact.html" class="btn btn--primary header__cta">Sign Up</a>
+        <a href="signin.html" class="btn btn--ghost header__login">Sign In</a>
+        <a href="signup.html" class="btn btn--primary header__cta">Sign Up</a>
         <button class="header__hamburger js-hamburger" aria-label="Toggle menu">
           <span class="header__hamburger-line"></span>
           <span class="header__hamburger-line"></span>
@@ -56,15 +56,18 @@
       <nav class="header__offcanvas-nav">
         <ul class="header__offcanvas-list">
           <li><a href="index.html" class="header__offcanvas-link">Home</a></li>
-          <li><a class="header__offcanvas-link">Services</a></li>
-          <li><a class="header__offcanvas-link">About</a></li>
-          <li><a class="header__offcanvas-link">Case Studies</a></li>
-          <li><a class="header__offcanvas-link">Blog</a></li>
-          <li><a class="header__offcanvas-link">Contact</a></li>
+          <li><a href="services.html" class="header__offcanvas-link">Services</a></li>
+          <li><a href="about.html" class="header__offcanvas-link">About</a></li>
+          <li><a href="case-studies.html" class="header__offcanvas-link is-active">Case Studies</a></li>
+          <li><a href="blog.html" class="header__offcanvas-link">Blog</a></li>
+          <li><a href="contact.html" class="header__offcanvas-link">Contact</a></li>
         </ul>
       </nav>
       <div class="header__offcanvas-actions">
-        <a href="contact.html" class="btn btn--primary header__offcanvas-cta">Get Started</a>
+        <div class="header__offcanvas-btn-group">
+          <a href="signin.html" class="btn btn--ghost header__offcanvas-btn">Sign In</a>
+          <a href="signup.html" class="btn btn--primary header__offcanvas-btn">Sign Up</a>
+        </div>
       </div>
     </div>
   </div>
@@ -72,218 +75,259 @@
 
   <main>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="container">
-        <span class="page-hero__label">Case Studies</span>
-        <h1 class="page-hero__title">Real campaigns. Real results.</h1>
-        <p class="page-hero__text">Explore how we've partnered with ambitious brands to solve complex challenges and deliver measurable growth across every channel.</p>
-      </div>
-    </section>
-
-    <!-- Portfolio Grid -->
-    <section class="casestudies-grid section reveal">
-      <div class="container">
-        <div class="casestudies-grid__filters">
-          <button class="casestudies-grid__filter is-active" data-filter="*">All</button>
-          <button class="casestudies-grid__filter" data-filter="saas">SaaS</button>
-          <button class="casestudies-grid__filter" data-filter="ecommerce">E-Commerce</button>
-          <button class="casestudies-grid__filter" data-filter="b2b">B2B</button>
-          <button class="casestudies-grid__filter" data-filter="branding">Branding</button>
-        </div>
-        <div class="casestudies-grid__items">
-          <article class="casestudies-grid__card" data-category="saas">
-            <div class="casestudies-grid__card-image">
-              <div class="casestudies-grid__card-placeholder"></div>
+    <!-- ============================================
+         SECTION 1 — HERO (Stat-driven dashboard)
+         ============================================ -->
+    <section class="case-hero js-hero">
+      <div class="case-hero__grid"></div>
+      <div class="case-hero__glow"></div>
+      <div class="container case-hero__inner">
+        <div class="case-hero__badge reveal">✦ Case Studies</div>
+        <h1 class="case-hero__title">
+          Results That Speak.<br>
+          <span class="case-hero__accent">Loudly.</span>
+        </h1>
+        <p class="case-hero__text">Real campaigns, real data, real growth — explore how we've transformed brands across every channel with measurable, scalable impact.</p>
+        <div class="case-hero__stats stagger-children">
+          <div class="case-hero__stat">
+            <div class="case-hero__stat-number">
+              <span class="case-hero__stat-value" data-count="500">0</span>
+              <span class="case-hero__stat-suffix">+</span>
             </div>
-            <div class="casestudies-grid__card-body">
-              <span class="tag">SaaS</span>
-              <h3 class="casestudies-grid__card-title">Apexion Technologies — 3x Pipeline Growth</h3>
-              <p class="casestudies-grid__card-text">Multi-channel demand generation campaign combining LinkedIn advertising, content marketing, and ABM that tripled qualified pipeline in 6 months.</p>
-              <div class="casestudies-grid__card-stats">
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">300%</span>
-                  <span class="casestudies-grid__card-stat-label">Pipeline Increase</span>
-                </div>
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">$4.5M</span>
-                  <span class="casestudies-grid__card-stat-label">Revenue Attributed</span>
-                </div>
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">6mo</span>
-                  <span class="casestudies-grid__card-stat-label">Timeline</span>
-                </div>
-              </div>
-              <a href="#" class="btn btn--outline btn--sm">Read Full Case Study</a>
+            <span class="case-hero__stat-label">Campaigns Delivered</span>
+          </div>
+          <div class="case-hero__stat">
+            <div class="case-hero__stat-number">
+              <span class="case-hero__stat-value" data-count="200">0</span>
+              <span class="case-hero__stat-suffix">M+</span>
             </div>
-          </article>
-          <article class="casestudies-grid__card" data-category="ecommerce">
-            <div class="casestudies-grid__card-image">
-              <div class="casestudies-grid__card-placeholder"></div>
+            <span class="case-hero__stat-label">Client Revenue Generated</span>
+          </div>
+          <div class="case-hero__stat">
+            <div class="case-hero__stat-number">
+              <span class="case-hero__stat-value" data-count="98">0</span>
+              <span class="case-hero__stat-suffix">%</span>
             </div>
-            <div class="casestudies-grid__card-body">
-              <span class="tag">E-Commerce</span>
-              <h3 class="casestudies-grid__card-title">Crestline — 4.2x ROAS</h3>
-              <p class="casestudies-grid__card-text">Full-funnel paid media strategy spanning Google Shopping, Meta, and TikTok that delivered 4.2x ROAS with 60% year-over-year revenue growth.</p>
-              <div class="casestudies-grid__card-stats">
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">4.2x</span>
-                  <span class="casestudies-grid__card-stat-label">ROAS</span>
-                </div>
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">60%</span>
-                  <span class="casestudies-grid__card-stat-label">Revenue Growth</span>
-                </div>
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">$8.2M</span>
-                  <span class="casestudies-grid__card-stat-label">Incremental Revenue</span>
-                </div>
-              </div>
-              <a href="#" class="btn btn--outline btn--sm">Read Full Case Study</a>
-            </div>
-          </article>
-          <article class="casestudies-grid__card" data-category="b2b">
-            <div class="casestudies-grid__card-image">
-              <div class="casestudies-grid__card-placeholder"></div>
-            </div>
-            <div class="casestudies-grid__card-body">
-              <span class="tag">B2B</span>
-              <h3 class="casestudies-grid__card-title">Nomadic Inc. — 180% Organic Traffic Surge</h3>
-              <p class="casestudies-grid__card-text">Comprehensive SEO and content strategy overhaul that doubled organic traffic, improved keyword rankings by 340%, and generated 500+ monthly leads.</p>
-              <div class="casestudies-grid__card-stats">
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">180%</span>
-                  <span class="casestudies-grid__card-stat-label">Traffic Increase</span>
-                </div>
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">340%</span>
-                  <span class="casestudies-grid__card-stat-label">Keyword Improvement</span>
-                </div>
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">500+</span>
-                  <span class="casestudies-grid__card-stat-label">Monthly Leads</span>
-                </div>
-              </div>
-              <a href="#" class="btn btn--outline btn--sm">Read Full Case Study</a>
-            </div>
-          </article>
-          <article class="casestudies-grid__card" data-category="branding">
-            <div class="casestudies-grid__card-image">
-              <div class="casestudies-grid__card-placeholder"></div>
-            </div>
-            <div class="casestudies-grid__card-body">
-              <span class="tag">Branding</span>
-              <h3 class="casestudies-grid__card-title">Everstone — Complete Brand Transformation</h3>
-              <p class="casestudies-grid__card-text">End-to-end brand strategy, visual identity, and website redesign that repositioned a legacy brand for the modern market — resulting in 45% increase in brand perception.</p>
-              <div class="casestudies-grid__card-stats">
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">45%</span>
-                  <span class="casestudies-grid__card-stat-label">Brand Lift</span>
-                </div>
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">72%</span>
-                  <span class="casestudies-grid__card-stat-label">Engagement Increase</span>
-                </div>
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">3x</span>
-                  <span class="casestudies-grid__card-stat-label">Site Traffic</span>
-                </div>
-              </div>
-              <a href="#" class="btn btn--outline btn--sm">Read Full Case Study</a>
-            </div>
-          </article>
-          <article class="casestudies-grid__card" data-category="saas">
-            <div class="casestudies-grid__card-image">
-              <div class="casestudies-grid__card-placeholder"></div>
-            </div>
-            <div class="casestudies-grid__card-body">
-              <span class="tag">SaaS</span>
-              <h3 class="casestudies-grid__card-title">Orbit AI — Product-Led Growth Launch</h3>
-              <p class="casestudies-grid__card-text">Go-to-market strategy combining content marketing, paid acquisition, and product-led growth tactics that drove 10,000+ sign-ups in the first quarter.</p>
-              <div class="casestudies-grid__card-stats">
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">10K+</span>
-                  <span class="casestudies-grid__card-stat-label">Sign-ups (Q1)</span>
-                </div>
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">$1.2M</span>
-                  <span class="casestudies-grid__card-stat-label">ARR Generated</span>
-                </div>
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">90 days</span>
-                  <span class="casestudies-grid__card-stat-label">Time to Market</span>
-                </div>
-              </div>
-              <a href="#" class="btn btn--outline btn--sm">Read Full Case Study</a>
-            </div>
-          </article>
-          <article class="casestudies-grid__card" data-category="ecommerce">
-            <div class="casestudies-grid__card-image">
-              <div class="casestudies-grid__card-placeholder"></div>
-            </div>
-            <div class="casestudies-grid__card-body">
-              <span class="tag">E-Commerce</span>
-              <h3 class="casestudies-grid__card-title">Sapphire Beauty — International Expansion</h3>
-              <p class="casestudies-grid__card-text">Cross-border marketing strategy including localization, international SEO, and market-specific paid campaigns that launched the brand in 12 new countries.</p>
-              <div class="casestudies-grid__card-stats">
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">12</span>
-                  <span class="casestudies-grid__card-stat-label">New Markets</span>
-                </div>
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">210%</span>
-                  <span class="casestudies-grid__card-stat-label">Revenue Growth</span>
-                </div>
-                <div class="casestudies-grid__card-stat">
-                  <span class="casestudies-grid__card-stat-value">8mo</span>
-                  <span class="casestudies-grid__card-stat-label">Timeline</span>
-                </div>
-              </div>
-              <a href="#" class="btn btn--outline btn--sm">Read Full Case Study</a>
-            </div>
-          </article>
+            <span class="case-hero__stat-label">Client Retention Rate</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Featured Case (Detailed) -->
-    <section class="featured-case section reveal">
+    <!-- ============================================
+         SECTION 2 — SHOWCASE (Filterable card grid)
+         ============================================ -->
+    <section class="case-showcase section">
       <div class="container">
-        <div class="featured-case__inner">
-          <span class="section__label">Featured Case</span>
-          <div class="featured-case__grid">
-            <div class="featured-case__content">
-              <span class="tag featured-case__tag">B2B SaaS</span>
-              <h2 class="featured-case__title">Apexion Technologies — 3x Pipeline Growth in 6 Months</h2>
-              <div class="featured-case__block">
-                <h4 class="featured-case__block-title">The Challenge</h4>
-                <p class="featured-case__block-text">Apexion had a world-class product but struggled to generate consistent qualified pipeline. Their existing marketing was fragmented across channels with no cohesive strategy or measurement framework.</p>
-              </div>
-              <div class="featured-case__block">
-                <h4 class="featured-case__block-title">The Solution</h4>
-                <p class="featured-case__block-text">We designed and executed a multi-channel demand generation engine — combining LinkedIn advertising, ABM, content marketing, and email nurture — all unified under a single measurement framework.</p>
-              </div>
-              <div class="featured-case__block">
-                <h4 class="featured-case__block-title">The Results</h4>
-                <p class="featured-case__block-text">300% increase in qualified pipeline, $4.5M in attributable revenue, and a scalable demand generation system that continues to deliver month over month.</p>
-              </div>
-              <a href="#" class="btn btn--primary">Read Full Case Study</a>
+        <div class="case-showcase__header stagger-children">
+          <span class="section__label">Our Work</span>
+          <h2 class="section__title">Featured Case Studies.</h2>
+        </div>
+        <div class="case-showcase__filters stagger-children">
+          <button class="case-showcase__filter is-active" data-filter="*">All</button>
+          <button class="case-showcase__filter" data-filter="saas">SaaS</button>
+          <button class="case-showcase__filter" data-filter="ecommerce">E-Commerce</button>
+          <button class="case-showcase__filter" data-filter="b2b">B2B</button>
+          <button class="case-showcase__filter" data-filter="branding">Branding</button>
+        </div>
+        <div class="case-showcase__grid stagger-children">
+          <article class="case-showcase__card js-tilt-card js-glow-card" data-category="saas">
+            <div class="case-showcase__card-image">
+              <img src="assets/images/case-1.webp" alt="Apexion Technologies dashboard" loading="lazy">
+              <span class="case-showcase__card-tag">SaaS</span>
             </div>
-            <div class="featured-case__visual">
-              <div class="featured-case__image-placeholder"></div>
-              <div class="featured-case__stats">
-                <div class="featured-case__stat">
-                  <span class="featured-case__stat-value">300%</span>
-                  <span class="featured-case__stat-label">Pipeline Growth</span>
+            <div class="case-showcase__card-body">
+              <h3 class="case-showcase__card-title">Apexion Technologies — 3x Pipeline Growth</h3>
+              <p class="case-showcase__card-text">Multi-channel demand generation campaign that tripled qualified pipeline in 6 months through LinkedIn advertising, content marketing, and ABM.</p>
+              <div class="case-showcase__card-stats">
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">300%</span>
+                  <span class="case-showcase__card-stat-label">Pipeline</span>
                 </div>
-                <div class="featured-case__stat">
-                  <span class="featured-case__stat-value">$4.5M</span>
-                  <span class="featured-case__stat-label">Revenue</span>
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">$4.5M</span>
+                  <span class="case-showcase__card-stat-label">Revenue</span>
                 </div>
-                <div class="featured-case__stat">
-                  <span class="featured-case__stat-value">6</span>
-                  <span class="featured-case__stat-label">Months</span>
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">6mo</span>
+                  <span class="case-showcase__card-stat-label">Timeline</span>
                 </div>
+              </div>
+              <a href="404.html" class="case-showcase__card-link">Read Case Study →</a>
+            </div>
+          </article>
+          <article class="case-showcase__card js-tilt-card js-glow-card" data-category="ecommerce">
+            <div class="case-showcase__card-image">
+              <img src="assets/images/case-2.webp" alt="Crestline e-commerce dashboard" loading="lazy">
+              <span class="case-showcase__card-tag">E-Commerce</span>
+            </div>
+            <div class="case-showcase__card-body">
+              <h3 class="case-showcase__card-title">Crestline — 4.2x ROAS</h3>
+              <p class="case-showcase__card-text">Full-funnel paid media strategy spanning Google Shopping, Meta, and TikTok that delivered 4.2x ROAS with 60% year-over-year revenue growth.</p>
+              <div class="case-showcase__card-stats">
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">4.2x</span>
+                  <span class="case-showcase__card-stat-label">ROAS</span>
+                </div>
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">60%</span>
+                  <span class="case-showcase__card-stat-label">Revenue</span>
+                </div>
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">$8.2M</span>
+                  <span class="case-showcase__card-stat-label">Incremental</span>
+                </div>
+              </div>
+              <a href="404.html" class="case-showcase__card-link">Read Case Study →</a>
+            </div>
+          </article>
+          <article class="case-showcase__card js-tilt-card js-glow-card" data-category="b2b">
+            <div class="case-showcase__card-image">
+              <img src="assets/images/case-3.webp" alt="Nomadic Inc. team" loading="lazy">
+              <span class="case-showcase__card-tag">B2B</span>
+            </div>
+            <div class="case-showcase__card-body">
+              <h3 class="case-showcase__card-title">Nomadic Inc. — 180% Organic Traffic Surge</h3>
+              <p class="case-showcase__card-text">Comprehensive SEO and content strategy overhaul that doubled organic traffic, improved keyword rankings by 340%, and generated 500+ monthly leads.</p>
+              <div class="case-showcase__card-stats">
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">180%</span>
+                  <span class="case-showcase__card-stat-label">Traffic</span>
+                </div>
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">340%</span>
+                  <span class="case-showcase__card-stat-label">Keywords</span>
+                </div>
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">500+</span>
+                  <span class="case-showcase__card-stat-label">Leads/mo</span>
+                </div>
+              </div>
+              <a href="404.html" class="case-showcase__card-link">Read Case Study →</a>
+            </div>
+          </article>
+          <article class="case-showcase__card js-tilt-card js-glow-card" data-category="branding">
+            <div class="case-showcase__card-image">
+              <img src="assets/images/case-4.webp" alt="Everstone brand transformation" loading="lazy">
+              <span class="case-showcase__card-tag">Branding</span>
+            </div>
+            <div class="case-showcase__card-body">
+              <h3 class="case-showcase__card-title">Everstone — Complete Brand Transformation</h3>
+              <p class="case-showcase__card-text">End-to-end brand strategy, visual identity, and website redesign that repositioned a legacy brand for the modern market with a 45% lift in brand perception.</p>
+              <div class="case-showcase__card-stats">
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">45%</span>
+                  <span class="case-showcase__card-stat-label">Brand Lift</span>
+                </div>
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">72%</span>
+                  <span class="case-showcase__card-stat-label">Engagement</span>
+                </div>
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">3x</span>
+                  <span class="case-showcase__card-stat-label">Traffic</span>
+                </div>
+              </div>
+              <a href="404.html" class="case-showcase__card-link">Read Case Study →</a>
+            </div>
+          </article>
+          <article class="case-showcase__card js-tilt-card js-glow-card" data-category="saas">
+            <div class="case-showcase__card-image">
+              <img src="assets/images/case-5.webp" alt="Orbit AI product launch" loading="lazy">
+              <span class="case-showcase__card-tag">SaaS</span>
+            </div>
+            <div class="case-showcase__card-body">
+              <h3 class="case-showcase__card-title">Orbit AI — Product-Led Growth Launch</h3>
+              <p class="case-showcase__card-text">Go-to-market strategy combining content marketing, paid acquisition, and product-led growth tactics that drove 10,000+ sign-ups in the first quarter.</p>
+              <div class="case-showcase__card-stats">
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">10K+</span>
+                  <span class="case-showcase__card-stat-label">Sign-ups</span>
+                </div>
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">$1.2M</span>
+                  <span class="case-showcase__card-stat-label">ARR</span>
+                </div>
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">90d</span>
+                  <span class="case-showcase__card-stat-label">To Market</span>
+                </div>
+              </div>
+              <a href="404.html" class="case-showcase__card-link">Read Case Study →</a>
+            </div>
+          </article>
+          <article class="case-showcase__card js-tilt-card js-glow-card" data-category="ecommerce">
+            <div class="case-showcase__card-image">
+              <img src="assets/images/case-6.webp" alt="Sapphire Beauty expansion" loading="lazy">
+              <span class="case-showcase__card-tag">E-Commerce</span>
+            </div>
+            <div class="case-showcase__card-body">
+              <h3 class="case-showcase__card-title">Sapphire Beauty — International Expansion</h3>
+              <p class="case-showcase__card-text">Cross-border marketing strategy including localization, international SEO, and market-specific paid campaigns that launched the brand in 12 new countries.</p>
+              <div class="case-showcase__card-stats">
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">12</span>
+                  <span class="case-showcase__card-stat-label">Markets</span>
+                </div>
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">210%</span>
+                  <span class="case-showcase__card-stat-label">Revenue</span>
+                </div>
+                <div class="case-showcase__card-stat">
+                  <span class="case-showcase__card-stat-value">8mo</span>
+                  <span class="case-showcase__card-stat-label">Timeline</span>
+                </div>
+              </div>
+              <a href="404.html" class="case-showcase__card-link">Read Case Study →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3 — FEATURED (Deep dive with overlay stats)
+         ============================================ -->
+    <section class="case-featured section reveal">
+      <div class="container">
+        <div class="case-featured__header stagger-children">
+          <span class="section__label">Spotlight Case</span>
+          <h2 class="section__title">The Deep Dive.</h2>
+        </div>
+        <div class="case-featured__inner">
+          <div class="case-featured__content">
+            <span class="tag case-featured__tag">B2B SaaS</span>
+            <h3 class="case-featured__title">Apexion Technologies — 3x Pipeline Growth in 6 Months</h3>
+            <div class="case-featured__blocks">
+              <div class="case-featured__block">
+                <h4 class="case-featured__block-title">The Challenge</h4>
+                <p class="case-featured__block-text">Apexion had a world-class product but struggled to generate consistent qualified pipeline. Their marketing was fragmented across channels with no cohesive strategy or measurement framework.</p>
+              </div>
+              <div class="case-featured__block">
+                <h4 class="case-featured__block-title">The Solution</h4>
+                <p class="case-featured__block-text">We designed a multi-channel demand generation engine — LinkedIn ads, ABM, content marketing, and email nurture — unified under a single measurement framework with weekly optimization.</p>
+              </div>
+              <div class="case-featured__block">
+                <h4 class="case-featured__block-title">The Results</h4>
+                <p class="case-featured__block-text">300% increase in qualified pipeline, $4.5M in attributable revenue, and a scalable demand generation system that continues to deliver compound growth month over month.</p>
+              </div>
+            </div>
+            <a href="404.html" class="btn btn--primary">Read Full Case Study</a>
+          </div>
+          <div class="case-featured__visual">
+            <img src="assets/images/case-featured.webp" alt="Apexion Technologies results dashboard" class="case-featured__image" loading="lazy">
+            <div class="case-featured__stat-overlay">
+              <div class="case-featured__stat-card">
+                <span class="case-featured__stat-value">300%</span>
+                <span class="case-featured__stat-label">Pipeline Growth</span>
+              </div>
+              <div class="case-featured__stat-card">
+                <span class="case-featured__stat-value">$4.5M</span>
+                <span class="case-featured__stat-label">Attributed Revenue</span>
+              </div>
+              <div class="case-featured__stat-card">
+                <span class="case-featured__stat-value">6</span>
+                <span class="case-featured__stat-label">Months</span>
               </div>
             </div>
           </div>
@@ -291,15 +335,49 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta section">
+    <!-- ============================================
+         SECTION 4 — METRICS (Aggregate impact)
+         ============================================ -->
+    <section class="case-metrics section reveal reveal--scale">
       <div class="container">
-        <div class="cta__inner">
-          <span class="section__label cta__label">Be Next</span>
+        <div class="case-metrics__inner">
+          <div class="case-metrics__header stagger-children">
+            <span class="section__label">By the Numbers</span>
+            <h2 class="section__title">Our Aggregate Impact.</h2>
+          </div>
+          <div class="case-metrics__grid stagger-children stagger--scale">
+            <div class="case-metrics__item">
+              <span class="case-metrics__number stats__number" data-count="500">0</span>
+              <span class="case-metrics__label">Campaigns Executed</span>
+            </div>
+            <div class="case-metrics__item">
+              <span class="case-metrics__number stats__number" data-count="340">0</span>
+              <span class="case-metrics__label">Avg. % Client ROI</span>
+            </div>
+            <div class="case-metrics__item">
+              <span class="case-metrics__number stats__number" data-count="50">0</span>
+              <span class="case-metrics__label">Industries Served</span>
+            </div>
+            <div class="case-metrics__item">
+              <span class="case-metrics__number stats__number" data-count="15">0</span>
+              <span class="case-metrics__label">Industry Awards</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 5 — CTA
+         ============================================ -->
+    <section class="case-cta section">
+      <div class="container">
+        <div class="case-cta__inner">
+          <span class="section__label">Be Next</span>
           <h2 class="cta__title">Ready to Write Your Success Story?</h2>
           <p class="cta__text">Let's build a campaign that delivers results you can measure and a partnership you can trust.</p>
           <div class="cta__actions">
-            <a href="contact.html" class="btn btn--primary btn--lg">Start Your Project</a>
+            <a href="404.html" class="btn btn--primary btn--lg js-magnetic">Start Your Project</a>
           </div>
         </div>
       </div>
@@ -314,39 +392,37 @@
           <a href="index.html" class="footer__logo"><span class="footer__logo-img" role="img" aria-label="Stackly Marketing"></span></a>
           <p class="footer__tagline">Data-driven strategy meets creative excellence. We help ambitious brands grow, engage, and dominate their markets with purpose-built digital marketing that delivers measurable results.</p>
           <div class="footer__social">
-            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
-            <a href="#" class="footer__social-link" aria-label="Twitter">X</a>
-            <a href="#" class="footer__social-link" aria-label="Instagram">IG</a>
-            <a href="#" class="footer__social-link" aria-label="Dribbble">Dr</a>
+            <a href="404.html" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="404.html" class="footer__social-link" aria-label="Twitter">X</a>
+            <a href="404.html" class="footer__social-link" aria-label="Instagram">IG</a>
+            <a href="404.html" class="footer__social-link" aria-label="Dribbble">Dr</a>
           </div>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Services</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">SEO & Organic Growth</span></li>
-            <li><span class="footer__col-link">Paid Advertising</span></li>
-            <li><span class="footer__col-link">Brand & Creative</span></li>
-            <li><span class="footer__col-link">Web & CRO</span></li>
-            <li><span class="footer__col-link">Social Media</span></li>
-            <li><span class="footer__col-link">AI Marketing</span></li>
+            <li><a href="404.html" class="footer__col-link">SEO & Organic Growth</a></li>
+            <li><a href="404.html" class="footer__col-link">Paid Advertising</a></li>
+            <li><a href="404.html" class="footer__col-link">Social Media</a></li>
+            <li><a href="404.html" class="footer__col-link">AI Marketing</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Company</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">About Us</span></li>
-            <li><span class="footer__col-link">Case Studies</span></li>
-            <li><span class="footer__col-link">Blog</span></li>
-            <li><span class="footer__col-link">Contact</span></li>
-            <li><span class="footer__col-link">Careers</span></li>
+            <li><a href="about.html" class="footer__col-link">About Us</a></li>
+            <li><a href="case-studies.html" class="footer__col-link">Case Studies</a></li>
+            <li><a href="blog.html" class="footer__col-link">Blog</a></li>
+            <li><a href="contact.html" class="footer__col-link">Contact</a></li>
+            <li><a href="contact.html" class="footer__col-link">Careers</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Contact</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">hello@stackly.com</span></li>
-            <li><span class="footer__col-link">+1 (234) 567-890</span></li>
-            <li class="footer__col-address">123 Madison Avenue<br>New York, NY 10016</li>
+            <li><a href="404.html" class="footer__col-link">info@stackly.com</a></li>
+            <li><a href="404.html" class="footer__col-link">+1 (234) 567-890</a></li>
+            <li class="footer__col-address">Stackly Marketing<br>Salem, Tamil Nadu, India</li>
           </ul>
         </div>
       </div>

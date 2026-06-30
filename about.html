@@ -27,16 +27,16 @@
       <nav class="header__nav js-nav">
         <ul class="header__nav-list">
           <li><a href="index.html" class="header__nav-link">Home</a></li>
-          <li><a class="header__nav-link">Services</a></li>
-          <li><a class="header__nav-link">About</a></li>
-          <li><a class="header__nav-link">Case Studies</a></li>
-          <li><a class="header__nav-link">Blog</a></li>
-          <li><a class="header__nav-link">Contact</a></li>
+          <li><a href="services.html" class="header__nav-link">Services</a></li>
+          <li><a href="about.html" class="header__nav-link is-active">About</a></li>
+          <li><a href="case-studies.html" class="header__nav-link">Case Studies</a></li>
+          <li><a href="blog.html" class="header__nav-link">Blog</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
         </ul>
       </nav>
       <div class="header__actions">
-        <a href="contact.html" class="btn btn--ghost header__login">Sign In</a>
-        <a href="contact.html" class="btn btn--primary header__cta">Sign Up</a>
+        <a href="signin.html" class="btn btn--ghost header__login">Sign In</a>
+        <a href="signup.html" class="btn btn--primary header__cta">Sign Up</a>
         <button class="header__hamburger js-hamburger" aria-label="Toggle menu">
           <span class="header__hamburger-line"></span>
           <span class="header__hamburger-line"></span>
@@ -46,7 +46,6 @@
     </div>
   </header>
 
-  <!-- Mobile Offcanvas -->
   <div class="header__offcanvas js-offcanvas">
     <div class="header__offcanvas-inner">
       <button class="header__offcanvas-close js-offcanvas-close" aria-label="Close menu">
@@ -56,15 +55,18 @@
       <nav class="header__offcanvas-nav">
         <ul class="header__offcanvas-list">
           <li><a href="index.html" class="header__offcanvas-link">Home</a></li>
-          <li><a class="header__offcanvas-link">Services</a></li>
-          <li><a class="header__offcanvas-link">About</a></li>
-          <li><a class="header__offcanvas-link">Case Studies</a></li>
-          <li><a class="header__offcanvas-link">Blog</a></li>
-          <li><a class="header__offcanvas-link">Contact</a></li>
+          <li><a href="services.html" class="header__offcanvas-link">Services</a></li>
+          <li><a href="about.html" class="header__offcanvas-link is-active">About</a></li>
+          <li><a href="case-studies.html" class="header__offcanvas-link">Case Studies</a></li>
+          <li><a href="blog.html" class="header__offcanvas-link">Blog</a></li>
+          <li><a href="contact.html" class="header__offcanvas-link">Contact</a></li>
         </ul>
       </nav>
       <div class="header__offcanvas-actions">
-        <a href="contact.html" class="btn btn--primary header__offcanvas-cta">Get Started</a>
+        <div class="header__offcanvas-btn-group">
+          <a href="signin.html" class="btn btn--ghost header__offcanvas-btn">Sign In</a>
+          <a href="signup.html" class="btn btn--primary header__offcanvas-btn">Sign Up</a>
+        </div>
       </div>
     </div>
   </div>
@@ -72,228 +74,360 @@
 
   <main>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="container">
-        <span class="page-hero__label">About Us</span>
-        <h1 class="page-hero__title">We're On a Mission to Redefine Digital Marketing.</h1>
-        <p class="page-hero__text">Founded on the belief that great marketing is a blend of art, science, and relentless execution. We exist to help ambitious brands find their voice and dominate their markets.</p>
+    <!-- ============================================
+         SECTION 1 — HERO (Full-bleed image)
+         ============================================ -->
+    <section class="about-hero js-hero">
+      <div class="about-hero__bg">
+        <img src="assets/images/about-hero.webp" alt="Stackly team collaborating" class="about-hero__bg-img" loading="lazy">
+      </div>
+      <div class="about-hero__overlay"></div>
+      <div class="about-hero__ring"></div>
+      <div class="about-hero__ring about-hero__ring--inner"></div>
+      <div class="container about-hero__inner">
+        <div class="about-hero__badge">
+          <span class="about-hero__badge-dot"></span>
+          Since 2018
+        </div>
+        <h1 class="about-hero__title">
+          We're on a Mission to<br>
+          <span class="about-hero__title-accent">Redefine Digital Marketing.</span>
+        </h1>
+        <p class="about-hero__text">Founded on the belief that great marketing is a blend of art, science, and relentless execution. We help ambitious brands find their voice and dominate their markets.</p>
+        <div class="about-hero__actions">
+          <a href="404.html" class="btn btn--primary btn--lg js-magnetic">Start Your Project</a>
+          <a href="404.html" class="btn btn--outline btn--lg js-magnetic">Our Story</a>
+        </div>
       </div>
     </section>
 
-    <!-- Story Section -->
-    <section class="story section reveal">
+    <!-- ============================================
+         SECTION 2 — STORY (Magazine spread with dropcap)
+         ============================================ -->
+    <section id="story" class="about-story section reveal">
       <div class="container">
-        <div class="story__grid">
-          <div class="story__content">
-            <span class="section__label">Our Story</span>
-            <h2 class="section__title story__title">From a Bold Idea to a Thriving Agency.</h2>
-            <p class="story__text">Stackly was born in 2018 when our founders recognized a gap in the market — agencies were either great at strategy but poor at execution, or creative but not data-driven. We set out to build something different: a full-service agency that combined rigorous analytical thinking with world-class creative output.</p>
-            <p class="story__text">What started as a two-person operation has grown into a team of 50+ strategists, creatives, engineers, and marketers serving clients across four continents. We've worked with startups ready to scale and established enterprises looking to reinvent their digital presence.</p>
-            <p class="story__text">Today, Stackly is recognized as one of the fastest-growing independent agencies, with a reputation for delivering campaigns that don't just look beautiful — they perform.</p>
+        <div class="about-story__grid">
+          <div class="about-story__content">
+            <div class="about-story__label">
+              <span class="about-story__label-line"></span>
+              Our Story
+            </div>
+            <h2 class="about-story__title">From a Bold Idea to a Thriving Agency.</h2>
+            <p class="about-story__text">
+              <span class="about-story__dropcap">S</span>tackly was born in 2018 when our founders recognized a gap in the market — agencies were either great at strategy but poor at execution, or creative but not data-driven. We set out to build something different: a full-service agency that combined rigorous analytical thinking with world-class creative output.
+            </p>
+            <p class="about-story__text">What started as a two-person operation has grown into a team of 50+ strategists, creatives, engineers, and marketers serving clients across four continents. We've worked with startups ready to scale and established enterprises looking to reinvent their digital presence.</p>
+            <p class="about-story__text">Today, Stackly is recognized as one of the fastest-growing independent agencies, with a reputation for delivering campaigns that don't just look beautiful — they perform.</p>
           </div>
-          <div class="story__visual">
-            <div class="story__image-placeholder"></div>
-            <div class="story__stat-card">
-              <span class="story__stat-number">$200M+</span>
-              <span class="story__stat-label">Client Revenue Generated</span>
+          <div class="about-story__image-wrap">
+            <img src="assets/images/about-story.webp" alt="Stackly team meeting" class="about-story__image" loading="lazy">
+            <div class="about-story__stat">
+              <span class="about-story__stat-value">$200M+</span>
+              <span class="about-story__stat-label">Client Revenue Generated</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Vision & Mission -->
-    <section class="vision section reveal">
+    <!-- ============================================
+         SECTION 3 — VISION & MISSION (Image bg cards)
+         ============================================ -->
+    <section class="about-vision section reveal">
       <div class="container">
-        <div class="vision__grid">
-          <div class="vision__card">
-            <span class="vision__card-icon">✦</span>
-            <h3 class="vision__card-title">Our Vision</h3>
-            <p class="vision__card-text">To be the most trusted growth partner for ambitious brands worldwide — setting the standard for what a modern digital agency can achieve.</p>
+        <div class="about-vision__header stagger-children">
+          <span class="section__label">Why We Exist</span>
+          <h2 class="section__title">Vision & Mission.</h2>
+        </div>
+        <div class="about-vision__grid stagger-children">
+          <div class="about-vision__card js-tilt-card js-glow-card reveal reveal--scale">
+            <div class="about-vision__card-bg">
+              <img src="assets/images/about-vision-bg.webp" alt="" class="about-vision__card-img" aria-hidden="true" loading="lazy">
+            </div>
+            <div class="about-vision__card-body">
+              <div class="about-vision__card-icon">✦</div>
+              <h3 class="about-vision__card-title">Our Vision</h3>
+              <p class="about-vision__card-text">To be the most trusted growth partner for ambitious brands worldwide — setting the standard for what a modern digital agency can achieve.</p>
+            </div>
           </div>
-          <div class="vision__card">
-            <span class="vision__card-icon">◆</span>
-            <h3 class="vision__card-title">Our Mission</h3>
-            <p class="vision__card-text">To empower brands with data-driven strategies, exceptional creative, and relentless execution — delivering measurable growth that transforms businesses.</p>
+          <div class="about-vision__card js-tilt-card js-glow-card reveal reveal--scale">
+            <div class="about-vision__card-bg">
+              <img src="assets/images/about-mission-bg.webp" alt="" class="about-vision__card-img" aria-hidden="true" loading="lazy">
+            </div>
+            <div class="about-vision__card-body">
+              <div class="about-vision__card-icon">◆</div>
+              <h3 class="about-vision__card-title">Our Mission</h3>
+              <p class="about-vision__card-text">To empower brands with data-driven strategies, exceptional creative, and relentless execution — delivering measurable growth that transforms businesses.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Values -->
-    <section class="values section reveal">
+    <!-- ============================================
+         SECTION 4 — VALUES (Numbered card grid)
+         ============================================ -->
+    <section class="about-values section reveal">
       <div class="container">
-        <div class="values__header">
+        <div class="about-values__header stagger-children">
           <span class="section__label">Our Values</span>
-          <h2 class="section__title values__title">Principles That Guide Everything We Do.</h2>
+          <h2 class="section__title">Principles That Guide Everything We Do.</h2>
         </div>
-        <div class="values__grid">
-          <div class="values__item">
-            <span class="values__item-number">01</span>
-            <h3 class="values__item-title">Radical Transparency</h3>
-            <p class="values__item-text">Honest communication, clear reporting, and open dialogue. No jargon, no hidden agendas — just the truth.</p>
+        <div class="about-values__grid stagger-children">
+          <div class="about-values__card reveal reveal--fade-up">
+            <div class="about-values__card-top">
+              <span class="about-values__card-icon">🎯</span>
+              <span class="about-values__card-number">01</span>
+            </div>
+            <h3 class="about-values__card-title">Radical Transparency</h3>
+            <p class="about-values__card-text">Honest communication, clear reporting, and open dialogue. No jargon, no hidden agendas — just the truth.</p>
           </div>
-          <div class="values__item">
-            <span class="values__item-number">02</span>
-            <h3 class="values__item-title">Obsession With Results</h3>
-            <p class="values__item-text">We measure everything. Every decision, every dollar, every campaign is evaluated through the lens of impact.</p>
+          <div class="about-values__card reveal reveal--fade-up">
+            <div class="about-values__card-top">
+              <span class="about-values__card-icon">📈</span>
+              <span class="about-values__card-number">02</span>
+            </div>
+            <h3 class="about-values__card-title">Obsession With Results</h3>
+            <p class="about-values__card-text">We measure everything. Every decision, every dollar, every campaign is evaluated through the lens of impact.</p>
           </div>
-          <div class="values__item">
-            <span class="values__item-number">03</span>
-            <h3 class="values__item-title">Creative Excellence</h3>
-            <p class="values__item-text">We reject mediocrity. Every piece of creative, every line of copy, every pixel must earn its place.</p>
+          <div class="about-values__card reveal reveal--fade-up">
+            <div class="about-values__card-top">
+              <span class="about-values__card-icon">✨</span>
+              <span class="about-values__card-number">03</span>
+            </div>
+            <h3 class="about-values__card-title">Creative Excellence</h3>
+            <p class="about-values__card-text">We reject mediocrity. Every piece of creative, every line of copy, every pixel must earn its place.</p>
           </div>
-          <div class="values__item">
-            <span class="values__item-number">04</span>
-            <h3 class="values__item-title">Continuous Evolution</h3>
-            <p class="values__item-text">The digital landscape never stops changing — and neither do we. We invest relentlessly in learning and innovation.</p>
+          <div class="about-values__card reveal reveal--fade-up">
+            <div class="about-values__card-top">
+              <span class="about-values__card-icon">🔄</span>
+              <span class="about-values__card-number">04</span>
+            </div>
+            <h3 class="about-values__card-title">Continuous Evolution</h3>
+            <p class="about-values__card-text">The digital landscape never stops changing — and neither do we. We invest relentlessly in learning and innovation.</p>
           </div>
-          <div class="values__item">
-            <span class="values__item-number">05</span>
-            <h3 class="values__item-title">Partnership First</h3>
-            <p class="values__item-text">We succeed when our clients succeed. Deep collaboration, shared goals, and genuine commitment define every relationship.</p>
+          <div class="about-values__card reveal reveal--fade-up">
+            <div class="about-values__card-top">
+              <span class="about-values__card-icon">🤝</span>
+              <span class="about-values__card-number">05</span>
+            </div>
+            <h3 class="about-values__card-title">Partnership First</h3>
+            <p class="about-values__card-text">We succeed when our clients succeed. Deep collaboration, shared goals, and genuine commitment define every relationship.</p>
           </div>
-          <div class="values__item">
-            <span class="values__item-number">06</span>
-            <h3 class="values__item-title">Diversity & Inclusion</h3>
-            <p class="values__item-text">Different perspectives drive better outcomes. We build diverse teams and foster a culture where everyone belongs.</p>
+          <div class="about-values__card reveal reveal--fade-up">
+            <div class="about-values__card-top">
+              <span class="about-values__card-icon">🌍</span>
+              <span class="about-values__card-number">06</span>
+            </div>
+            <h3 class="about-values__card-title">Diversity & Inclusion</h3>
+            <p class="about-values__card-text">Different perspectives drive better outcomes. We build diverse teams and foster a culture where everyone belongs.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team section reveal">
+    <!-- ============================================
+         SECTION 5 — TEAM (Profile cards with headshots)
+         ============================================ -->
+    <section class="about-team section reveal">
       <div class="container">
-        <div class="team__header">
+        <div class="about-team__header stagger-children">
           <span class="section__label">Leadership</span>
-          <h2 class="section__title team__title">Meet the People Behind the Work.</h2>
-          <p class="section__subtitle team__subtitle">A diverse team of strategists, creatives, and technologists united by a passion for building great brands.</p>
+          <h2 class="section__title">Meet the People Behind the Work.</h2>
+          <p class="section__subtitle">A diverse team of strategists, creatives, and technologists united by a passion for building great brands.</p>
         </div>
-        <div class="team__grid">
-          <article class="team__card">
-            <div class="team__card-avatar"></div>
-            <h3 class="team__card-name">David Chen</h3>
-            <span class="team__card-role">Founder & CEO</span>
-            <p class="team__card-bio">15+ years in digital marketing. Former VP at Omnicom. Passionate about building a different kind of agency.</p>
+        <div class="about-team__grid stagger-children">
+          <article class="about-team__card js-tilt-card reveal reveal--fade-up">
+            <img src="assets/images/team-1.webp" alt="David Chen" class="about-team__avatar" loading="lazy">
+            <h3 class="about-team__name">David Chen</h3>
+            <span class="about-team__role">Founder & CEO</span>
+            <p class="about-team__bio">15+ years in digital marketing. Former VP at Omnicom. Passionate about building a different kind of agency.</p>
+            <div class="about-team__social">
+              <a href="404.html" class="about-team__social-link" aria-label="LinkedIn">in</a>
+              <a href="404.html" class="about-team__social-link" aria-label="Twitter">X</a>
+            </div>
           </article>
-          <article class="team__card">
-            <div class="team__card-avatar"></div>
-            <h3 class="team__card-name">Amara Okafor</h3>
-            <span class="team__card-role">Chief Strategy Officer</span>
-            <p class="team__card-bio">Data-obsessed strategist who's led $50M+ in media spend for Fortune 500 brands and high-growth startups.</p>
+          <article class="about-team__card js-tilt-card reveal reveal--fade-up">
+            <img src="assets/images/team-2.webp" alt="Amara Okafor" class="about-team__avatar" loading="lazy">
+            <h3 class="about-team__name">Amara Okafor</h3>
+            <span class="about-team__role">Chief Strategy Officer</span>
+            <p class="about-team__bio">Data-obsessed strategist who's led $50M+ in media spend for Fortune 500 brands and high-growth startups.</p>
+            <div class="about-team__social">
+              <a href="404.html" class="about-team__social-link" aria-label="LinkedIn">in</a>
+              <a href="404.html" class="about-team__social-link" aria-label="Twitter">X</a>
+            </div>
           </article>
-          <article class="team__card">
-            <div class="team__card-avatar"></div>
-            <h3 class="team__card-name">James Whitfield</h3>
-            <span class="team__card-role">Creative Director</span>
-            <p class="team__card-bio">Award-winning creative with work featured in Communication Arts, Awwwards, and Cannes Lions.</p>
+          <article class="about-team__card js-tilt-card reveal reveal--fade-up">
+            <img src="assets/images/team-3.webp" alt="James Whitfield" class="about-team__avatar" loading="lazy">
+            <h3 class="about-team__name">James Whitfield</h3>
+            <span class="about-team__role">Creative Director</span>
+            <p class="about-team__bio">Award-winning creative with work featured in Communication Arts, Awwwards, and Cannes Lions.</p>
+            <div class="about-team__social">
+              <a href="404.html" class="about-team__social-link" aria-label="LinkedIn">in</a>
+              <a href="404.html" class="about-team__social-link" aria-label="Twitter">X</a>
+            </div>
           </article>
-          <article class="team__card">
-            <div class="team__card-avatar"></div>
-            <h3 class="team__card-name">Priya Sharma</h3>
-            <span class="team__card-role">VP of Client Success</span>
-            <p class="team__card-bio">Obsessed with client outcomes. Built account management frameworks that deliver 95%+ retention rates.</p>
+          <article class="about-team__card js-tilt-card reveal reveal--fade-up">
+            <img src="assets/images/team-4.webp" alt="Priya Sharma" class="about-team__avatar" loading="lazy">
+            <h3 class="about-team__name">Priya Sharma</h3>
+            <span class="about-team__role">VP of Client Success</span>
+            <p class="about-team__bio">Obsessed with client outcomes. Built account management frameworks that deliver 95%+ retention rates.</p>
+            <div class="about-team__social">
+              <a href="404.html" class="about-team__social-link" aria-label="LinkedIn">in</a>
+              <a href="404.html" class="about-team__social-link" aria-label="Twitter">X</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Timeline -->
-    <section class="timeline section reveal">
+    <!-- ============================================
+         SECTION 6 — TIMELINE (Horizontal scroll)
+         ============================================ -->
+    <section class="about-timeline section reveal">
       <div class="container">
-        <div class="timeline__header">
+        <div class="about-timeline__header stagger-children">
           <span class="section__label">Our Journey</span>
-          <h2 class="section__title timeline__title">Key Milestones.</h2>
+          <h2 class="section__title">Key Milestones.</h2>
         </div>
-        <div class="timeline__track">
-          <div class="timeline__item">
-            <span class="timeline__item-year">2018</span>
-            <h3 class="timeline__item-title">Founded in NYC</h3>
-            <p class="timeline__item-text">Stackly launched from a small studio in Manhattan with a team of two and a vision to rethink digital marketing.</p>
+        <div class="about-timeline__marquee">
+          <div class="about-timeline__marquee-track">
+            <span class="about-timeline__marquee-item">2018<span class="about-timeline__marquee-item-dot"></span></span>
+            <span class="about-timeline__marquee-item">2019<span class="about-timeline__marquee-item-dot"></span></span>
+            <span class="about-timeline__marquee-item">2020<span class="about-timeline__marquee-item-dot"></span></span>
+            <span class="about-timeline__marquee-item">2022<span class="about-timeline__marquee-item-dot"></span></span>
+            <span class="about-timeline__marquee-item">2024<span class="about-timeline__marquee-item-dot"></span></span>
+            <span class="about-timeline__marquee-item">2026<span class="about-timeline__marquee-item-dot"></span></span>
+            <span class="about-timeline__marquee-item">2018<span class="about-timeline__marquee-item-dot"></span></span>
+            <span class="about-timeline__marquee-item">2019<span class="about-timeline__marquee-item-dot"></span></span>
+            <span class="about-timeline__marquee-item">2020<span class="about-timeline__marquee-item-dot"></span></span>
+            <span class="about-timeline__marquee-item">2022<span class="about-timeline__marquee-item-dot"></span></span>
+            <span class="about-timeline__marquee-item">2024<span class="about-timeline__marquee-item-dot"></span></span>
+            <span class="about-timeline__marquee-item">2026<span class="about-timeline__marquee-item-dot"></span></span>
           </div>
-          <div class="timeline__item">
-            <span class="timeline__item-year">2019</span>
-            <h3 class="timeline__item-title">First Major Client</h3>
-            <p class="timeline__item-text">Secured our first enterprise client and delivered a campaign that generated $2M+ in attributable revenue.</p>
+        </div>
+        <div class="about-timeline__track stagger-children" id="timeline-track">
+          <div class="about-timeline__line">
+            <div class="about-timeline__line-progress" id="timeline-progress"></div>
           </div>
-          <div class="timeline__item">
-            <span class="timeline__item-year">2020</span>
-            <h3 class="timeline__item-title">Team Expansion</h3>
-            <p class="timeline__item-text">Grew to 15 team members despite global challenges. Launched remote-first operations and expanded service offerings.</p>
+          <div class="about-timeline__item reveal reveal--fade-up">
+            <span class="about-timeline__item-year">2018</span>
+            <div class="about-timeline__item-dot"></div>
+            <div class="about-timeline__item-card">
+              <h4 class="about-timeline__item-title">Founded in NYC</h4>
+              <p class="about-timeline__item-text">Launched from a small studio in Manhattan with a team of two and a vision to rethink digital marketing.</p>
+            </div>
           </div>
-          <div class="timeline__item">
-            <span class="timeline__item-year">2022</span>
-            <h3 class="timeline__item-title">Award Recognition</h3>
-            <p class="timeline__item-text">Named "Agency of the Year" at the Digital Marketing Awards. Surpassed $10M in annual client ad spend managed.</p>
+          <div class="about-timeline__item reveal reveal--fade-up">
+            <span class="about-timeline__item-year">2019</span>
+            <div class="about-timeline__item-dot"></div>
+            <div class="about-timeline__item-card">
+              <h4 class="about-timeline__item-title">First Major Client</h4>
+              <p class="about-timeline__item-text">Secured our first enterprise client and delivered a campaign that generated $2M+ in attributable revenue.</p>
+            </div>
           </div>
-          <div class="timeline__item">
-            <span class="timeline__item-year">2024</span>
-            <h3 class="timeline__item-title">Global Reach</h3>
-            <p class="timeline__item-text">Opened offices in London and Sydney. Team grew to 50+ serving clients across 4 continents.</p>
+          <div class="about-timeline__item reveal reveal--fade-up">
+            <span class="about-timeline__item-year">2020</span>
+            <div class="about-timeline__item-dot"></div>
+            <div class="about-timeline__item-card">
+              <h4 class="about-timeline__item-title">Team Expansion</h4>
+              <p class="about-timeline__item-text">Grew to 15 team members despite global challenges. Launched remote-first operations and expanded service offerings.</p>
+            </div>
           </div>
-          <div class="timeline__item">
-            <span class="timeline__item-year">2026</span>
-            <h3 class="timeline__item-title">AI Innovation</h3>
-            <p class="timeline__item-text">Launched proprietary AI marketing platform. Named to Inc. 5000 list of fastest-growing private companies.</p>
+          <div class="about-timeline__item reveal reveal--fade-up">
+            <span class="about-timeline__item-year">2022</span>
+            <div class="about-timeline__item-dot"></div>
+            <div class="about-timeline__item-card">
+              <h4 class="about-timeline__item-title">Award Recognition</h4>
+              <p class="about-timeline__item-text">Named "Agency of the Year" at the Digital Marketing Awards. Surpassed $10M in annual client ad spend managed.</p>
+            </div>
+          </div>
+          <div class="about-timeline__item reveal reveal--fade-up">
+            <span class="about-timeline__item-year">2024</span>
+            <div class="about-timeline__item-dot"></div>
+            <div class="about-timeline__item-card">
+              <h4 class="about-timeline__item-title">Global Reach</h4>
+              <p class="about-timeline__item-text">Opened offices in London and Sydney. Team grew to 50+ serving clients across 4 continents.</p>
+            </div>
+          </div>
+          <div class="about-timeline__item reveal reveal--fade-up">
+            <span class="about-timeline__item-year">2026</span>
+            <div class="about-timeline__item-dot"></div>
+            <div class="about-timeline__item-card">
+              <h4 class="about-timeline__item-title">AI Innovation</h4>
+              <p class="about-timeline__item-text">Launched proprietary AI marketing platform. Named to Inc. 5000 list of fastest-growing private companies.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Awards Section -->
-    <section class="awards section reveal">
+    <!-- ============================================
+         SECTION 7 — AWARDS + CTA
+         ============================================ -->
+    <section class="about-awards section reveal">
       <div class="container">
-        <div class="awards__header">
+        <div class="about-awards__header stagger-children">
           <span class="section__label">Recognition</span>
-          <h2 class="section__title awards__title">Awards & Accolades.</h2>
+          <h2 class="section__title">Awards & Accolades.</h2>
         </div>
-        <div class="awards__grid">
-          <div class="awards__item">
-            <span class="awards__item-icon">🏆</span>
-            <h3 class="awards__item-title">Agency of the Year</h3>
-            <span class="awards__item-org">Digital Marketing Awards 2022</span>
+        <div class="about-awards__grid stagger-children">
+          <div class="about-awards__card reveal reveal--fade-up">
+            <div class="about-awards__card-icon">🏆</div>
+            <h3 class="about-awards__card-title">Agency of the Year</h3>
+            <span class="about-awards__card-org">Digital Marketing Awards 2022</span>
+            <span class="about-awards__card-year">2022</span>
           </div>
-          <div class="awards__item">
-            <span class="awards__item-icon">🥇</span>
-            <h3 class="awards__item-title">Best SEO Campaign</h3>
-            <span class="awards__item-org">Search Engine Land Awards 2023</span>
+          <div class="about-awards__card reveal reveal--fade-up">
+            <div class="about-awards__card-icon">🥇</div>
+            <h3 class="about-awards__card-title">Best SEO Campaign</h3>
+            <span class="about-awards__card-org">Search Engine Land Awards 2023</span>
+            <span class="about-awards__card-year">2023</span>
           </div>
-          <div class="awards__item">
-            <span class="awards__item-icon">⭐</span>
-            <h3 class="awards__item-title">Top 10 B2B Agency</h3>
-            <span class="awards__item-org">Clutch Leaders 2024</span>
+          <div class="about-awards__card reveal reveal--fade-up">
+            <div class="about-awards__card-icon">⭐</div>
+            <h3 class="about-awards__card-title">Top 10 B2B Agency</h3>
+            <span class="about-awards__card-org">Clutch Leaders 2024</span>
+            <span class="about-awards__card-year">2024</span>
           </div>
-          <div class="awards__item">
-            <span class="awards__item-icon">🎯</span>
-            <h3 class="awards__item-title">Best Paid Media Strategy</h3>
-            <span class="awards__item-org">Global Marketing Awards 2024</span>
+          <div class="about-awards__card reveal reveal--fade-up">
+            <div class="about-awards__card-icon">🎯</div>
+            <h3 class="about-awards__card-title">Best Paid Media Strategy</h3>
+            <span class="about-awards__card-org">Global Marketing Awards 2024</span>
+            <span class="about-awards__card-year">2024</span>
           </div>
-          <div class="awards__item">
-            <span class="awards__item-icon">📈</span>
-            <h3 class="awards__item-title">Fastest Growing Agency</h3>
-            <span class="awards__item-org">Inc. 5000 2025–2026</span>
+          <div class="about-awards__card reveal reveal--fade-up">
+            <div class="about-awards__card-icon">📈</div>
+            <h3 class="about-awards__card-title">Fastest Growing Agency</h3>
+            <span class="about-awards__card-org">Inc. 5000 2025–2026</span>
+            <span class="about-awards__card-year">2025</span>
           </div>
-          <div class="awards__item">
-            <span class="awards__item-icon">✦</span>
-            <h3 class="awards__item-title">Webby Award Honoree</h3>
-            <span class="awards__item-org">Webby Awards 2025</span>
+          <div class="about-awards__card reveal reveal--fade-up">
+            <div class="about-awards__card-icon">✦</div>
+            <h3 class="about-awards__card-title">Webby Award Honoree</h3>
+            <span class="about-awards__card-org">Webby Awards 2025</span>
+            <span class="about-awards__card-year">2025</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="cta section">
+    <section class="about-cta section reveal">
       <div class="container">
-        <div class="cta__inner">
-          <span class="section__label cta__label">Join Us</span>
-          <h2 class="cta__title">Want to Be Part of Something Bigger?</h2>
-          <p class="cta__text">We're always looking for exceptional talent. If you're passionate about digital marketing and want to do the best work of your career, let's talk.</p>
-          <div class="cta__actions">
-            <a href="contact.html" class="btn btn--primary btn--lg">View Open Positions</a>
-            <a href="contact.html" class="btn btn--outline btn--lg">Get in Touch</a>
+        <div class="about-cta__inner">
+          <div class="about-cta__bg">
+            <img src="assets/images/about-hero.webp" alt="" class="about-cta__bg-img" loading="lazy" aria-hidden="true">
+          </div>
+          <div class="about-cta__overlay"></div>
+          <div class="about-cta__content stagger-children">
+            <span class="section__label">Join Us</span>
+            <h2 class="section__title">Want to Be Part of Something Bigger?</h2>
+            <p class="section__subtitle">We're always looking for exceptional talent. If you're passionate about digital marketing and want to do the best work of your career, let's talk.</p>
+            <div class="about-hero__actions">
+              <a href="404.html" class="btn btn--primary btn--lg js-magnetic">View Open Positions</a>
+              <a href="404.html" class="btn btn--outline btn--lg js-magnetic">Get in Touch</a>
+            </div>
           </div>
         </div>
       </div>
@@ -308,39 +442,37 @@
           <a href="index.html" class="footer__logo"><span class="footer__logo-img" role="img" aria-label="Stackly Marketing"></span></a>
           <p class="footer__tagline">Data-driven strategy meets creative excellence. We help ambitious brands grow, engage, and dominate their markets with purpose-built digital marketing that delivers measurable results.</p>
           <div class="footer__social">
-            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
-            <a href="#" class="footer__social-link" aria-label="Twitter">X</a>
-            <a href="#" class="footer__social-link" aria-label="Instagram">IG</a>
-            <a href="#" class="footer__social-link" aria-label="Dribbble">Dr</a>
+            <a href="404.html" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="404.html" class="footer__social-link" aria-label="Twitter">X</a>
+            <a href="404.html" class="footer__social-link" aria-label="Instagram">IG</a>
+            <a href="404.html" class="footer__social-link" aria-label="Dribbble">Dr</a>
           </div>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Services</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">SEO & Organic Growth</span></li>
-            <li><span class="footer__col-link">Paid Advertising</span></li>
-            <li><span class="footer__col-link">Brand & Creative</span></li>
-            <li><span class="footer__col-link">Web & CRO</span></li>
-            <li><span class="footer__col-link">Social Media</span></li>
-            <li><span class="footer__col-link">AI Marketing</span></li>
+            <li><a href="404.html" class="footer__col-link">SEO & Organic Growth</a></li>
+            <li><a href="404.html" class="footer__col-link">Paid Advertising</a></li>
+            <li><a href="404.html" class="footer__col-link">Social Media</a></li>
+            <li><a href="404.html" class="footer__col-link">AI Marketing</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Company</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">About Us</span></li>
-            <li><span class="footer__col-link">Case Studies</span></li>
-            <li><span class="footer__col-link">Blog</span></li>
-            <li><span class="footer__col-link">Contact</span></li>
-            <li><span class="footer__col-link">Careers</span></li>
+            <li><a href="about.html" class="footer__col-link">About Us</a></li>
+            <li><a href="case-studies.html" class="footer__col-link">Case Studies</a></li>
+            <li><a href="blog.html" class="footer__col-link">Blog</a></li>
+            <li><a href="contact.html" class="footer__col-link">Contact</a></li>
+            <li><a href="contact.html" class="footer__col-link">Careers</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Contact</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">hello@stackly.com</span></li>
-            <li><span class="footer__col-link">+1 (234) 567-890</span></li>
-            <li class="footer__col-address">123 Madison Avenue<br>New York, NY 10016</li>
+            <li><a href="404.html" class="footer__col-link">info@stackly.com</a></li>
+            <li><a href="404.html" class="footer__col-link">+1 (234) 567-890</a></li>
+            <li class="footer__col-address">Stackly Marketing<br>Salem, Tamil Nadu, India</li>
           </ul>
         </div>
       </div>

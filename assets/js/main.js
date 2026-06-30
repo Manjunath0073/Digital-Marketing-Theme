@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initCardTilt();
   initCardGlow();
   initScrollParallax();
+  initCaseFilter();
+  initBlogFilter();
+  initMapInteract();
+  initContactForm();
+  initBlogSubscribe();
 });
 
 function initHeader() {
@@ -117,7 +122,7 @@ function initStaggerObserver() {
 }
 
 function initCounterAnimation() {
-  const counters = document.querySelectorAll('.stats__number');
+  const counters = document.querySelectorAll('.stats__number, .services-stats__card-number');
   if (!counters.length) return;
 
   const observer = new IntersectionObserver(
@@ -175,14 +180,52 @@ function initSmoothScroll() {
           behavior: 'smooth',
           block: 'start',
         });
-      }
-    });
+    }
+  });
+  });
+}
+
+function initBlogSubscribe() {
+  const form = document.getElementById('blogSubscribeForm');
+  if (!form) return;
+
+  const input = document.getElementById('subscribeEmail');
+  const successMsg = document.getElementById('subscribeSuccess');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const email = input.value.trim();
+
+    if (!email) {
+      input.classList.remove('is-valid');
+      input.classList.add('is-invalid');
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      input.classList.remove('is-valid');
+      input.classList.add('is-invalid');
+      return;
+    }
+
+    input.classList.remove('is-invalid');
+    input.classList.add('is-valid');
+
+    if (successMsg) {
+      successMsg.style.display = 'block';
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+        input.value = '';
+        input.classList.remove('is-valid');
+      }, 3000);
+    }
   });
 }
 
 function initFaqAccordion() {
-  document.querySelectorAll('.faq__item').forEach((item) => {
-    const question = item.querySelector('.faq__question');
+  document.querySelectorAll('.faq__item, .services-faq__item').forEach((item) => {
+    const question = item.querySelector('.faq__question, .services-faq__question');
     if (!question) return;
 
     question.addEventListener('click', (e) => {
@@ -260,7 +303,7 @@ function initDashboardTilt() {
 }
 
 function initDashboardCounters() {
-  const counters = document.querySelectorAll('.hero__dashboard-stat-value[data-count]');
+  const counters = document.querySelectorAll('.hero__dashboard-stat-value[data-count], .case-hero__stat-value[data-count]');
   if (!counters.length) return;
 
   const observer = new IntersectionObserver(
@@ -310,26 +353,73 @@ function animateDashboardCounter(el, target, suffixEl) {
 }
 
 function initHeroTitleStagger() {
-  const title = document.querySelector('.hero__title');
+  const title = document.querySelector('.hero__title, .services-hero__title, .about-hero__title, .case-hero__title, .blog-hero__title, .contact-hero__title');
   if (!title || title.getAttribute('data-staggered')) return;
 
-  const text = title.textContent.trim();
-  const words = text.split(' ');
   title.setAttribute('data-staggered', 'true');
-  title.innerHTML = '';
 
-  words.forEach((word, i) => {
-    const span = document.createElement('span');
-    span.className = 'hero__title-word';
-    span.textContent = word;
-    span.style.transitionDelay = `${0.4 + i * 0.08}s`;
-    span.style.opacity = '0';
-    span.style.transform = 'translateY(24px)';
-    title.appendChild(span);
-    if (i < words.length - 1) {
-      title.appendChild(document.createTextNode(' '));
+  const frag = document.createDocumentFragment();
+  let wordIndex = 0;
+
+  function staggerText(text) {
+    const words = text.trim().split(/\s+/);
+    if (!words[0]) return;
+    words.forEach((word, i) => {
+      const span = document.createElement('span');
+      span.className = 'hero__title-word';
+      span.textContent = word;
+      span.style.transitionDelay = `${0.4 + wordIndex * 0.08}s`;
+      span.style.opacity = '0';
+      span.style.transform = 'translateY(24px)';
+      frag.appendChild(span);
+      if (i < words.length - 1) {
+        frag.appendChild(document.createTextNode(' '));
+      }
+      wordIndex++;
+    });
+  }
+
+  function processNode(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      staggerText(node.textContent);
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      if (node.tagName === 'BR') {
+        frag.appendChild(document.createElement('br'));
+      } else {
+        const clone = node.cloneNode();
+        clone.innerHTML = '';
+        for (const child of node.childNodes) {
+          if (child.nodeType === Node.TEXT_NODE) {
+            const words = child.textContent.trim().split(/\s+/);
+            if (!words[0]) continue;
+            words.forEach((word, i) => {
+              const span = document.createElement('span');
+              span.className = 'hero__title-word';
+              span.textContent = word;
+              span.style.transitionDelay = `${0.4 + wordIndex * 0.08}s`;
+              span.style.opacity = '0';
+              span.style.transform = 'translateY(24px)';
+              clone.appendChild(span);
+              if (i < words.length - 1) {
+                clone.appendChild(document.createTextNode(' '));
+              }
+              wordIndex++;
+            });
+          } else {
+            clone.appendChild(child.cloneNode(true));
+          }
+        }
+        frag.appendChild(clone);
+      }
     }
-  });
+  }
+
+  for (const child of title.childNodes) {
+    processNode(child);
+  }
+
+  title.innerHTML = '';
+  title.appendChild(frag);
 
   requestAnimationFrame(() => {
     title.querySelectorAll('.hero__title-word').forEach((span) => {
@@ -397,4 +487,199 @@ function initScrollParallax() {
       ticking = true;
     }
   }, { passive: true });
+}
+
+function initCaseFilter() {
+  const container = document.querySelector('.case-showcase__grid');
+  const filters = document.querySelectorAll('.case-showcase__filter');
+  if (!container || !filters.length) return;
+
+  filters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      filters.forEach((f) => f.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      Array.from(container.children).forEach((card) => {
+        if (filter === '*' || card.getAttribute('data-category') === filter) {
+          card.classList.remove('is-hidden');
+        } else {
+          card.classList.add('is-hidden');
+        }
+      });
+    });
+  });
+}
+
+function initBlogFilter() {
+  const container = document.querySelector('.blog-grid__items');
+  const filters = document.querySelectorAll('.blog-grid__category');
+  if (!container || !filters.length) return;
+
+  filters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      filters.forEach((f) => f.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      Array.from(container.children).forEach((card) => {
+        if (filter === '*' || card.getAttribute('data-category') === filter) {
+          card.classList.remove('is-hidden');
+        } else {
+          card.classList.add('is-hidden');
+        }
+      });
+    });
+  });
+}
+
+function initMapInteract() {
+  const overlay = document.querySelector('.js-map-overlay');
+  const iframe = document.querySelector('.js-map-iframe');
+  const btn = document.querySelector('.js-map-interact');
+  if (!overlay || !iframe || !btn) return;
+
+  btn.addEventListener('click', () => {
+    overlay.classList.add('is-hidden');
+    iframe.classList.add('is-active');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (iframe.classList.contains('is-active') && !overlay.contains(e.target) && !iframe.contains(e.target)) {
+      overlay.classList.remove('is-hidden');
+      iframe.classList.remove('is-active');
+    }
+  });
+}
+
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const serviceSelect = document.getElementById('service');
+  const budgetSelect = document.getElementById('budget');
+  const messageTextarea = document.getElementById('message');
+  const successMsg = document.getElementById('contactFormSuccess');
+
+  function setNameError(msg) {
+    let err = nameInput.parentElement.querySelector('.contact-form__field-error');
+    if (!err) return;
+    err.textContent = msg;
+    err.classList.toggle('is-visible', !!msg);
+  }
+
+  function setFieldValidity(el, valid) {
+    el.classList.toggle('is-valid', valid);
+    el.classList.toggle('is-invalid', !valid);
+  }
+
+  function createErrorEl(parent) {
+    if (parent.querySelector('.contact-form__field-error')) return;
+    const div = document.createElement('div');
+    div.className = 'contact-form__field-error';
+    parent.appendChild(div);
+  }
+
+  [nameInput, emailInput, serviceSelect, budgetSelect, messageTextarea].forEach(el => {
+    if (el) createErrorEl(el.parentElement);
+    if (el && el.id === 'name') {
+      el.addEventListener('input', () => {
+        el.value = el.value.replace(/[^A-Za-z\s]/g, '');
+      });
+    }
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+
+    const name = nameInput.value.trim();
+    if (!name) {
+      setFieldValidity(nameInput, false);
+      setNameError('Name is required');
+      valid = false;
+    } else if (!/^[A-Za-z\s]+$/.test(name)) {
+      setFieldValidity(nameInput, false);
+      setNameError('Name must contain only alphabets');
+      valid = false;
+    } else {
+      setFieldValidity(nameInput, true);
+      setNameError('');
+    }
+
+    const email = emailInput.value.trim();
+    if (!email) {
+      setFieldValidity(emailInput, false);
+      const err = emailInput.parentElement.querySelector('.contact-form__field-error');
+      if (err) { err.textContent = 'Email is required'; err.classList.add('is-visible'); }
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setFieldValidity(emailInput, false);
+      const err = emailInput.parentElement.querySelector('.contact-form__field-error');
+      if (err) { err.textContent = 'Enter a valid email address'; err.classList.add('is-visible'); }
+      valid = false;
+    } else {
+      setFieldValidity(emailInput, true);
+      const err = emailInput.parentElement.querySelector('.contact-form__field-error');
+      if (err) { err.textContent = ''; err.classList.remove('is-visible'); }
+    }
+
+    if (!serviceSelect.value) {
+      setFieldValidity(serviceSelect, false);
+      const err = serviceSelect.parentElement.querySelector('.contact-form__field-error');
+      if (err) { err.textContent = 'Please select a service'; err.classList.add('is-visible'); }
+      valid = false;
+    } else {
+      setFieldValidity(serviceSelect, true);
+      const err = serviceSelect.parentElement.querySelector('.contact-form__field-error');
+      if (err) { err.textContent = ''; err.classList.remove('is-visible'); }
+    }
+
+    if (!budgetSelect.value) {
+      setFieldValidity(budgetSelect, false);
+      const err = budgetSelect.parentElement.querySelector('.contact-form__field-error');
+      if (err) { err.textContent = 'Please select a budget range'; err.classList.add('is-visible'); }
+      valid = false;
+    } else {
+      setFieldValidity(budgetSelect, true);
+      const err = budgetSelect.parentElement.querySelector('.contact-form__field-error');
+      if (err) { err.textContent = ''; err.classList.remove('is-visible'); }
+    }
+
+    const msg = messageTextarea.value.trim();
+    if (!msg) {
+      setFieldValidity(messageTextarea, false);
+      const err = messageTextarea.parentElement.querySelector('.contact-form__field-error');
+      if (err) { err.textContent = 'Message is required'; err.classList.add('is-visible'); }
+      valid = false;
+    } else if (msg.length < 10) {
+      setFieldValidity(messageTextarea, false);
+      const err = messageTextarea.parentElement.querySelector('.contact-form__field-error');
+      if (err) { err.textContent = 'Message must be at least 10 characters'; err.classList.add('is-visible'); }
+      valid = false;
+    } else {
+      setFieldValidity(messageTextarea, true);
+      const err = messageTextarea.parentElement.querySelector('.contact-form__field-error');
+      if (err) { err.textContent = ''; err.classList.remove('is-visible'); }
+    }
+
+    if (valid && successMsg) {
+      successMsg.style.display = 'block';
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+        form.reset();
+        [nameInput, emailInput, serviceSelect, budgetSelect, messageTextarea].forEach(el => {
+          if (el) {
+            el.classList.remove('is-valid', 'is-invalid');
+            const err = el.parentElement.querySelector('.contact-form__field-error');
+            if (err) { err.textContent = ''; err.classList.remove('is-visible'); }
+          }
+        });
+      }, 3000);
+    }
+  });
 }

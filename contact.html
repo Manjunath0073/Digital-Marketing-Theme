@@ -27,16 +27,16 @@
       <nav class="header__nav js-nav">
         <ul class="header__nav-list">
           <li><a href="index.html" class="header__nav-link">Home</a></li>
-          <li><a class="header__nav-link">Services</a></li>
-          <li><a class="header__nav-link">About</a></li>
-          <li><a class="header__nav-link">Case Studies</a></li>
-          <li><a class="header__nav-link">Blog</a></li>
-          <li><a class="header__nav-link">Contact</a></li>
+          <li><a href="services.html" class="header__nav-link">Services</a></li>
+          <li><a href="about.html" class="header__nav-link">About</a></li>
+          <li><a href="case-studies.html" class="header__nav-link">Case Studies</a></li>
+          <li><a href="blog.html" class="header__nav-link">Blog</a></li>
+          <li><a href="contact.html" class="header__nav-link is-active">Contact</a></li>
         </ul>
       </nav>
       <div class="header__actions">
-        <a href="contact.html" class="btn btn--ghost header__login">Sign In</a>
-        <a href="contact.html" class="btn btn--primary header__cta">Sign Up</a>
+        <a href="signin.html" class="btn btn--ghost header__login">Sign In</a>
+        <a href="signup.html" class="btn btn--primary header__cta">Sign Up</a>
         <button class="header__hamburger js-hamburger" aria-label="Toggle menu">
           <span class="header__hamburger-line"></span>
           <span class="header__hamburger-line"></span>
@@ -56,15 +56,18 @@
       <nav class="header__offcanvas-nav">
         <ul class="header__offcanvas-list">
           <li><a href="index.html" class="header__offcanvas-link">Home</a></li>
-          <li><a class="header__offcanvas-link">Services</a></li>
-          <li><a class="header__offcanvas-link">About</a></li>
-          <li><a class="header__offcanvas-link">Case Studies</a></li>
-          <li><a class="header__offcanvas-link">Blog</a></li>
-          <li><a class="header__offcanvas-link">Contact</a></li>
+          <li><a href="services.html" class="header__offcanvas-link">Services</a></li>
+          <li><a href="about.html" class="header__offcanvas-link">About</a></li>
+          <li><a href="case-studies.html" class="header__offcanvas-link">Case Studies</a></li>
+          <li><a href="blog.html" class="header__offcanvas-link">Blog</a></li>
+          <li><a href="contact.html" class="header__offcanvas-link is-active">Contact</a></li>
         </ul>
       </nav>
       <div class="header__offcanvas-actions">
-        <a href="contact.html" class="btn btn--primary header__offcanvas-cta">Get Started</a>
+        <div class="header__offcanvas-btn-group">
+          <a href="signin.html" class="btn btn--ghost header__offcanvas-btn">Sign In</a>
+          <a href="signup.html" class="btn btn--primary header__offcanvas-btn">Sign Up</a>
+        </div>
       </div>
     </div>
   </div>
@@ -72,17 +75,52 @@
 
   <main>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="container">
-        <span class="page-hero__label">Get in Touch</span>
-        <h1 class="page-hero__title">Let's Build Something Extraordinary.</h1>
-        <p class="page-hero__text">Tell us about your goals, challenges, and vision — we'll design a partnership that drives measurable results.</p>
+    <!-- ============================================
+         SECTION 1 — HERO (Connection hub)
+         ============================================ -->
+    <section class="contact-hero js-hero">
+      <div class="contact-hero__bg">
+        <div class="contact-hero__dot contact-hero__dot--1"></div>
+        <div class="contact-hero__dot contact-hero__dot--2"></div>
+        <div class="contact-hero__dot contact-hero__dot--3"></div>
+        <div class="contact-hero__dot contact-hero__dot--4"></div>
+      </div>
+      <div class="contact-hero__lines"></div>
+      <div class="container contact-hero__inner">
+        <span class="contact-hero__badge">Get in Touch</span>
+        <h1 class="contact-hero__title">
+          Let's Build Something<br>
+          <span class="contact-hero__accent">Extraordinary.</span>
+        </h1>
+        <p class="contact-hero__text">Tell us about your goals, challenges, and vision — we'll design a partnership that drives measurable results.</p>
+        <div class="contact-hero__actions">
+          <a href="404.html" class="btn btn--primary btn--lg js-magnetic">Start Your Project</a>
+          <a href="404.html" class="btn btn--outline btn--lg js-magnetic">Visit Our Studio</a>
+        </div>
+        <div class="contact-hero__quick">
+          <div class="contact-hero__quick-item">
+            <div class="contact-hero__quick-icon">✉</div>
+            <span class="contact-hero__quick-label">Email</span>
+            <span class="contact-hero__quick-value">info@stackly.com</span>
+          </div>
+          <div class="contact-hero__quick-item">
+            <div class="contact-hero__quick-icon">☎</div>
+            <span class="contact-hero__quick-label">Phone</span>
+            <span class="contact-hero__quick-value">+1 (234) 567-890</span>
+          </div>
+          <div class="contact-hero__quick-item">
+            <div class="contact-hero__quick-icon">◈</div>
+            <span class="contact-hero__quick-label">Office</span>
+            <span class="contact-hero__quick-value">Stackly — Salem, India</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="contact-form section reveal">
+    <!-- ============================================
+         SECTION 2 — CONTACT FORM
+         ============================================ -->
+    <section id="form" class="contact-form section reveal">
       <div class="container">
         <div class="contact-form__grid">
           <div class="contact-form__info">
@@ -93,7 +131,7 @@
                 <span class="contact-form__detail-icon">✉</span>
                 <div>
                   <h4 class="contact-form__detail-label">Email</h4>
-                  <a href="mailto:hello@stackly.com" class="contact-form__detail-value">hello@stackly.com</a>
+                  <a href="mailto:info@stackly.com" class="contact-form__detail-value">info@stackly.com</a>
                 </div>
               </div>
               <div class="contact-form__detail">
@@ -107,12 +145,12 @@
                 <span class="contact-form__detail-icon">◈</span>
                 <div>
                   <h4 class="contact-form__detail-label">Office</h4>
-                  <span class="contact-form__detail-value">123 Madison Avenue<br>New York, NY 10016</span>
+                  <span class="contact-form__detail-value">Stackly Marketing<br>Salem, Tamil Nadu, India</span>
                 </div>
               </div>
             </div>
           </div>
-          <form class="contact-form__form">
+          <form class="contact-form__form" id="contactForm">
             <div class="contact-form__form-row">
               <div class="contact-form__field">
                 <label for="name" class="contact-form__label">Full Name</label>
@@ -129,12 +167,10 @@
             </div>
             <div class="contact-form__field">
               <label for="service" class="contact-form__label">Service Interest</label>
-              <select id="service" class="contact-form__select">
+              <select id="service" class="contact-form__select" required>
                 <option value="">Select a service</option>
                 <option value="seo">SEO & Organic Growth</option>
                 <option value="paid">Paid Advertising</option>
-                <option value="brand">Brand & Creative</option>
-                <option value="web">Web & CRO</option>
                 <option value="social">Social Media</option>
                 <option value="ai">AI Marketing</option>
                 <option value="other">Other</option>
@@ -142,7 +178,7 @@
             </div>
             <div class="contact-form__field">
               <label for="budget" class="contact-form__label">Monthly Budget</label>
-              <select id="budget" class="contact-form__select">
+              <select id="budget" class="contact-form__select" required>
                 <option value="">Select budget range</option>
                 <option value="3-5k">$3,000 – $5,000</option>
                 <option value="5-10k">$5,000 – $10,000</option>
@@ -153,18 +189,21 @@
             </div>
             <div class="contact-form__field">
               <label for="message" class="contact-form__label">Tell Us About Your Project</label>
-              <textarea id="message" class="contact-form__textarea" rows="5" placeholder="Describe your goals, challenges, and timeline..."></textarea>
+              <textarea id="message" class="contact-form__textarea" rows="5" placeholder="Describe your goals, challenges, and timeline..." required></textarea>
             </div>
             <button type="submit" class="btn btn--primary btn--lg contact-form__submit">Send Message</button>
+            <div id="contactFormSuccess" class="contact-form__success" style="display:none;">Message sent successfully! We'll be in touch within 24 hours.</div>
           </form>
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq section">
+    <!-- ============================================
+         SECTION 3 — FAQ
+         ============================================ -->
+    <section class="faq section contact-faq">
       <div class="container">
-        <div class="faq__header">
+        <div class="faq__header stagger-children">
           <span class="section__label">FAQ</span>
           <h2 class="section__title faq__title">Quick Answers.</h2>
         </div>
@@ -209,20 +248,45 @@
       </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="map section reveal">
+    <!-- ============================================
+         SECTION 4 — MAP (OSM with interact toggle)
+         ============================================ -->
+    <section id="map" class="contact-map section reveal">
       <div class="container">
-        <div class="map__inner">
-          <h2 class="map__title">Visit Our Studio.</h2>
-          <p class="map__text">We'd love to meet you in person. Our flagship office is located in the heart of Manhattan.</p>
-          <div class="map__container">
-            <div class="map__placeholder">
-              <span class="map__placeholder-text">Interactive Map</span>
-            </div>
+        <div class="contact-map__header stagger-children">
+          <span class="section__label">Our Studio</span>
+          <h2 class="section__title">Visit Stackly Salem.</h2>
+        </div>
+        <div class="contact-map__wrapper">
+          <div class="contact-map__overlay js-map-overlay">
+            <button class="contact-map__interact-btn js-map-interact">
+              <span class="contact-map__interact-btn-icon">↔</span>
+              Interact with Map
+            </button>
           </div>
+          <iframe class="contact-map__iframe js-map-iframe"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=78.0460%2C11.6143%2C78.2460%2C11.7143&layer=mapnik&marker=11.6643%2C78.1460"
+            loading="lazy"
+            title="Map of Stackly Salem office location">
+          </iframe>
         </div>
       </div>
     </section>
+
+    <!-- ============================================
+         SECTION 5 — CTA
+         ============================================ -->
+    <section class="contact-cta section">
+      <div class="container">
+        <div class="contact-cta__inner">
+          <span class="section__label">Be Next</span>
+          <h2 class="cta__title">Ready to Write Your Success Story?</h2>
+          <p class="cta__text">Let's build a campaign that delivers results you can measure and a partnership you can trust.</p>
+          <div class="cta__actions">
+            <a href="404.html" class="btn btn--primary btn--lg js-magnetic">Start Your Project</a>
+          </div>
+        </div>
+      </section>
 
   </main>
 
@@ -233,39 +297,37 @@
           <a href="index.html" class="footer__logo"><span class="footer__logo-img" role="img" aria-label="Stackly Marketing"></span></a>
           <p class="footer__tagline">Data-driven strategy meets creative excellence. We help ambitious brands grow, engage, and dominate their markets with purpose-built digital marketing that delivers measurable results.</p>
           <div class="footer__social">
-            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
-            <a href="#" class="footer__social-link" aria-label="Twitter">X</a>
-            <a href="#" class="footer__social-link" aria-label="Instagram">IG</a>
-            <a href="#" class="footer__social-link" aria-label="Dribbble">Dr</a>
+            <a href="404.html" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="404.html" class="footer__social-link" aria-label="Twitter">X</a>
+            <a href="404.html" class="footer__social-link" aria-label="Instagram">IG</a>
+            <a href="404.html" class="footer__social-link" aria-label="Dribbble">Dr</a>
           </div>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Services</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">SEO & Organic Growth</span></li>
-            <li><span class="footer__col-link">Paid Advertising</span></li>
-            <li><span class="footer__col-link">Brand & Creative</span></li>
-            <li><span class="footer__col-link">Web & CRO</span></li>
-            <li><span class="footer__col-link">Social Media</span></li>
-            <li><span class="footer__col-link">AI Marketing</span></li>
+            <li><a href="404.html" class="footer__col-link">SEO & Organic Growth</a></li>
+            <li><a href="404.html" class="footer__col-link">Paid Advertising</a></li>
+            <li><a href="404.html" class="footer__col-link">Social Media</a></li>
+            <li><a href="404.html" class="footer__col-link">AI Marketing</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Company</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">About Us</span></li>
-            <li><span class="footer__col-link">Case Studies</span></li>
-            <li><span class="footer__col-link">Blog</span></li>
-            <li><span class="footer__col-link">Contact</span></li>
-            <li><span class="footer__col-link">Careers</span></li>
+            <li><a href="about.html" class="footer__col-link">About Us</a></li>
+            <li><a href="case-studies.html" class="footer__col-link">Case Studies</a></li>
+            <li><a href="blog.html" class="footer__col-link">Blog</a></li>
+            <li><a href="contact.html" class="footer__col-link">Contact</a></li>
+            <li><a href="contact.html" class="footer__col-link">Careers</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Contact</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">hello@stackly.com</span></li>
-            <li><span class="footer__col-link">+1 (234) 567-890</span></li>
-            <li class="footer__col-address">123 Madison Avenue<br>New York, NY 10016</li>
+            <li><a href="404.html" class="footer__col-link">info@stackly.com</a></li>
+            <li><a href="404.html" class="footer__col-link">+1 (234) 567-890</a></li>
+            <li class="footer__col-address">Stackly Marketing<br>Salem, Tamil Nadu, India</li>
           </ul>
         </div>
       </div>

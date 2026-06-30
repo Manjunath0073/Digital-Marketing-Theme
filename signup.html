@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your Stackly Marketing account.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/signin-signup.css">
+
+  <title>Sign Up — Stackly Marketing</title>
+</head>
+<body>
+
+<main class="auth-page">
+  <div class="auth-page__grid">
+
+    <!-- ============================================
+         BRAND PANEL
+         ============================================ -->
+    <div class="auth-panel">
+      <div class="auth-panel__content">
+        <a href="index.html" class="auth-panel__logo">
+          <span class="auth-panel__logo-img" role="img" aria-label="Stackly Marketing"></span>
+        </a>
+
+        <p class="auth-panel__tagline">
+          Start Your<br>
+          <span class="auth-panel__tagline-accent">Journey.</span>
+        </p>
+        <p class="auth-panel__text">Join hundreds of brands that trust Stackly to drive measurable growth through data-driven marketing strategies.</p>
+      </div>
+
+      <div class="auth-panel__features">
+        <div class="auth-panel__feature">
+          <span class="auth-panel__feature-icon">&#9650;</span>
+          Dedicated account manager
+        </div>
+        <div class="auth-panel__feature">
+          <span class="auth-panel__feature-icon">&#9673;</span>
+          No long-term contracts — cancel anytime
+        </div>
+        <div class="auth-panel__feature">
+          <span class="auth-panel__feature-icon">&#9632;</span>
+          Free discovery consultation
+        </div>
+        <div class="auth-panel__feature">
+          <span class="auth-panel__feature-icon">&#9670;</span>
+          Multi-channel campaign management
+        </div>
+      </div>
+
+      <div class="auth-panel__trust js-trust-rotator">
+        <div class="auth-panel__trust-slide js-trust-slide is-active">
+          <div class="auth-panel__trust-text">"Stackly helped us achieve a 4x increase in qualified leads within the first quarter."</div>
+          <div class="auth-panel__trust-author">David Park, Growth Lead at Nebula</div>
+        </div>
+        <div class="auth-panel__trust-slide js-trust-slide">
+          <div class="auth-panel__trust-text">"Our ROI tripled in just 90 days. The data-driven approach completely transformed our campaign strategy."</div>
+          <div class="auth-panel__trust-author">Maria Chen, CMO at Brightline</div>
+        </div>
+        <div class="auth-panel__trust-slide js-trust-slide">
+          <div class="auth-panel__trust-text">"Stackly's team brought a level of strategic thinking that we hadn't seen from any other agency."</div>
+          <div class="auth-panel__trust-author">James Walker, Founder at Orbit Studio</div>
+        </div>
+        <div class="auth-panel__trust-slide js-trust-slide">
+          <div class="auth-panel__trust-text">"From zero to 50k monthly visitors in six months — Stackly exceeded every expectation we had."</div>
+          <div class="auth-panel__trust-author">Priya Sharma, Director at Lotus Media</div>
+        </div>
+        <div class="auth-panel__trust-dots js-trust-dots"></div>
+      </div>
+
+      <a href="index.html" class="auth-panel__back">
+        <span class="auth-panel__back-arrow">&larr;</span>
+        Back to home
+      </a>
+    </div>
+
+    <!-- ============================================
+         AUTH CARD
+         ============================================ -->
+    <div class="auth-card">
+      <div class="auth-card__inner">
+        <span class="auth-card__badge">Sign Up</span>
+        <h1 class="auth-card__title">Create Your Account.</h1>
+        <p class="auth-card__subtitle">Fill in your details below to get started. It takes less than a minute.</p>
+
+        <form class="auth-form js-auth-form" novalidate>
+          <div class="auth-form__message auth-form__message--error js-form-error"></div>
+
+          <div class="auth-form__field js-field">
+            <label class="auth-form__label" for="signup-name">
+              Full name
+              <span class="auth-form__label-error">Letters only</span>
+            </label>
+            <div class="auth-form__input-wrap">
+              <input type="text" class="auth-form__input" id="signup-name" placeholder="John Smith" required autocomplete="name">
+            </div>
+          </div>
+
+          <div class="auth-form__field js-field">
+            <label class="auth-form__label" for="signup-email">
+              Email
+              <span class="auth-form__label-error">Required</span>
+            </label>
+            <div class="auth-form__input-wrap">
+              <input type="email" class="auth-form__input" id="signup-email" placeholder="you@company.com" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="auth-form__field">
+            <label class="auth-form__label" for="signup-role">Account type</label>
+            <select class="auth-form__select" id="signup-role" required>
+              <option value="client">Client</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+
+          <div class="auth-form__field js-field">
+            <label class="auth-form__label" for="signup-password">
+              Password
+              <span class="auth-form__label-error">Required</span>
+            </label>
+            <div class="auth-form__input-wrap">
+              <input type="password" class="auth-form__input" id="signup-password" placeholder="Create a strong password" required minlength="8" autocomplete="new-password">
+              <button type="button" class="auth-form__toggle-btn js-password-toggle" aria-label="Toggle password visibility" tabindex="-1">&#128065;</button>
+            </div>
+            <div class="auth-password-strength js-strength">
+              <span class="auth-password-strength__bar" data-index="0"></span>
+              <span class="auth-password-strength__bar" data-index="1"></span>
+              <span class="auth-password-strength__bar" data-index="2"></span>
+              <span class="auth-password-strength__bar" data-index="3"></span>
+            </div>
+            <div class="auth-password-reqs">
+              <span class="auth-password-reqs__item" data-req="length">At least 8 characters</span>
+              <span class="auth-password-reqs__item" data-req="upper">One uppercase letter</span>
+              <span class="auth-password-reqs__item" data-req="lower">One lowercase letter</span>
+              <span class="auth-password-reqs__item" data-req="number">One number</span>
+              <span class="auth-password-reqs__item" data-req="special">One special character</span>
+            </div>
+          </div>
+
+          <div class="auth-form__field js-field">
+            <label class="auth-form__label" for="signup-confirm">
+              Confirm password
+              <span class="auth-form__label-error">Must match</span>
+            </label>
+            <div class="auth-form__input-wrap">
+              <input type="password" class="auth-form__input" id="signup-confirm" placeholder="Re-enter password" required autocomplete="new-password">
+            </div>
+          </div>
+
+          <div class="auth-form__checkbox-row">
+            <label class="auth-form__checkbox">
+              <input type="checkbox" id="signup-terms" required>
+              <span class="auth-form__check"></span>
+              I agree to the <a href="#" class="auth-form__link">Terms of Service</a> and <a href="#" class="auth-form__link">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg auth-form__submit">Create Account</button>
+
+          <p class="auth-form__footer">
+            Already have an account? <a href="signin.html">Sign in</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script>
+(function () {
+  /* ---------- DOM refs ---------- */
+  var form = document.querySelector('.js-auth-form');
+  var errorMsg = document.querySelector('.js-form-error');
+
+  var nameField = document.getElementById('signup-name');
+  var emailField = document.getElementById('signup-email');
+  var passwordField = document.getElementById('signup-password');
+  var confirmField = document.getElementById('signup-confirm');
+  var toggleBtns = form.querySelectorAll('.js-password-toggle');
+  var strengthBars = document.querySelectorAll('.js-strength .auth-password-strength__bar');
+  var reqItems = document.querySelectorAll('.auth-password-reqs__item');
+
+  /* ---------- Helpers ---------- */
+  function setValidity(field, valid) {
+    field.classList.toggle('is-valid', valid);
+    field.classList.toggle('is-invalid', !valid);
+  }
+
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validateName(name) {
+    return /^[A-Za-z\s]+$/.test(name);
+  }
+
+  function getPasswordScore(pw) {
+    var score = 0;
+    if (pw.length >= 8) score++;
+    if (/[A-Z]/.test(pw)) score++;
+    if (/[a-z]/.test(pw)) score++;
+    if (/[0-9]/.test(pw)) score++;
+    if (/[^A-Za-z0-9]/.test(pw)) score++;
+    return score;
+  }
+
+  function showError(msg) {
+    errorMsg.textContent = msg;
+    errorMsg.classList.remove('auth-form__message--success');
+    errorMsg.classList.add('auth-form__message--error', 'is-visible');
+  }
+
+  function clearError() {
+    errorMsg.textContent = '';
+    errorMsg.classList.remove('is-visible');
+  }
+
+  /* ---------- Password toggle ---------- */
+  toggleBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var input = btn.parentElement.querySelector('input');
+      var isPassword = input.getAttribute('type') === 'password';
+      input.setAttribute('type', isPassword ? 'text' : 'password');
+      btn.textContent = isPassword ? '\u2713' : '\u{1F441}';
+    });
+  });
+
+  /* ---------- Password strength and requirements ---------- */
+  function updatePasswordFeedback(pw) {
+    var score = getPasswordScore(pw);
+
+    strengthBars.forEach(function (bar, i) {
+      bar.className = 'auth-password-strength__bar';
+      if (i < score) {
+        if (score <= 2) bar.classList.add('is-weak');
+        else if (score <= 3) bar.classList.add('is-medium');
+        else bar.classList.add('is-strong');
+      }
+    });
+
+    reqItems.forEach(function (item) {
+      var req = item.getAttribute('data-req');
+      var met = false;
+      switch (req) {
+        case 'length': met = pw.length >= 8; break;
+        case 'upper': met = /[A-Z]/.test(pw); break;
+        case 'lower': met = /[a-z]/.test(pw); break;
+        case 'number': met = /[0-9]/.test(pw); break;
+        case 'special': met = /[^A-Za-z0-9]/.test(pw); break;
+      }
+      item.classList.toggle('is-met', met);
+    });
+  }
+
+  passwordField.addEventListener('input', function () {
+    updatePasswordFeedback(passwordField.value);
+  });
+
+  /* ---------- Live validation on blur ---------- */
+  nameField.addEventListener('blur', function () {
+    var v = nameField.value.trim();
+    if (!v) { setValidity(nameField.closest('.js-field'), false); return; }
+    setValidity(nameField.closest('.js-field'), validateName(v));
+  });
+
+  emailField.addEventListener('blur', function () {
+    var v = emailField.value.trim();
+    if (!v) { setValidity(emailField.closest('.js-field'), false); return; }
+    setValidity(emailField.closest('.js-field'), validateEmail(v));
+  });
+
+  passwordField.addEventListener('blur', function () {
+    var v = passwordField.value;
+    if (!v) { setValidity(passwordField.closest('.js-field'), false); return; }
+    setValidity(passwordField.closest('.js-field'), v.length >= 8);
+  });
+
+  confirmField.addEventListener('blur', function () {
+    var v = confirmField.value;
+    if (!v) { setValidity(confirmField.closest('.js-field'), false); return; }
+    setValidity(confirmField.closest('.js-field'), v === passwordField.value && v.length >= 8);
+  });
+
+  confirmField.addEventListener('input', function () {
+    if (confirmField.value.length > 0) {
+      setValidity(confirmField.closest('.js-field'), confirmField.value === passwordField.value && confirmField.value.length >= 8);
+    }
+  });
+
+  /* ---------- Terms toggle ---------- */
+  var termsCheck = document.getElementById('signup-terms');
+
+  termsCheck.addEventListener('change', function () {
+    termsCheck.closest('.auth-form__checkbox').classList.toggle('is-error', !termsCheck.checked);
+  });
+
+  /* ---------- Form submit ---------- */
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearError();
+
+    var name = nameField.value.trim();
+    var email = emailField.value.trim();
+    var password = passwordField.value;
+    var confirm = confirmField.value;
+    var isValid = true;
+
+    if (!name) {
+      setValidity(nameField.closest('.js-field'), false);
+      isValid = false;
+    } else if (!validateName(name)) {
+      setValidity(nameField.closest('.js-field'), false);
+      isValid = false;
+    } else {
+      setValidity(nameField.closest('.js-field'), true);
+    }
+
+    if (!email) {
+      setValidity(emailField.closest('.js-field'), false);
+      isValid = false;
+    } else if (!validateEmail(email)) {
+      setValidity(emailField.closest('.js-field'), false);
+      isValid = false;
+    } else {
+      setValidity(emailField.closest('.js-field'), true);
+    }
+
+    if (!password) {
+      setValidity(passwordField.closest('.js-field'), false);
+      isValid = false;
+    } else if (password.length < 8) {
+      setValidity(passwordField.closest('.js-field'), false);
+      isValid = false;
+    } else {
+      setValidity(passwordField.closest('.js-field'), true);
+    }
+
+    if (!confirm) {
+      setValidity(confirmField.closest('.js-field'), false);
+      isValid = false;
+    } else if (confirm !== password) {
+      setValidity(confirmField.closest('.js-field'), false);
+      isValid = false;
+    } else {
+      setValidity(confirmField.closest('.js-field'), true);
+    }
+
+    if (!termsCheck.checked) {
+      termsCheck.closest('.auth-form__checkbox').classList.add('is-error');
+      isValid = false;
+    }
+
+    if (!isValid) {
+      showError('Please fix the highlighted fields before continuing.');
+      return;
+    }
+
+    errorMsg.textContent = 'Account created \u2014 redirecting to dashboard...';
+    errorMsg.classList.remove('auth-form__message--error');
+    errorMsg.classList.add('auth-form__message--success', 'is-visible');
+  });
+
+  /* ---------- Trust rotator ---------- */
+  (function () {
+    var slides = document.querySelectorAll('.js-trust-slide');
+    var dotsContainer = document.querySelector('.js-trust-dots');
+    if (!slides.length || !dotsContainer) return;
+
+    var current = 0;
+    var total = slides.length;
+    var dots = [];
+
+    for (var i = 0; i < total; i++) {
+      var dot = document.createElement('span');
+      dot.className = 'auth-panel__trust-dot' + (i === 0 ? ' is-active' : '');
+      dot.addEventListener('click', (function (idx) {
+        return function () { goTo(idx); };
+      })(i));
+      dotsContainer.appendChild(dot);
+      dots.push(dot);
+    }
+
+    function goTo(idx) {
+      slides[current].classList.remove('is-active');
+      dots[current].classList.remove('is-active');
+      current = idx;
+      slides[current].classList.add('is-active');
+      dots[current].classList.add('is-active');
+    }
+
+    setInterval(function () {
+      goTo((current + 1) % total);
+    }, 3000);
+  })();
+})();
+</script>
+</body>
+</html>

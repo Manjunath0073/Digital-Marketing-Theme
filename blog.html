@@ -27,16 +27,16 @@
       <nav class="header__nav js-nav">
         <ul class="header__nav-list">
           <li><a href="index.html" class="header__nav-link">Home</a></li>
-          <li><a class="header__nav-link">Services</a></li>
-          <li><a class="header__nav-link">About</a></li>
-          <li><a class="header__nav-link">Case Studies</a></li>
-          <li><a class="header__nav-link">Blog</a></li>
-          <li><a class="header__nav-link">Contact</a></li>
+          <li><a href="services.html" class="header__nav-link">Services</a></li>
+          <li><a href="about.html" class="header__nav-link">About</a></li>
+          <li><a href="case-studies.html" class="header__nav-link">Case Studies</a></li>
+          <li><a href="blog.html" class="header__nav-link is-active">Blog</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
         </ul>
       </nav>
       <div class="header__actions">
-        <a href="contact.html" class="btn btn--ghost header__login">Sign In</a>
-        <a href="contact.html" class="btn btn--primary header__cta">Sign Up</a>
+        <a href="signin.html" class="btn btn--ghost header__login">Sign In</a>
+        <a href="signup.html" class="btn btn--primary header__cta">Sign Up</a>
         <button class="header__hamburger js-hamburger" aria-label="Toggle menu">
           <span class="header__hamburger-line"></span>
           <span class="header__hamburger-line"></span>
@@ -56,15 +56,18 @@
       <nav class="header__offcanvas-nav">
         <ul class="header__offcanvas-list">
           <li><a href="index.html" class="header__offcanvas-link">Home</a></li>
-          <li><a class="header__offcanvas-link">Services</a></li>
-          <li><a class="header__offcanvas-link">About</a></li>
-          <li><a class="header__offcanvas-link">Case Studies</a></li>
-          <li><a class="header__offcanvas-link">Blog</a></li>
-          <li><a class="header__offcanvas-link">Contact</a></li>
+          <li><a href="services.html" class="header__offcanvas-link">Services</a></li>
+          <li><a href="about.html" class="header__offcanvas-link">About</a></li>
+          <li><a href="case-studies.html" class="header__offcanvas-link">Case Studies</a></li>
+          <li><a href="blog.html" class="header__offcanvas-link is-active">Blog</a></li>
+          <li><a href="contact.html" class="header__offcanvas-link">Contact</a></li>
         </ul>
       </nav>
       <div class="header__offcanvas-actions">
-        <a href="contact.html" class="btn btn--primary header__offcanvas-cta">Get Started</a>
+        <div class="header__offcanvas-btn-group">
+          <a href="signin.html" class="btn btn--ghost header__offcanvas-btn">Sign In</a>
+          <a href="signup.html" class="btn btn--primary header__offcanvas-btn">Sign Up</a>
+        </div>
       </div>
     </div>
   </div>
@@ -72,62 +75,62 @@
 
   <main>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
+    <!-- ============================================
+         SECTION 1 — HERO (Editorial newsroom w/ featured card)
+         ============================================ -->
+    <section class="blog-hero js-hero">
+      <div class="blog-hero__bg"></div>
+      <div class="blog-hero__lines"></div>
       <div class="container">
-        <span class="page-hero__label">Our Blog</span>
-        <h1 class="page-hero__title">Insights for Modern Marketers.</h1>
-        <p class="page-hero__text">Expert perspectives on digital strategy, growth tactics, industry trends, and behind-the-scenes looks at how we build brands.</p>
-      </div>
-    </section>
-
-    <!-- Featured Article -->
-    <section class="featured-post section reveal">
-      <div class="container">
-        <article class="featured-post__card">
-          <div class="featured-post__image">
-            <div class="featured-post__image-placeholder"></div>
+        <div class="blog-hero__inner">
+          <div class="blog-hero__content">
+            <span class="blog-hero__badge">Our Blog</span>
+            <h1 class="blog-hero__title">
+              Stories, Strategies &<br>
+              <span class="blog-hero__accent">Insights.</span>
+            </h1>
+            <p class="blog-hero__text">Expert perspectives on digital strategy, growth tactics, and industry trends from practitioners who build campaigns daily.</p>
           </div>
-          <div class="featured-post__body">
-            <div class="featured-post__meta">
-              <span class="tag">Strategy</span>
-              <span class="featured-post__date">June 24, 2026</span>
-              <span class="featured-post__read-time">8 min read</span>
+          <article class="blog-hero__featured">
+            <div class="blog-hero__featured-image">
+              <img src="assets/images/blog-featured.webp" alt="Featured article" loading="lazy">
             </div>
-            <h2 class="featured-post__title">The Future of AI in Digital Marketing: What's Working in 2026</h2>
-            <p class="featured-post__excerpt">From predictive analytics to AI-powered creative optimization — we break down the practical applications of artificial intelligence that are delivering real results for marketers today.</p>
-            <div class="featured-post__author">
-              <div class="featured-post__author-avatar"></div>
-              <div class="featured-post__author-info">
-                <span class="featured-post__author-name">Amara Okafor</span>
-                <span class="featured-post__author-role">Chief Strategy Officer</span>
+            <div class="blog-hero__featured-body">
+              <span class="tag blog-hero__featured-tag">Strategy</span>
+              <h3 class="blog-hero__featured-title">The Future of AI in Digital Marketing: What's Working in 2026</h3>
+              <div class="blog-hero__featured-meta">
+                <span>June 24, 2026</span>
+                <span>·</span>
+                <span>8 min read</span>
               </div>
+              <a href="404.html" class="blog-hero__featured-link">Read Article →</a>
             </div>
-            <a href="#" class="btn btn--outline featured-post__link">Read Article</a>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- Blog Grid -->
-    <section class="blog-grid section reveal">
+    <!-- ============================================
+         SECTION 2 — BLOG GRID
+         ============================================ -->
+    <section class="blog-grid section">
       <div class="container">
-        <div class="blog-grid__header">
+        <div class="blog-grid__header stagger-children">
           <span class="section__label">Latest Articles</span>
-          <h2 class="section__title blog-grid__title">More from the Blog.</h2>
+          <h2 class="section__title">More from the Blog.</h2>
         </div>
         <div class="blog-grid__categories">
-          <button class="blog-grid__category is-active">All</button>
-          <button class="blog-grid__category">SEO</button>
-          <button class="blog-grid__category">Paid Media</button>
-          <button class="blog-grid__category">Branding</button>
-          <button class="blog-grid__category">Strategy</button>
-          <button class="blog-grid__category">AI</button>
+          <button class="blog-grid__category is-active" data-filter="*">All</button>
+          <button class="blog-grid__category" data-filter="seo">SEO</button>
+          <button class="blog-grid__category" data-filter="paid">Paid Media</button>
+          <button class="blog-grid__category" data-filter="branding">Branding</button>
+          <button class="blog-grid__category" data-filter="strategy">Strategy</button>
+          <button class="blog-grid__category" data-filter="ai">AI</button>
         </div>
         <div class="blog-grid__items">
-          <article class="blog-grid__card">
+          <article class="blog-grid__card" data-category="seo">
             <div class="blog-grid__card-image">
-              <div class="blog-grid__card-placeholder"></div>
+              <img src="assets/images/blog-1.webp" alt="Content strategy" loading="lazy">
             </div>
             <div class="blog-grid__card-body">
               <div class="blog-grid__card-meta">
@@ -136,12 +139,12 @@
               </div>
               <h3 class="blog-grid__card-title">How to Build a Content Strategy That Actually Drives Traffic</h3>
               <p class="blog-grid__card-text">A step-by-step framework for creating content that ranks, resonates, and converts — backed by real data from our campaigns.</p>
-              <a href="#" class="blog-grid__card-link">Read More <span>→</span></a>
+              <a href="404.html" class="blog-grid__card-link">Read More <span>→</span></a>
             </div>
           </article>
-          <article class="blog-grid__card">
+          <article class="blog-grid__card" data-category="paid">
             <div class="blog-grid__card-image">
-              <div class="blog-grid__card-placeholder"></div>
+              <img src="assets/images/blog-2.webp" alt="Google Ads" loading="lazy">
             </div>
             <div class="blog-grid__card-body">
               <div class="blog-grid__card-meta">
@@ -150,12 +153,12 @@
               </div>
               <h3 class="blog-grid__card-title">Google Ads in 2026: What Changed and How to Adapt</h3>
               <p class="blog-grid__card-text">Major updates to Google's advertising platform are reshaping how smart marketers allocate their budgets. Here's what you need to know.</p>
-              <a href="#" class="blog-grid__card-link">Read More <span>→</span></a>
+              <a href="404.html" class="blog-grid__card-link">Read More <span>→</span></a>
             </div>
           </article>
-          <article class="blog-grid__card">
+          <article class="blog-grid__card" data-category="branding">
             <div class="blog-grid__card-image">
-              <div class="blog-grid__card-placeholder"></div>
+              <img src="assets/images/blog-3.webp" alt="Brand strategy" loading="lazy">
             </div>
             <div class="blog-grid__card-body">
               <div class="blog-grid__card-meta">
@@ -164,12 +167,12 @@
               </div>
               <h3 class="blog-grid__card-title">Why Brand Strategy Matters More Than Ever in 2026</h3>
               <p class="blog-grid__card-text">In an era of AI-generated content and noise, a strong brand is your most valuable competitive advantage. Here's how to build one.</p>
-              <a href="#" class="blog-grid__card-link">Read More <span>→</span></a>
+              <a href="404.html" class="blog-grid__card-link">Read More <span>→</span></a>
             </div>
           </article>
-          <article class="blog-grid__card">
+          <article class="blog-grid__card" data-category="strategy">
             <div class="blog-grid__card-image">
-              <div class="blog-grid__card-placeholder"></div>
+              <img src="assets/images/blog-4.webp" alt="Marketing funnel" loading="lazy">
             </div>
             <div class="blog-grid__card-body">
               <div class="blog-grid__card-meta">
@@ -178,12 +181,12 @@
               </div>
               <h3 class="blog-grid__card-title">The Modern Marketing Funnel: A Complete Guide</h3>
               <p class="blog-grid__card-text">Forget everything you know about traditional funnels. Today's customer journey is nonlinear — and your strategy needs to reflect that.</p>
-              <a href="#" class="blog-grid__card-link">Read More <span>→</span></a>
+              <a href="404.html" class="blog-grid__card-link">Read More <span>→</span></a>
             </div>
           </article>
-          <article class="blog-grid__card">
+          <article class="blog-grid__card" data-category="ai">
             <div class="blog-grid__card-image">
-              <div class="blog-grid__card-placeholder"></div>
+              <img src="assets/images/blog-5.webp" alt="AI personalization" loading="lazy">
             </div>
             <div class="blog-grid__card-body">
               <div class="blog-grid__card-meta">
@@ -192,12 +195,12 @@
               </div>
               <h3 class="blog-grid__card-title">AI-Powered Personalization: A Practical Implementation Guide</h3>
               <p class="blog-grid__card-text">How leading brands are using machine learning to deliver hyper-personalized experiences at scale — and how you can too.</p>
-              <a href="#" class="blog-grid__card-link">Read More <span>→</span></a>
+              <a href="404.html" class="blog-grid__card-link">Read More <span>→</span></a>
             </div>
           </article>
-          <article class="blog-grid__card">
+          <article class="blog-grid__card" data-category="paid">
             <div class="blog-grid__card-image">
-              <div class="blog-grid__card-placeholder"></div>
+              <img src="assets/images/blog-6.webp" alt="LinkedIn advertising" loading="lazy">
             </div>
             <div class="blog-grid__card-body">
               <div class="blog-grid__card-meta">
@@ -206,32 +209,51 @@
               </div>
               <h3 class="blog-grid__card-title">LinkedIn Advertising: B2B Playbook for 2026</h3>
               <p class="blog-grid__card-text">The strategies, targeting options, and creative approaches that are driving the best results on LinkedIn right now.</p>
-              <a href="#" class="blog-grid__card-link">Read More <span>→</span></a>
+              <a href="404.html" class="blog-grid__card-link">Read More <span>→</span></a>
             </div>
           </article>
         </div>
         <div class="blog-grid__pagination">
-          <a href="#" class="btn btn--outline">Load More Articles</a>
+          <a href="404.html" class="btn btn--outline">Load More Articles</a>
         </div>
       </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter section reveal">
+    <!-- ============================================
+         SECTION 3 — NEWSLETTER
+         ============================================ -->
+    <section class="blog-newsletter section reveal">
       <div class="container">
-        <div class="newsletter__inner">
-          <div class="newsletter__content">
-            <span class="section__label newsletter__label">Stay Ahead</span>
-            <h2 class="newsletter__title">Get Marketing Insights Delivered to Your Inbox.</h2>
-            <p class="newsletter__text">Weekly updates on digital strategy, growth tactics, and industry trends — from practitioners who build campaigns daily.</p>
+        <div class="blog-newsletter__inner">
+          <div class="blog-newsletter__content">
+            <span class="section__label">Stay Ahead</span>
+            <h2 class="blog-newsletter__title">Get Marketing Insights Delivered to Your Inbox.</h2>
+            <p class="blog-newsletter__text">Weekly updates on digital strategy, growth tactics, and industry trends — from practitioners who build campaigns daily.</p>
           </div>
-          <form class="newsletter__form">
-            <div class="newsletter__form-row">
-              <input type="email" class="newsletter__input" placeholder="Enter your email" required>
-              <button type="submit" class="btn btn--primary newsletter__submit">Subscribe</button>
+          <form class="blog-newsletter__form" id="blogSubscribeForm">
+            <div class="blog-newsletter__form-row">
+              <input type="email" id="subscribeEmail" class="blog-newsletter__input" placeholder="Enter your email" required>
+              <button type="submit" class="btn btn--primary blog-newsletter__submit">Subscribe</button>
             </div>
-            <p class="newsletter__disclaimer">No spam, ever. Unsubscribe anytime.</p>
+            <div id="subscribeSuccess" class="blog-newsletter__success" style="display:none;">Subscribed successfully! Check your inbox.</div>
+            <p class="blog-newsletter__disclaimer">No spam, ever. Unsubscribe anytime.</p>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 4 — CTA
+         ============================================ -->
+    <section class="blog-cta section">
+      <div class="container">
+        <div class="blog-cta__inner">
+          <span class="section__label">Be Next</span>
+          <h2 class="cta__title">Ready to Write Your Success Story?</h2>
+          <p class="cta__text">Let's build a campaign that delivers results you can measure and a partnership you can trust.</p>
+          <div class="cta__actions">
+            <a href="404.html" class="btn btn--primary btn--lg js-magnetic">Start Your Project</a>
+          </div>
         </div>
       </div>
     </section>
@@ -245,39 +267,37 @@
           <a href="index.html" class="footer__logo"><span class="footer__logo-img" role="img" aria-label="Stackly Marketing"></span></a>
           <p class="footer__tagline">Data-driven strategy meets creative excellence. We help ambitious brands grow, engage, and dominate their markets with purpose-built digital marketing that delivers measurable results.</p>
           <div class="footer__social">
-            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
-            <a href="#" class="footer__social-link" aria-label="Twitter">X</a>
-            <a href="#" class="footer__social-link" aria-label="Instagram">IG</a>
-            <a href="#" class="footer__social-link" aria-label="Dribbble">Dr</a>
+            <a href="404.html" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="404.html" class="footer__social-link" aria-label="Twitter">X</a>
+            <a href="404.html" class="footer__social-link" aria-label="Instagram">IG</a>
+            <a href="404.html" class="footer__social-link" aria-label="Dribbble">Dr</a>
           </div>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Services</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">SEO & Organic Growth</span></li>
-            <li><span class="footer__col-link">Paid Advertising</span></li>
-            <li><span class="footer__col-link">Brand & Creative</span></li>
-            <li><span class="footer__col-link">Web & CRO</span></li>
-            <li><span class="footer__col-link">Social Media</span></li>
-            <li><span class="footer__col-link">AI Marketing</span></li>
+            <li><a href="404.html" class="footer__col-link">SEO & Organic Growth</a></li>
+            <li><a href="404.html" class="footer__col-link">Paid Advertising</a></li>
+            <li><a href="404.html" class="footer__col-link">Social Media</a></li>
+            <li><a href="404.html" class="footer__col-link">AI Marketing</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Company</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">About Us</span></li>
-            <li><span class="footer__col-link">Case Studies</span></li>
-            <li><span class="footer__col-link">Blog</span></li>
-            <li><span class="footer__col-link">Contact</span></li>
-            <li><span class="footer__col-link">Careers</span></li>
+            <li><a href="about.html" class="footer__col-link">About Us</a></li>
+            <li><a href="case-studies.html" class="footer__col-link">Case Studies</a></li>
+            <li><a href="blog.html" class="footer__col-link">Blog</a></li>
+            <li><a href="contact.html" class="footer__col-link">Contact</a></li>
+            <li><a href="contact.html" class="footer__col-link">Careers</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Contact</h4>
           <ul class="footer__col-list">
-            <li><span class="footer__col-link">hello@stackly.com</span></li>
-            <li><span class="footer__col-link">+1 (234) 567-890</span></li>
-            <li class="footer__col-address">123 Madison Avenue<br>New York, NY 10016</li>
+            <li><a href="404.html" class="footer__col-link">info@stackly.com</a></li>
+            <li><a href="404.html" class="footer__col-link">+1 (234) 567-890</a></li>
+            <li class="footer__col-address">Stackly Marketing<br>Salem, Tamil Nadu, India</li>
           </ul>
         </div>
       </div>
