@@ -79,7 +79,7 @@
           <div class="auth-form__field js-field">
             <label class="auth-form__label" for="signin-email">
               Email
-              <span class="auth-form__label-error">Required</span>
+              <span class="auth-form__label-error"></span>
             </label>
             <div class="auth-form__input-wrap">
               <input type="email" class="auth-form__input" id="signin-email" placeholder="you@company.com" required autocomplete="email">
@@ -89,7 +89,7 @@
           <div class="auth-form__field js-field">
             <label class="auth-form__label" for="signin-password">
               Password
-              <span class="auth-form__label-error">Required</span>
+              <span class="auth-form__label-error"></span>
             </label>
             <div class="auth-form__input-wrap">
               <input type="password" class="auth-form__input" id="signin-password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required minlength="8" autocomplete="current-password">
@@ -137,9 +137,26 @@
   });
 
   /* ---------- Helpers ---------- */
-  function setFieldValidity(field, valid) {
-    field.classList.toggle('is-valid', valid);
-    field.classList.toggle('is-invalid', !valid);
+  function getFieldErrorEl(field) {
+    return field.querySelector('.auth-form__label-error');
+  }
+
+  function setFieldError(field, msg) {
+    var err = getFieldErrorEl(field);
+    if (err) err.textContent = msg;
+    field.classList.add('is-invalid');
+    field.classList.remove('is-valid');
+  }
+
+  function clearFieldError(field) {
+    var err = getFieldErrorEl(field);
+    if (err) err.textContent = '';
+    field.classList.remove('is-invalid');
+  }
+
+  function setFieldValid(field) {
+    clearFieldError(field);
+    field.classList.add('is-valid');
   }
 
   function validateEmail(email) {
@@ -160,14 +177,18 @@
   /* ---------- Live validation on blur ---------- */
   emailField.addEventListener('blur', function () {
     var v = emailField.value.trim();
-    if (!v) { setFieldValidity(emailField.closest('.js-field'), false); return; }
-    setFieldValidity(emailField.closest('.js-field'), validateEmail(v));
+    var field = emailField.closest('.js-field');
+    if (!v) { setFieldError(field, 'Please enter your email'); return; }
+    if (!validateEmail(v)) { setFieldError(field, 'Enter a valid email address'); return; }
+    setFieldValid(field);
   });
 
   passwordField.addEventListener('blur', function () {
     var v = passwordField.value;
-    if (!v) { setFieldValidity(passwordField.closest('.js-field'), false); return; }
-    setFieldValidity(passwordField.closest('.js-field'), v.length >= 8);
+    var field = passwordField.closest('.js-field');
+    if (!v) { setFieldError(field, 'Please enter your password'); return; }
+    if (v.length < 8) { setFieldError(field, 'At least 8 characters'); return; }
+    setFieldValid(field);
   });
 
   /* ---------- Form submit ---------- */
@@ -180,23 +201,23 @@
     var isValid = true;
 
     if (!email) {
-      setFieldValidity(emailField.closest('.js-field'), false);
+      setFieldError(emailField.closest('.js-field'), 'Please enter your email');
       isValid = false;
     } else if (!validateEmail(email)) {
-      setFieldValidity(emailField.closest('.js-field'), false);
+      setFieldError(emailField.closest('.js-field'), 'Enter a valid email address');
       isValid = false;
     } else {
-      setFieldValidity(emailField.closest('.js-field'), true);
+      setFieldValid(emailField.closest('.js-field'));
     }
 
     if (!password) {
-      setFieldValidity(passwordField.closest('.js-field'), false);
+      setFieldError(passwordField.closest('.js-field'), 'Please enter your password');
       isValid = false;
     } else if (password.length < 8) {
-      setFieldValidity(passwordField.closest('.js-field'), false);
+      setFieldError(passwordField.closest('.js-field'), 'At least 8 characters');
       isValid = false;
     } else {
-      setFieldValidity(passwordField.closest('.js-field'), true);
+      setFieldValid(passwordField.closest('.js-field'));
     }
 
     if (!isValid) {

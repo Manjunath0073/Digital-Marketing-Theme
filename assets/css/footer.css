@@ -94,6 +94,12 @@
   transition: all var(--transition-base);
 }
 
+.footer__social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
 .footer__social-link:hover {
   color: var(--color-accent);
   border-color: var(--color-accent);
@@ -239,8 +245,10 @@
   }
 
   .footer__logo-img {
-    width: 240px;
-    height: 76px;
+    width: 300px;
+    height: 92px;
+    mask-position: center center;
+    -webkit-mask-position: center center;
   }
 
   .footer__col-address {
@@ -288,9 +296,11 @@
   }
 
   .footer__logo-img {
-    width: 180px;
-    height: 56px;
+    width: 200px;
+    height: 62px;
     margin-top: -16px;
+    mask-position: center center;
+    -webkit-mask-position: center center;
   }
 
   .footer__tagline {

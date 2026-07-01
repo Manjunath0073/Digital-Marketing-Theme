@@ -600,7 +600,8 @@
 
   .contact-form__details {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     max-width: 400px;
     margin: var(--space-4) auto 0;
   }
